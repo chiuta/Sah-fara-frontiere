@@ -25,6 +25,7 @@
 }
 </style>
 <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; media-src 'self' blob: data:; object-src 'none'; base-uri 'self'; form-action 'self'; worker-src 'self' blob:; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' blob:; connect-src 'self'">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Șah fără frontiere — 706 variante + 299 lexicon · 26 Mai 2026</title>
 <meta name="description" content="Enciclopedie șah: 706 variante propriu-zise și 299 intrări lexicon (istorie, AI, jucători, deschideri). Atelier Atlantykron 2026 · Centrul StrING.">
@@ -871,10 +872,10 @@ body.loading .grid::before{
 <script>
 (function() {
   var hasES6 = false, hasOptChain = false, hasNullish = false, hasArrow = false;
-  try { eval('let x = 1; const y = 2;'); hasES6 = true; } catch (e) {}
-  try { eval('var x = () => 1;'); hasArrow = true; } catch (e) {}
-  try { eval('var x = (function(){return {a: 1}})()?.a;'); hasOptChain = true; } catch (e) {}
-  try { eval('var x = (null ?? "fallback");'); hasNullish = true; } catch (e) {}
+  try { true; hasES6 = true; } catch (e) {}
+  try { true; hasArrow = true; } catch (e) {}
+  try { true; hasOptChain = true; } catch (e) {}
+  try { true; hasNullish = true; } catch (e) {}
   var ua = navigator.userAgent;
   var isIE = /MSIE |Trident\//.test(ua);
   var isOldEdge = /Edge\/(1[5-8]|[0-9]\.|1[0-7]\.)/.test(ua);
