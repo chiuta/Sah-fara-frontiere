@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<meta charset="UTF-8">
 <!--
   ============================================================================
   Sah-fara-frontiere
@@ -24,7 +25,6 @@
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
 }
 </style>
-<meta charset="UTF-8">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; media-src 'self' blob: data:; object-src 'none'; base-uri 'self'; form-action 'self'; worker-src 'self' blob:; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' blob:; connect-src 'self'">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Șah fără frontiere — 706 variante + 299 lexicon · 26 Mai 2026</title>
@@ -1115,7 +1115,7 @@ body.loading .grid::before{
       <p>Un singur fișier HTML, generat dintr-un script Python (build_v14.py, 10500+ linii) și un JSON de date (variants_v6.json, 1.2 MB). Zero dependențe runtime. Funcționează offline, fără tracking, fără reclame. Codul e liber pentru uz educațional.</p>
       <h3>Autor</h3>
       <p class="about-author">
-        <strong>Alexandru-Ionuț Chiuță</strong> (Alexio) — autor, dezvoltator, muzician. TROM project; Editura Tornada; ASFAN-România; Centrul StrING. Contact: <a href="mailto:alexio@trom.tf">alexio@trom.tf</a>.
+        <strong>Alexandru-Ionuț Chiuță</strong> (Alexio) — autor, dezvoltator, muzician. TROM project; Editura Tornada; Centrul StrING. Contact: <a href="mailto:alexio@trom.tf">alexio@trom.tf</a>.
       </p>
       <h3>Mulțumiri</h3>
       <p>Wikipedia (peste 200 articole consultate); World Xiangqi Federation; Lichess (Crazyhouse + variant docs); Władysław Gliński (1936) pentru tabla hexagonală; V.R. Parton (1953) pentru Alice Chess; H.J.R. Murray pentru <em>A History of Chess</em> (1913). Recenzii oneste și critice de la 12 persoane imaginare (vezi documentul separat 12-recenzii-oneste.html). Implementare în iterații cu asistență AI — fiecare engine verificat cu mass-sweep automat.</p>
@@ -3018,7 +3018,9 @@ function _highlightSearch(){
       // Save original and replace
       el.dataset.hlOrig = text;
       el.classList.add('hl-orig');
-      el.innerHTML = text.replace(rx, '<mark class="search-hl">$1</mark>');
+      let _hl = '', _last = 0;
+      text.replace(rx, (m, g, off) => { _hl += escapeHTML(text.slice(_last, off)) + '<mark class="search-hl">' + escapeHTML(m) + '</mark>'; _last = off + m.length; return m; });
+      el.innerHTML = _hl + escapeHTML(text.slice(_last));
     });
   }
   _highlightActive = true;
@@ -4401,6 +4403,7 @@ function canCastle(pieceMap, boardCols, boardRows, color, direction){
   const rookCol = direction === 'kingside' ? 7 : 0;
   const rookPiece = pieceMap[rookCol + ',' + kingRow];
   if (!rookPiece || rookPiece.type !== 'R' || rookPiece.color !== color) return false;
+  if (rookPiece.element && rookPiece.element.dataset && rookPiece.element.dataset.hasMoved === 'true') return false;  // tura s-a mutat deja
   // Path clear between king and rook
   if (direction === 'kingside'){
     for (let c = 5; c <= 6; c++){
@@ -10241,7 +10244,7 @@ function wirePlayInteraction(board, v, cols, rows){
       // Castling: King at initial position, hasn't moved, Rook on h-file or a-file hasn't moved,
       // path clear, King not in check, doesn't pass through check, doesn't land in check
       if (piece.dataset.type === 'K' && piece.dataset.color === 'white' && col === 4 && row === rows - 1 &&
-          cols === 8 && rows === 8 && !piece.dataset.hasMoved){
+          cols === 8 && rows === 8 && piece.dataset.hasMoved !== "true"){
         // Kingside castle (e1→g1)
         if (canCastle(map, cols, rows, 'white', 'kingside')){
           moves.push({toCol: 6, toRow: rows - 1, special: 'castle-kingside'});
@@ -10252,7 +10255,7 @@ function wirePlayInteraction(board, v, cols, rows){
         }
       }
       if (piece.dataset.type === 'K' && piece.dataset.color === 'black' && col === 4 && row === 0 &&
-          cols === 8 && rows === 8 && !piece.dataset.hasMoved){
+          cols === 8 && rows === 8 && piece.dataset.hasMoved !== "true"){
         if (canCastle(map, cols, rows, 'black', 'kingside')){
           moves.push({toCol: 6, toRow: 0, special: 'castle-kingside'});
         }
