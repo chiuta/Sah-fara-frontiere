@@ -450,6 +450,25 @@ mark.search-hl{background:rgba(232,178,75,.45);color:inherit;padding:0 1px;borde
 .d4{background:rgba(192,57,43,.15);color:#f0644a;border:1px solid rgba(192,57,43,.4)}
 .card-origin{font-family:"JetBrains Mono",monospace;font-size:9px;color:var(--silver);margin-left:auto}
 
+/* a11y (audit 2026-10-10): contrast în tema deschisă */
+:root[data-theme="light"]{--gold:#7a5a0e}
+:root[data-theme="light"] .card-num .section-badge.var{color:#7a5a0e}
+:root[data-theme="light"] .card-num .section-badge.lex,:root[data-theme="light"] .modal-section-badge.lex{color:#4a5560}
+:root[data-theme="light"] .tag.theor{color:#4a5560}
+:root[data-theme="light"] .d1,:root[data-theme="light"] #beginner-btn,:root[data-theme="light"] #beginner-btn:hover,:root[data-theme="light"] #beginner-btn:focus-visible,:root[data-theme="light"] #beginner-btn.active{color:#146a36}
+:root[data-theme="light"] .d3{color:#98450a}
+:root[data-theme="light"] .d4{color:#a5301c}
+:root[data-theme="light"] .modal-mini-badge.verified{color:#3d6b1f}
+:root[data-theme="light"] .about-body em,:root[data-theme="light"] .play-approx-banner strong{color:#7a5a0e}
+:root[data-theme="light"] .elo-vs{color:#666;opacity:1}
+:root[data-theme="light"] .turn-label.white{color:#222}
+:root[data-theme="light"] .turn-label.black{color:#555}
+:root .elo-vs{opacity:1}
+:root[data-theme="light"] .move-chip.move-normal{color:#2f5a1a}
+:root[data-theme="light"] .move-chip.move-capture{color:#9a2a1a}
+:root[data-theme="light"] .move-chip.move-special{color:#1f5a85}
+:root[data-theme="light"] .ai-dialog-entry{color:#444}
+:root[data-theme="light"] .ai-dialog-entry.ai-dialog-intro{color:#555;opacity:1}
 /* ===== Modal ===== */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:1000;display:flex;align-items:center;justify-content:center;padding:14px;opacity:0;pointer-events:none;transition:opacity .14s;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
 .modal-overlay.open{opacity:1;pointer-events:all}
@@ -2694,7 +2713,7 @@ function buildCard(v){
   c.className = cls;
   c.tabIndex = 0;
   c.dataset.id = v.id;
-  c.setAttribute("role", "button");
+  /* a11y (audit 2026-10-10): fără role="button" — cardul conține butoane de tag (nested-interactive) */
   c.setAttribute("aria-label",
     `${SECTION_LABELS[v.section]} #${v.id} — ${v.title} — ${v.subtitle}${v.beginner ? " — recomandată pentru începători" : ""}`);
   const descShort = v.desc.length > 92 ? v.desc.substring(0, 92) + "…" : v.desc;
@@ -12065,7 +12084,7 @@ window.addEventListener("hashchange", () => {
 @media (max-width:560px){#tf-donate .tf-lbl{display:none}}
 @media print{#tf-donate{display:none}}
 </style>
-<input type="checkbox" id="tf-donate-cb" class="tf-cb" aria-hidden="true">
+<input type="checkbox" id="tf-donate-cb" class="tf-cb" aria-label="Ascunde sau arată panoul de sprijin" tabindex="-1">
 <div class="tf-panel">
 <span class="tf-lbl">Sprijină:</span>
 <a class="tf-b tf-pat" href="https://www.patreon.com/c/alexio_tf" target="_blank" rel="noopener" aria-label="Sprijină pe Patreon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="15.4" cy="9.4" r="6.6" fill="currentColor"/><rect x="2.4" y="2.4" width="3.7" height="19.2" fill="currentColor"/></svg>Patreon</a>

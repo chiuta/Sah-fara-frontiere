@@ -50,3 +50,7 @@ Alexio — Alexandru-Ionuț Chiuță, contact: alexio@trom.tf. Aplicația îl pr
 ## English summary
 
 Șah fără frontiere is a single-file chess-variants atlas: 706 variants plus 299 lexicon entries, with search, filters, playable engines (local AI, PGN/FEN export, local ELO), a 7-day guided course, badges and CSV/BibTeX export. Everything runs locally; progress is kept in localStorage (`sff:` keys) and no external requests were found in the code. The licence statements inside the app are inconsistent (CC0 vs CC-BY-SA 4.0).
+
+## Audit
+
+Audit: 2026-10-10 — claimul „fără rețea” verificat (0 `fetch`/XHR/WebSocket, CSP `connect-src 'self'`, doar linkuri `<a>` externe); corectat contrastul din tema deschisă și semantica cardurilor (butoanele de tag din carduri nu mai sunt imbricate într-un `role="button"`). Licența rămâne neclarificată (CC0 în antet vs. CC-BY-SA 4.0 în pagină), de aceea nu există fișier LICENSE. Unele variante sunt marcate în aplicație ca „experimentale/sintetice” (fără sursă primară): tratează regulile lor ca neverificate.
