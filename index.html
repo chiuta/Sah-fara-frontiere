@@ -25,7 +25,7 @@
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
 }
 </style>
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; media-src 'self' blob: data:; object-src 'none'; base-uri 'self'; form-action 'self'; worker-src 'self' blob:; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' blob:; connect-src 'self'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; media-src 'self' blob: data:; object-src 'none'; base-uri 'self'; form-action 'self'; worker-src 'none'; script-src 'self' 'sha256-RaRVHBQY6+g3XPTMHZW0YeQk2WKn/Yp3HyUL7DVeju4=' 'sha256-YKjzxrQphAnV0I+l9BDGWxbiZzM/1gRWe+LR5alC3Ak='; connect-src 'self'">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Șah fără frontiere — 706 variante + 299 lexicon · 11 Octombrie 2026</title>
 <meta name="description" content="Enciclopedie șah: 706 variante propriu-zise și 299 intrări lexicon (istorie, AI, jucători, deschideri). Atelier Atlantykron 2026 · Centrul StrING.">
@@ -1143,12 +1143,19 @@ body.loading .grid::before{
       <h3>Mulțumiri</h3>
       <p>Wikipedia (peste 200 articole consultate); World Xiangqi Federation; Lichess (Crazyhouse + variant docs); Władysław Gliński (1936) pentru tabla hexagonală; V.R. Parton (1953) pentru Alice Chess; H.J.R. Murray pentru <em>A History of Chess</em> (1913). Recenzii oneste și critice de la 12 persoane imaginare (vezi documentul separat 12-recenzii-oneste.html). Implementare în iterații cu asistență AI — fiecare engine verificat cu mass-sweep automat.</p>
       <h3>Versiune</h3>
-      <p class="mono">v14.1 · Octombrie 2026 · Atlantykron 2026 · CC0 1.0</p>
+      <p class="mono">v14.2 · Octombrie 2026 · Atlantykron 2026 · CC0 1.0</p>
       <h3>Ghid de utilizare</h3>
       <p>
         <button type="button" class="about-action-btn" id="about-restart-tour">▶ Reia tour-ul de prezentare</button>
         <button type="button" class="about-action-btn" id="about-export-csv">⤓ Export CSV (toate intrările)</button>
         <button type="button" class="about-action-btn" id="about-export-bibtex">⤓ Citează ca BibTeX</button>
+      </p>
+      <h3>Copie de siguranță a progresului</h3>
+      <p>Progresul (parcurs, insigne, ELO, preferințe) se păstrează doar în acest browser. Îl poți salva într-un fișier și restaura pe alt dispozitiv sau după ștergerea datelor site-ului.</p>
+      <p>
+        <button type="button" class="about-action-btn" id="about-export-progress">⤓ Exportă progresul (.json)</button>
+        <button type="button" class="about-action-btn" id="about-import-progress">⤒ Importă progresul</button>
+        <input type="file" id="about-import-file" accept="application/json,.json" hidden>
       </p>
     </div>
   </div>
@@ -11357,6 +11364,55 @@ document.getElementById("about-restart-tour").addEventListener("click", () => {
   try { localStorage.removeItem("sff:tourSeen"); } catch(e) {}
   setTimeout(() => { if (typeof window.startTour === 'function') window.startTour(); }, 200);
 });
+// Copie de siguranță a progresului local (chei `sff:`): export / import JSON
+(function(){
+  const PFX = "sff:", MAX_KEYS = 300, MAX_VAL = 600000;
+  const exp = document.getElementById("about-export-progress");
+  const imp = document.getElementById("about-import-progress");
+  const inp = document.getElementById("about-import-file");
+  if (!exp || !imp || !inp) return;
+  exp.addEventListener("click", () => {
+    const data = {};
+    try {
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        if (k && k.indexOf(PFX) === 0) data[k] = localStorage.getItem(k);
+      }
+    } catch(_){ showToast("Nu pot citi progresul din browser", true); return; }
+    const n = Object.keys(data).length;
+    if (!n) { showToast("Nu există încă progres de exportat", true); return; }
+    const blob = new Blob([JSON.stringify({ app: "sah-fara-frontiere", format: 1, exported: new Date().toISOString(), data: data }, null, 1)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url; a.download = "sah-fara-frontiere-progres-" + new Date().toISOString().slice(0, 10) + ".json";
+    document.body.appendChild(a); a.click();
+    setTimeout(() => { document.body.removeChild(a); URL.revokeObjectURL(url); }, 100);
+    showToast("Progres exportat (" + n + " chei)");
+  });
+  imp.addEventListener("click", () => inp.click());
+  inp.addEventListener("change", () => {
+    const f = inp.files && inp.files[0]; inp.value = "";
+    if (!f) return;
+    if (f.size > 8 * 1024 * 1024) { showToast("Fișier prea mare pentru un progres valid", true); return; }
+    const fr = new FileReader();
+    fr.onload = () => {
+      let d;
+      try { d = JSON.parse(String(fr.result)); } catch(_){ showToast("Fișierul nu este JSON valid", true); return; }
+      const src = d && d.app === "sah-fara-frontiere" && d.data && typeof d.data === "object" ? d.data : null;
+      if (!src) { showToast("Fișierul nu este o copie de progres Șah fără frontiere", true); return; }
+      const keys = Object.keys(src).filter(k => k.indexOf(PFX) === 0 && typeof src[k] === "string" && src[k].length <= MAX_VAL);
+      if (!keys.length || keys.length > MAX_KEYS) { showToast("Copia de progres nu conține date valide", true); return; }
+      if (!window.confirm("Importul înlocuiește progresul curent (" + keys.length + " chei) cu cel din fișier. Continui?")) return;
+      try {
+        keys.forEach(k => localStorage.setItem(k, src[k]));
+      } catch(_){ showToast("Nu am putut scrie în browser (spațiu insuficient sau blocat)", true); return; }
+      showToast("Progres importat: " + keys.length + " chei. Reîncarc…");
+      setTimeout(() => location.reload(), 900);
+    };
+    fr.onerror = () => showToast("Nu am putut citi fișierul", true);
+    fr.readAsText(f);
+  });
+})();
 // Export CSV (rec. VI.6/Marina)
 document.getElementById("about-export-csv").addEventListener("click", () => {
   const headers = ["id","section","title","subtitle","cat","difficulty","year","era","board","players","origin"];
@@ -11402,7 +11458,7 @@ document.getElementById("about-export-bibtex").addEventListener("click", () => {
     '  title  = {Atlas {\\c{S}}ah f\\u{a}r\\u{a} frontiere},\n' +
     '  author = {Chiu\\c{t}\\u{a}, Alexandru-Ionu\\c{t}},\n' +
     '  year   = {' + year + '},\n' +
-    '  note   = {v14.1 \\textperiodcentered{} Atlantykron 2026 \\textperiodcentered{} Centrul StrING \\textperiodcentered{} ' + V.length + ' intr\\u{a}ri},\n' +
+    '  note   = {v14.2 \\textperiodcentered{} Atlantykron 2026 \\textperiodcentered{} Centrul StrING \\textperiodcentered{} ' + V.length + ' intr\\u{a}ri},\n' +
     '  url    = {' + location.origin + location.pathname + '},\n' +
     '  urldate = {' + today + '}\n' +
     '}';
