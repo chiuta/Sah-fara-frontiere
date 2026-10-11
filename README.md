@@ -41,7 +41,13 @@ Descarcă `index.html` (aproximativ 1,9 MB) și deschide-l în browser; funcțio
 
 ## Licență
 
-Licența nu este încă declarată explicit în acest repository; vezi nota din aplicație. Atenție: aplicația conține indicații diferite — antetul codului menționează „TRADE-FREE + CC0 1.0", iar secțiunea de versiune menționează „CC-BY-SA 4.0".
+CC0 1.0 Universal (dedicare în domeniul public) — vezi fișierul `LICENSE`. Antetul din `index.html` și textul din interfață indică aceeași licență (o mențiune anterioară „CC-BY-SA 4.0” din interfață a fost eliminată la audit, 2026-10-11, pentru a elimina contradicția).
+
+Excepție — materiale terțe: rezumatele și descrierile unor variante se sprijină pe surse publice (Wikipedia, FIDE, Lichess, chessvariants.com), indicate în aplicație ca linkuri și mulțumiri. Dedicarea CC0 acoperă contribuția originală a autorului (cod, selecție, texte proprii); orice text preluat sau adaptat de la terți rămâne sub licența sursei (de ex. CC BY-SA pentru Wikipedia) și trebuie verificat de cine îl reutilizează.
+
+## Mărci
+
+Numele de jocuri sunt denumiri comerciale ale deținătorilor lor, folosite descriptiv; proiectul nu este afiliat cu aceștia.
 
 ## Autor
 
@@ -49,8 +55,8 @@ Alexio — Alexandru-Ionuț Chiuță, contact: alexio@trom.tf. Aplicația îl pr
 
 ## English summary
 
-Șah fără frontiere is a single-file chess-variants atlas: 706 variants plus 299 lexicon entries, with search, filters, playable engines (local AI, PGN/FEN export, local ELO), a 7-day guided course, badges and CSV/BibTeX export. Everything runs locally; progress is kept in localStorage (`sff:` keys) and no external requests were found in the code. The licence statements inside the app are inconsistent (CC0 vs CC-BY-SA 4.0).
+Șah fără frontiere is a single-file chess-variants atlas: 706 variants plus 299 lexicon entries, with search, filters, playable engines (local AI, PGN/FEN export, local ELO), a 7-day guided course, badges and CSV/BibTeX export. Everything runs locally; progress is kept in localStorage (`sff:` keys) and no external requests were found in the code. Licensed CC0 1.0 for the author's own contribution (see LICENSE); third-party-derived summaries keep their source licences.
 
 ## Audit
 
-Audit: 2026-10-10 — claimul „fără rețea” verificat (0 `fetch`/XHR/WebSocket, CSP `connect-src 'self'`, doar linkuri `<a>` externe); corectat contrastul din tema deschisă și semantica cardurilor (butoanele de tag din carduri nu mai sunt imbricate într-un `role="button"`). Licența rămâne neclarificată (CC0 în antet vs. CC-BY-SA 4.0 în pagină), de aceea nu există fișier LICENSE. Unele variante sunt marcate în aplicație ca „experimentale/sintetice” (fără sursă primară): tratează regulile lor ca neverificate.
+Audit: 2026-10-10 — claimul „fără rețea” verificat (0 `fetch`/XHR/WebSocket, CSP `connect-src 'self'`, doar linkuri `<a>` externe); corectat contrastul din tema deschisă și semantica cardurilor (butoanele de tag din carduri nu mai sunt imbricate într-un `role="button"`). Licența a fost unificată la CC0 1.0 (2026-10-11) și s-a adăugat `LICENSE`. Unele variante sunt marcate în aplicație ca „experimentale/sintetice” (fără sursă primară): tratează regulile lor ca neverificate.
