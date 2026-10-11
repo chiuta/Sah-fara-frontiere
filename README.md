@@ -4,11 +4,13 @@ Atlas/enciclopedie de variante de șah: 706 variante și 299 intrări de lexicon
 
 **Live:** https://chiuta.github.io/Sah-fara-frontiere/
 
+Ultima actualizare: 11 octombrie 2026 · versiune v14.1
+
 ![Captura de ecran](screenshot.png)
 
 ## Ce este
 
-Șah fără frontiere este un atlas dintr-un singur fișier HTML (v14, mai 2026, realizat pentru atelierul Atlantykron 2026) cu 1005 intrări: 706 variante de șah (online, moderne, istorice, regionale, geometrice, fairy, pe table mari, cu AI) și 299 de termeni de lexicon (istorie, AI, jucători, deschideri). Potrivit secțiunii „Despre acest atlas", fișierul este generat dintr-un script Python și un JSON de date, fără dependențe la rulare, cu implementare în iterații asistate de AI.
+Șah fără frontiere este un atlas dintr-un singur fișier HTML (v14.1, actualizat la 11 octombrie 2026; realizat pentru atelierul Atlantykron 2026) cu 1005 intrări: 706 variante de șah (online, moderne, istorice, regionale, geometrice, fairy, pe table mari, cu AI) și 299 de termeni de lexicon (istorie, AI, jucători, deschideri). Potrivit secțiunii „Despre acest atlas", fișierul este generat dintr-un script Python și un JSON de date, fără dependențe la rulare, cu implementare în iterații asistate de AI.
 
 ## Funcții
 
@@ -38,6 +40,13 @@ Atlas/enciclopedie de variante de șah: 706 variante și 299 intrări de lexicon
 ## Rulare locală / offline
 
 Descarcă `index.html` (aproximativ 1,9 MB) și deschide-l în browser; funcționează fără internet. Doar linkurile către surse externe necesită conexiune.
+
+## Istoric / Changelog
+
+### v14.1 — 11 octombrie 2026
+- Accesibilitate: dialogul de detalii are acum titlu implicit (nume accesibil), blocul „Sprijină” este regiune (aside) etichetată; verificare axe fără încălcări.
+- Eliminat handlerul inline onclick din avertismentul de browser incompatibil (înlocuit cu listener).
+- Date și versiune actualizate: v14.1, 11 octombrie 2026 (titlu, antet, statistică „Actualizat”, BibTeX).
 
 ## Licență
 

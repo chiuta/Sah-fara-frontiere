@@ -27,7 +27,7 @@
 </style>
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; media-src 'self' blob: data:; object-src 'none'; base-uri 'self'; form-action 'self'; worker-src 'self' blob:; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' blob:; connect-src 'self'">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Șah fără frontiere — 706 variante + 299 lexicon · 26 Mai 2026</title>
+<title>Șah fără frontiere — 706 variante + 299 lexicon · 11 Octombrie 2026</title>
 <meta name="description" content="Enciclopedie șah: 706 variante propriu-zise și 299 intrări lexicon (istorie, AI, jucători, deschideri). Atelier Atlantykron 2026 · Centrul StrING.">
 <meta name="author" content="Alexandru-Ionuț Chiuță (Alexio)">
 <meta name="theme-color" content="#0a0b0e">
@@ -910,9 +910,13 @@ body.loading .grid::before{
     var html = '<div id="browser-warning" style="position:fixed;top:0;left:0;right:0;z-index:99999;padding:14px 18px;background:#c44e3b;color:#fff;font-family:Georgia,serif;font-size:14.5px;line-height:1.5;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,0.5);border-bottom:3px solid #7a2918">' +
       '<strong>&#9888; Browser incompatibil</strong><br>' + msg + '<br>' +
       '<span style="font-size:12px;opacity:0.92">Versiuni minime recomandate: Chrome 80+ / Firefox 74+ / Safari 13.1+ / Edge 80+ (Chromium) &mdash; toate din 2020 &icirc;ncoace.</span>' +
-      '<br><button onclick="this.parentNode.style.display=&quot;none&quot;" style="margin-top:8px;padding:5px 14px;background:#fff;color:#c44e3b;border:none;font-family:Georgia,serif;font-size:12px;cursor:pointer;font-weight:600">' +
+      '<br><button id="bw-ok" type="button" style="margin-top:8px;padding:5px 14px;background:#fff;color:#c44e3b;border:none;font-family:Georgia,serif;font-size:12px;cursor:pointer;font-weight:600">' +
       '&Icirc;nțeleg, continuă oricum</button></div>';
     document.write(html);
+    document.addEventListener('DOMContentLoaded', function () {
+      var okb = document.getElementById('bw-ok');
+      if (okb) okb.addEventListener('click', function () { this.parentNode.style.display = 'none'; });
+    });
   }
 })();
 </script>
@@ -937,16 +941,16 @@ body.loading .grid::before{
 
 <header class="page-header">
   <div class="header-glow"></div><div class="header-grid-bg" id="header-grid-bg" aria-hidden="true"></div>
-  <div class="kicker">♔ Enciclopedie · Atlantykron 2026 · Centrul StrING · 27 Mai 2026 ♔</div>
+  <div class="kicker">♔ Enciclopedie · Atlantykron 2026 · Centrul StrING · 11 Octombrie 2026 ♔</div>
   <h1>ȘAH <span>FĂRĂ</span> FRONTIERE</h1>
-  <p class="subtitle">706 variante propriu-zise · 299 intrări lexicon · 21 recomandate pentru începători · 26 Mai 2026</p>
+  <p class="subtitle">706 variante propriu-zise · 299 intrări lexicon · 21 recomandate pentru începători · 11 Octombrie 2026</p>
   <div class="stat-strip" role="group" aria-label="Statistici enciclopedie">
     <div class="stat-item"><span class="stat-num" id="stat-total">1005</span><span class="stat-label">Total</span></div>
     <div class="stat-item"><span class="stat-num" id="stat-variants">706</span><span class="stat-label">Variante</span></div>
     <div class="stat-item"><span class="stat-num" id="stat-lexicon">299</span><span class="stat-label">Lexicon</span></div>
     <div class="stat-item"><span class="stat-num" id="stat-beginners">21</span><span class="stat-label">Începători</span></div>
     <div class="stat-item"><span class="stat-num">~1500</span><span class="stat-label">Ani Istorie</span></div>
-    <div class="stat-item"><span class="stat-num">26·V·2026</span><span class="stat-label">Actualizat</span></div>
+    <div class="stat-item"><span class="stat-num">11·X·2026</span><span class="stat-label">Actualizat</span></div>
   </div>
 </header>
 <nav class="controls" aria-label="Filtre și căutare">
@@ -1052,7 +1056,7 @@ body.loading .grid::before{
     <div class="modal-head">
       <div class="modal-icon" id="modal-icon" aria-hidden="true"></div>
       <div class="modal-titlewrap">
-        <h2 class="modal-title" id="modal-title"></h2>
+        <h2 class="modal-title" id="modal-title">Detalii variantă</h2>
         <div class="modal-sub" id="modal-sub"></div>
         <span class="modal-section-badge" id="modal-section-badge"></span>
         <div class="modal-badges-row" id="modal-badges-row"></div>
@@ -1139,7 +1143,7 @@ body.loading .grid::before{
       <h3>Mulțumiri</h3>
       <p>Wikipedia (peste 200 articole consultate); World Xiangqi Federation; Lichess (Crazyhouse + variant docs); Władysław Gliński (1936) pentru tabla hexagonală; V.R. Parton (1953) pentru Alice Chess; H.J.R. Murray pentru <em>A History of Chess</em> (1913). Recenzii oneste și critice de la 12 persoane imaginare (vezi documentul separat 12-recenzii-oneste.html). Implementare în iterații cu asistență AI — fiecare engine verificat cu mass-sweep automat.</p>
       <h3>Versiune</h3>
-      <p class="mono">v14 · Mai 2026 · Atlantykron 2026 · CC0 1.0</p>
+      <p class="mono">v14.1 · Octombrie 2026 · Atlantykron 2026 · CC0 1.0</p>
       <h3>Ghid de utilizare</h3>
       <p>
         <button type="button" class="about-action-btn" id="about-restart-tour">▶ Reia tour-ul de prezentare</button>
@@ -11398,7 +11402,7 @@ document.getElementById("about-export-bibtex").addEventListener("click", () => {
     '  title  = {Atlas {\\c{S}}ah f\\u{a}r\\u{a} frontiere},\n' +
     '  author = {Chiu\\c{t}\\u{a}, Alexandru-Ionu\\c{t}},\n' +
     '  year   = {' + year + '},\n' +
-    '  note   = {v14 \\textperiodcentered{} Atlantykron 2026 \\textperiodcentered{} Centrul StrING \\textperiodcentered{} ' + V.length + ' intr\\u{a}ri},\n' +
+    '  note   = {v14.1 \\textperiodcentered{} Atlantykron 2026 \\textperiodcentered{} Centrul StrING \\textperiodcentered{} ' + V.length + ' intr\\u{a}ri},\n' +
     '  url    = {' + location.origin + location.pathname + '},\n' +
     '  urldate = {' + today + '}\n' +
     '}';
@@ -12064,7 +12068,7 @@ window.addEventListener("hashchange", () => {
 });
 </script>
 <!-- tf-donate: sprijin voluntar (Patreon + Buy Me a Coffee) — self-contained, fără resurse externe, fără JS -->
-<div id="tf-donate" aria-label="Sprijină autorul">
+<aside id="tf-donate" aria-label="Sprijină autorul">
 <style>
 #tf-donate{position:fixed;right:14px;bottom:14px;z-index:2147483600;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1}
 #tf-donate *{box-sizing:border-box}
@@ -12092,6 +12096,6 @@ window.addEventListener("hashchange", () => {
 <label for="tf-donate-cb" class="tf-x" title="Ascunde" aria-label="Ascunde">✕</label>
 </div>
 <label for="tf-donate-cb" class="tf-open" title="Sprijină" aria-label="Sprijină">♥</label>
-</div>
+</aside>
 </body>
 </html>
