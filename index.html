@@ -25,7 +25,7 @@
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
 }
 </style>
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; media-src 'self' blob: data:; object-src 'none'; base-uri 'self'; form-action 'self'; worker-src 'none'; script-src 'self' 'sha256-RaRVHBQY6+g3XPTMHZW0YeQk2WKn/Yp3HyUL7DVeju4=' 'sha256-YKjzxrQphAnV0I+l9BDGWxbiZzM/1gRWe+LR5alC3Ak='; connect-src 'self'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; media-src 'self' blob: data:; object-src 'none'; base-uri 'self'; form-action 'self'; worker-src 'none'; script-src 'self' 'sha256-RaRVHBQY6+g3XPTMHZW0YeQk2WKn/Yp3HyUL7DVeju4=' 'sha256-zb42K2/twJu29Axka4JlBXWBq6f2QoQi8UZt/9v1gXk='; connect-src 'self'">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Șah fără frontiere — 706 variante + 299 lexicon · 11 Octombrie 2026</title>
 <meta name="description" content="Enciclopedie șah: 706 variante propriu-zise și 299 intrări lexicon (istorie, AI, jucători, deschideri). Atelier Atlantykron 2026 · Centrul StrING.">
@@ -106,7 +106,7 @@
   background:linear-gradient(135deg,var(--gold-soft),transparent);
   border:1px solid var(--gold);border-radius:12px;padding:18px 48px 18px 22px;
   font-size:14px;line-height:1.6;color:var(--text);box-shadow:var(--shadow)}
-#welcome-banner h3{font-size:16px;color:var(--gold);margin:0 0 8px;
+#welcome-banner h2{font-size:16px;color:var(--gold);margin:0 0 8px;
   font-family:"JetBrains Mono",monospace;letter-spacing:.04em}
 #welcome-banner p{margin:0 0 6px}
 #welcome-banner .wb-steps{margin:8px 0 0;padding-left:0;list-style:none;
@@ -125,7 +125,7 @@
   background:linear-gradient(135deg,rgba(94,140,106,0.12),transparent);
   border:1px solid var(--jade,#5e8c6a);border-radius:12px;padding:18px 48px 18px 22px;
   font-size:14px;line-height:1.6;color:var(--text);box-shadow:var(--shadow)}
-#resume-banner h3{font-size:16px;color:var(--jade,#5e8c6a);margin:0 0 8px;
+#resume-banner h2{font-size:16px;color:var(--jade,#5e8c6a);margin:0 0 8px;
   font-family:"JetBrains Mono",monospace;letter-spacing:.04em}
 #resume-banner p{margin:0 0 12px}
 #resume-banner .wb-close{position:absolute;top:12px;right:12px;background:none;border:none;
@@ -171,6 +171,9 @@ h1 span{color:var(--gold)}
 /* ===== Controls ===== */
 .controls{padding:10px 28px;border-bottom:1px solid var(--border);background:var(--surface);position:sticky;top:0;z-index:100;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);display:flex;flex-direction:column;gap:8px}
 .controls-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+/* Pe ecrane înguste/scurte bara de comenzi (≈620 px înălțime) ar acoperi aproape tot viewportul dacă ar rămâne lipită sus: devine statică */
+#grid .card,.curated-card,[id^="sec-"]{scroll-margin-top:250px}
+@media (max-width:820px),(max-height:560px){.controls{position:static}#grid .card,.curated-card,[id^="sec-"]{scroll-margin-top:12px}}
 
 .section-toggle{display:inline-flex;border:1px solid var(--gold);overflow:hidden}
 .section-btn{font-family:"Cinzel",Georgia,serif;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;padding:11px 18px;border:none;background:transparent;color:var(--silver);cursor:pointer;transition:all .12s;border-right:1px solid rgba(212,168,71,.3);font-weight:600;min-height:44px}
@@ -649,6 +652,10 @@ body[data-theme="light"] .turn-label.black{color:#666}
 @media (max-width:600px){
   .play-controls-row .ai-note .ai-note-text{display:none}
 }
+.ai-busy{display:flex;align-items:center;justify-content:center;gap:8px;margin:6px auto 0;padding:5px 12px;max-width:max-content;border:1px solid var(--gold);border-radius:999px;background:var(--gold-soft);color:var(--text);font-family:"JetBrains Mono",monospace;font-size:12px}
+.ai-busy-spin{width:12px;height:12px;border:2px solid var(--gold);border-top-color:transparent;border-radius:50%;animation:aibusyspin .8s linear infinite}
+@keyframes aibusyspin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.ai-busy-spin{animation:none;border-top-color:var(--gold)}}
 .play-status{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--silver);text-align:center;letter-spacing:.04em;margin-top:4px;line-height:1.4}
 
 /* Mobile <500px: tighten play controls for small screens */
@@ -1143,7 +1150,7 @@ body.loading .grid::before{
       <h3>Mulțumiri</h3>
       <p>Wikipedia (peste 200 articole consultate); World Xiangqi Federation; Lichess (Crazyhouse + variant docs); Władysław Gliński (1936) pentru tabla hexagonală; V.R. Parton (1953) pentru Alice Chess; H.J.R. Murray pentru <em>A History of Chess</em> (1913). Recenzii oneste și critice de la 12 persoane imaginare (vezi documentul separat 12-recenzii-oneste.html). Implementare în iterații cu asistență AI — fiecare engine verificat cu mass-sweep automat.</p>
       <h3>Versiune</h3>
-      <p class="mono">v14.2 · Octombrie 2026 · Atlantykron 2026 · CC0 1.0</p>
+      <p class="mono">v14.3 · Octombrie 2026 · Atlantykron 2026 · CC0 1.0</p>
       <h3>Ghid de utilizare</h3>
       <p>
         <button type="button" class="about-action-btn" id="about-restart-tour">▶ Reia tour-ul de prezentare</button>
@@ -8999,6 +9006,29 @@ function aiSchedulePrecomputation(domMap, userColor, cols, rows){
   }, {timeout: 2000});
 }
 
+// Indicator vizual (aria-hidden; starea rămâne anunțată prin #play-status) cu secundele scurse cât gândește AI-ul
+let _aiBusyTimer = null;
+function _hideAIBusy(){
+  if (_aiBusyTimer){ clearInterval(_aiBusyTimer); _aiBusyTimer = null; }
+  const b = document.getElementById("ai-busy"); if (b) b.remove();
+}
+function _showAIBusy(){
+  _hideAIBusy();
+  const ps = document.getElementById("play-status");
+  if (!ps || !ps.parentNode) return;
+  const el = document.createElement("div");
+  el.id = "ai-busy"; el.className = "ai-busy"; el.setAttribute("aria-hidden", "true");
+  el.innerHTML = '<span class="ai-busy-spin"></span><span class="ai-busy-txt">AI gândește…</span>';
+  ps.parentNode.insertBefore(el, ps.nextSibling);
+  const t0 = Date.now();
+  _aiBusyTimer = setInterval(() => {
+    if (!aiThinking || !document.getElementById("ai-busy")){ _hideAIBusy(); return; }
+    const sec = Math.floor((Date.now() - t0) / 1000);
+    const txt = el.querySelector(".ai-busy-txt");
+    if (txt) txt.textContent = "AI gândește… " + sec + " s";
+  }, 250);
+}
+
 function aiPlayMove(board, v, cols, rows){
   if (aiThinking || gameEnded){
     // FIX BUG 4 (rec. IX/Vlad): if we were running AI vs AI and just hit a
@@ -9009,6 +9039,7 @@ function aiPlayMove(board, v, cols, rows){
   aiThinking = true;
   appendAIDialog('💭 <em>Calculez mutarea...</em>', true);
   document.getElementById("play-status").textContent = "🤖 AI gândește...";
+  _showAIBusy();
   setTimeout(async () => {
     try {
       const svg = _getActiveBoardSvg();
@@ -11458,7 +11489,7 @@ document.getElementById("about-export-bibtex").addEventListener("click", () => {
     '  title  = {Atlas {\\c{S}}ah f\\u{a}r\\u{a} frontiere},\n' +
     '  author = {Chiu\\c{t}\\u{a}, Alexandru-Ionu\\c{t}},\n' +
     '  year   = {' + year + '},\n' +
-    '  note   = {v14.2 \\textperiodcentered{} Atlantykron 2026 \\textperiodcentered{} Centrul StrING \\textperiodcentered{} ' + V.length + ' intr\\u{a}ri},\n' +
+    '  note   = {v14.3 \\textperiodcentered{} Atlantykron 2026 \\textperiodcentered{} Centrul StrING \\textperiodcentered{} ' + V.length + ' intr\\u{a}ri},\n' +
     '  url    = {' + location.origin + location.pathname + '},\n' +
     '  urldate = {' + today + '}\n' +
     '}';
@@ -12008,7 +12039,7 @@ requestAnimationFrame(() => {
         banner.setAttribute("aria-label", "Bun venit — ghid rapid");
         banner.innerHTML =
           '<button class="wb-close" aria-label="Închide ghidul de bun venit" title="Închide">✕</button>' +
-          '<h3>♔ Bun venit la Atlas Șah fără frontiere</h3>' +
+          '<h2>♔ Bun venit la Atlas Șah fără frontiere</h2>' +
           '<p>Explorează 1005 intrări: 706 variante de șah jucabile + 299 termeni de lexicon. Tot ce vezi funcționează 100% offline.</p>' +
           '<ul class="wb-steps">' +
             '<li data-n="1">Atinge o variantă pentru detalii</li>' +
@@ -12016,7 +12047,9 @@ requestAnimationFrame(() => {
             '<li data-n="3">Caută cu / · Surprinde-mă cu R · Ajutor cu ?</li>' +
           '</ul>' +
           '<button class="wb-tour-btn" id="wb-start-tour">▶ Începe turul (30 sec)</button>';
-        grid.parentNode.insertBefore(banner, grid);
+        // în vârful conținutului (înainte de „Varianta de astăzi”), ca ghidul să fie vizibil la prima deschidere
+        const anchor = document.getElementById("curated-landing") || grid;
+        anchor.parentNode.insertBefore(banner, anchor);
         const closeBanner = () => {
           banner.style.display = "none";
           try { localStorage.setItem("sff:welcomeSeen", "1"); } catch(e) {}
@@ -12076,7 +12109,7 @@ requestAnimationFrame(() => {
       wb.setAttribute("aria-label", "Jocuri în desfășurare");
       wb.innerHTML =
         '<button class="wb-close" aria-label="Închide" title="Închide">✕</button>' +
-        '<h3>👋 Bun venit înapoi</h3>' +
+        '<h2>👋 Bun venit înapoi</h2>' +
         '<p>Aveți ' + meaningful.length + ' joc' + (meaningful.length === 1 ? '' : 'uri') + ' în desfășurare:</p>' +
         '<div class="resume-list">' +
         meaningful.slice(0, 5).map(g =>
@@ -12086,7 +12119,8 @@ requestAnimationFrame(() => {
           '</button>'
         ).join('') +
         '</div>';
-      grid.parentNode.insertBefore(wb, grid);
+      const anchor2 = document.getElementById("curated-landing") || grid;
+      anchor2.parentNode.insertBefore(wb, anchor2);
       wb.querySelector(".wb-close").addEventListener("click", () => wb.style.display = "none");
       wb.querySelectorAll(".resume-item").forEach(btn => {
         btn.addEventListener("click", () => {

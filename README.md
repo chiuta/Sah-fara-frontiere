@@ -4,13 +4,13 @@ Atlas/enciclopedie de variante de șah: 706 variante și 299 intrări de lexicon
 
 **Live:** https://chiuta.github.io/Sah-fara-frontiere/
 
-Ultima actualizare: 11 octombrie 2026 · versiune v14.2
+Ultima actualizare: 11 octombrie 2026 · versiune v14.3
 
 ![Captura de ecran](screenshot.png)
 
 ## Ce este
 
-Șah fără frontiere este un atlas dintr-un singur fișier HTML (v14.2, actualizat la 11 octombrie 2026; realizat pentru atelierul Atlantykron 2026) cu 1005 intrări: 706 variante de șah (online, moderne, istorice, regionale, geometrice, fairy, pe table mari, cu AI) și 299 de termeni de lexicon (istorie, AI, jucători, deschideri). Potrivit secțiunii „Despre acest atlas", fișierul este generat dintr-un script Python și un JSON de date, fără dependențe la rulare, cu implementare în iterații asistate de AI.
+Șah fără frontiere este un atlas dintr-un singur fișier HTML (v14.3, actualizat la 11 octombrie 2026; realizat pentru atelierul Atlantykron 2026) cu 1005 intrări: 706 variante de șah (online, moderne, istorice, regionale, geometrice, fairy, pe table mari, cu AI) și 299 de termeni de lexicon (istorie, AI, jucători, deschideri). Potrivit secțiunii „Despre acest atlas", fișierul este generat dintr-un script Python și un JSON de date, fără dependențe la rulare, cu implementare în iterații asistate de AI.
 
 ## Funcții
 
@@ -43,6 +43,12 @@ Ultima actualizare: 11 octombrie 2026 · versiune v14.2
 Descarcă `index.html` (aproximativ 1,9 MB) și deschide-l în browser; funcționează fără internet. Doar linkurile către surse externe necesită conexiune.
 
 ## Istoric / Changelog
+
+### v14.3 — 11 octombrie 2026
+- Pe ecrane înguste (≤820 px) sau scurte (≤560 px) bara de comenzi nu mai rămâne lipită sus: pe telefon ocupa ≈620 px din 740 și acoperea cardurile (clicul pe primele carduri nu mai ajungea la ele); pe desktop, cardurile au `scroll-margin-top` ca să nu rămână sub bara lipită.
+- Indicator vizual „AI gândește… N s” sub tablă cât timp calculează AI-ul (starea rămâne anunțată și prin regiunea `aria-live` existentă); respectă `prefers-reduced-motion`.
+- Bannerul „Bun venit” apare acum în vârful conținutului (înainte de „Varianta de astăzi”), nu sub secțiunile curate.
+- Dimensiunea (≈1,9 MB) rămâne: ~1,05 MB sunt datele (deja compacte) și ~230 KB fonturi base64 pentru funcționare offline.
 
 ### v14.2 — 11 octombrie 2026
 - Securitate: politica CSP nu mai conține `'unsafe-inline'`, `'wasm-unsafe-eval'` și `blob:` pentru scripturi (scripturile inline sunt acum autorizate prin hash SHA-256); `worker-src` este `'none'`.
