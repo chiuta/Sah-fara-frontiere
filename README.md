@@ -1,16 +1,16 @@
 # Șah fără frontiere
 
+**Versiune:** 14.3.1 · **Ultima actualizare:** 12 octombrie 2026
+
 Atlas/enciclopedie de variante de șah: 706 variante și 299 intrări de lexicon, cu motoare jucabile pentru o parte dintre ele.
 
 **Live:** https://chiuta.github.io/Sah-fara-frontiere/
-
-Ultima actualizare: 11 octombrie 2026 · versiune v14.3
 
 ![Captura de ecran](screenshot.png)
 
 ## Ce este
 
-Șah fără frontiere este un atlas dintr-un singur fișier HTML (v14.3, actualizat la 11 octombrie 2026; realizat pentru atelierul Atlantykron 2026) cu 1005 intrări: 706 variante de șah (online, moderne, istorice, regionale, geometrice, fairy, pe table mari, cu AI) și 299 de termeni de lexicon (istorie, AI, jucători, deschideri). Potrivit secțiunii „Despre acest atlas", fișierul este generat dintr-un script Python și un JSON de date, fără dependențe la rulare, cu implementare în iterații asistate de AI.
+Șah fără frontiere este un atlas dintr-un singur fișier HTML (v14.3.1, actualizat la 12 octombrie 2026; realizat pentru atelierul Atlantykron 2026) cu 1005 intrări: 706 variante de șah (online, moderne, istorice, regionale, geometrice, fairy, pe table mari, cu AI) și 299 de termeni de lexicon (istorie, AI, jucători, deschideri). Potrivit secțiunii „Despre acest atlas", fișierul este generat dintr-un script Python și un JSON de date, fără dependențe la rulare, cu implementare în iterații asistate de AI.
 
 ## Funcții
 
@@ -43,6 +43,9 @@ Ultima actualizare: 11 octombrie 2026 · versiune v14.3
 Descarcă `index.html` (aproximativ 1,9 MB) și deschide-l în browser; funcționează fără internet. Doar linkurile către surse externe necesită conexiune.
 
 ## Istoric / Changelog
+
+### v14.3.1 — 12 octombrie 2026
+- Versiunea și data ultimei actualizări sunt afișate în aplicație („Despre acest atlas”, subsol); titlul, antetul, statistica „Actualizat” și BibTeX arată v14.3.1 / 12 octombrie 2026.
 
 ### v14.3 — 11 octombrie 2026
 - Pe ecrane înguste (≤820 px) sau scurte (≤560 px) bara de comenzi nu mai rămâne lipită sus: pe telefon ocupa ≈620 px din 740 și acoperea cardurile (clicul pe primele carduri nu mai ajungea la ele); pe desktop, cardurile au `scroll-margin-top` ca să nu rămână sub bara lipită.

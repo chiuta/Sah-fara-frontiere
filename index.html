@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <meta charset="UTF-8">
+<meta name="application-version" content="14.3.1">
+<meta name="last-updated" content="2026-10-12">
 <!--
   ============================================================================
   Sah-fara-frontiere
@@ -25,9 +27,9 @@
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
 }
 </style>
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; media-src 'self' blob: data:; object-src 'none'; base-uri 'self'; form-action 'self'; worker-src 'none'; script-src 'self' 'sha256-RaRVHBQY6+g3XPTMHZW0YeQk2WKn/Yp3HyUL7DVeju4=' 'sha256-zb42K2/twJu29Axka4JlBXWBq6f2QoQi8UZt/9v1gXk='; connect-src 'self'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; media-src 'self' blob: data:; object-src 'none'; base-uri 'self'; form-action 'self'; worker-src 'none'; script-src 'self' 'sha256-RaRVHBQY6+g3XPTMHZW0YeQk2WKn/Yp3HyUL7DVeju4=' 'sha256-yLCJVU7Tq+rX3K+CZ5lQ2jGuyNL9gww5z0ynzyyE9uc='; connect-src 'self'">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Șah fără frontiere — 706 variante + 299 lexicon · 11 Octombrie 2026</title>
+<title>Șah fără frontiere — 706 variante + 299 lexicon · 12 Octombrie 2026</title>
 <meta name="description" content="Enciclopedie șah: 706 variante propriu-zise și 299 intrări lexicon (istorie, AI, jucători, deschideri). Atelier Atlantykron 2026 · Centrul StrING.">
 <meta name="author" content="Alexandru-Ionuț Chiuță (Alexio)">
 <meta name="theme-color" content="#0a0b0e">
@@ -948,16 +950,16 @@ body.loading .grid::before{
 
 <header class="page-header">
   <div class="header-glow"></div><div class="header-grid-bg" id="header-grid-bg" aria-hidden="true"></div>
-  <div class="kicker">♔ Enciclopedie · Atlantykron 2026 · Centrul StrING · 11 Octombrie 2026 ♔</div>
+  <div class="kicker">♔ Enciclopedie · Atlantykron 2026 · Centrul StrING · 12 Octombrie 2026 ♔</div>
   <h1>ȘAH <span>FĂRĂ</span> FRONTIERE</h1>
-  <p class="subtitle">706 variante propriu-zise · 299 intrări lexicon · 21 recomandate pentru începători · 11 Octombrie 2026</p>
+  <p class="subtitle">706 variante propriu-zise · 299 intrări lexicon · 21 recomandate pentru începători · 12 Octombrie 2026</p>
   <div class="stat-strip" role="group" aria-label="Statistici enciclopedie">
     <div class="stat-item"><span class="stat-num" id="stat-total">1005</span><span class="stat-label">Total</span></div>
     <div class="stat-item"><span class="stat-num" id="stat-variants">706</span><span class="stat-label">Variante</span></div>
     <div class="stat-item"><span class="stat-num" id="stat-lexicon">299</span><span class="stat-label">Lexicon</span></div>
     <div class="stat-item"><span class="stat-num" id="stat-beginners">21</span><span class="stat-label">Începători</span></div>
     <div class="stat-item"><span class="stat-num">~1500</span><span class="stat-label">Ani Istorie</span></div>
-    <div class="stat-item"><span class="stat-num">11·X·2026</span><span class="stat-label">Actualizat</span></div>
+    <div class="stat-item"><span class="stat-num">12·X·2026</span><span class="stat-label">Actualizat</span></div>
   </div>
 </header>
 <nav class="controls" aria-label="Filtre și căutare">
@@ -1150,7 +1152,7 @@ body.loading .grid::before{
       <h3>Mulțumiri</h3>
       <p>Wikipedia (peste 200 articole consultate); World Xiangqi Federation; Lichess (Crazyhouse + variant docs); Władysław Gliński (1936) pentru tabla hexagonală; V.R. Parton (1953) pentru Alice Chess; H.J.R. Murray pentru <em>A History of Chess</em> (1913). Recenzii oneste și critice de la 12 persoane imaginare (vezi documentul separat 12-recenzii-oneste.html). Implementare în iterații cu asistență AI — fiecare engine verificat cu mass-sweep automat.</p>
       <h3>Versiune</h3>
-      <p class="mono">v14.3 · Octombrie 2026 · Atlantykron 2026 · CC0 1.0</p>
+      <p class="mono"><span id="app-version">v14.3.1 · 2026-10-12</span> · Atlantykron 2026 · CC0 1.0</p>
       <h3>Ghid de utilizare</h3>
       <p>
         <button type="button" class="about-action-btn" id="about-restart-tour">▶ Reia tour-ul de prezentare</button>
@@ -11489,7 +11491,7 @@ document.getElementById("about-export-bibtex").addEventListener("click", () => {
     '  title  = {Atlas {\\c{S}}ah f\\u{a}r\\u{a} frontiere},\n' +
     '  author = {Chiu\\c{t}\\u{a}, Alexandru-Ionu\\c{t}},\n' +
     '  year   = {' + year + '},\n' +
-    '  note   = {v14.3 \\textperiodcentered{} Atlantykron 2026 \\textperiodcentered{} Centrul StrING \\textperiodcentered{} ' + V.length + ' intr\\u{a}ri},\n' +
+    '  note   = {v14.3.1 \\textperiodcentered{} Atlantykron 2026 \\textperiodcentered{} Centrul StrING \\textperiodcentered{} ' + V.length + ' intr\\u{a}ri},\n' +
     '  url    = {' + location.origin + location.pathname + '},\n' +
     '  urldate = {' + today + '}\n' +
     '}';
