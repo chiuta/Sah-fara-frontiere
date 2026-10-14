@@ -295,6 +295,7 @@ console.log("6. joc în doi prin FFF.p2p (două pagini, lockstep)");
   await B.page.waitForSelector(`${PANE} .c1a-online >> text=Acceptă`);
   await B.page.locator(`${PANE} .c1a-online >> text=Acceptă`).click();
   await A.page.waitForFunction(() => window.__sah8.NET.G.agreed, null, {timeout: 10000});
+  await B.page.waitForFunction(() => window.__sah8.NET.G.agreed, null, {timeout: 10000});
   check("remiza acceptată se aplică ambelor părți", await B.page.evaluate(() => window.__sah8.NET.G.agreed));
   check("rezultatul final este remiză (½–½)", (await A.page.evaluate(() => window.__sah8.outcome(window.__sah8.NET.G).res)) === "1/2-1/2");
   check("0 erori (A, B)", A.st.errs.length === 0 && B.st.errs.length === 0, [A.st.errs, B.st.errs]);
