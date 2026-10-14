@@ -1,6 +1,6 @@
 # Șah fără frontiere
 
-**Versiune:** 14.3.1 · **Ultima actualizare:** 12 octombrie 2026
+**Versiune:** 14.4.0 · **Ultima actualizare:** 14 octombrie 2026
 
 Atlas/enciclopedie de variante de șah: 706 variante și 299 intrări de lexicon, cu motoare jucabile pentru o parte dintre ele.
 
@@ -10,7 +10,7 @@ Atlas/enciclopedie de variante de șah: 706 variante și 299 intrări de lexicon
 
 ## Ce este
 
-Șah fără frontiere este un atlas dintr-un singur fișier HTML (v14.3.1, actualizat la 12 octombrie 2026; realizat pentru atelierul Atlantykron 2026) cu 1005 intrări: 706 variante de șah (online, moderne, istorice, regionale, geometrice, fairy, pe table mari, cu AI) și 299 de termeni de lexicon (istorie, AI, jucători, deschideri). Potrivit secțiunii „Despre acest atlas", fișierul este generat dintr-un script Python și un JSON de date, fără dependențe la rulare, cu implementare în iterații asistate de AI.
+Șah fără frontiere este un atlas dintr-un singur fișier HTML (v14.4.0, actualizat la 14 octombrie 2026; realizat pentru atelierul Atlantykron 2026) cu 1005 intrări: 706 variante de șah (online, moderne, istorice, regionale, geometrice, fairy, pe table mari, cu AI) și 299 de termeni de lexicon (istorie, AI, jucători, deschideri). Potrivit secțiunii „Despre acest atlas", fișierul este generat dintr-un script Python și un JSON de date, fără dependențe la rulare, cu implementare în iterații asistate de AI.
 
 ## Funcții
 
@@ -22,6 +22,23 @@ Atlas/enciclopedie de variante de șah: 706 variante și 299 intrări de lexicon
 - „Export CSV (toate intrările)" și „Citează ca BibTeX"; buton „Link" pentru partajare.
 - Tema închisă/deschisă, trei mărimi de text, zoom.
 - „Copie de siguranță a progresului” (în „Despre acest atlas”): exportă și importă într-un fișier JSON parcursul, insignele, ELO-ul și preferințele locale (cheile `sff:`); la import se validează fișierul și se cere confirmarea.
+
+## Funcții noi (14.4.0) — „Masa de șah”
+
+Se deschid din butonul „Masa de șah” de lângă „Curs”, într-un dialog cu cinci file. **Domeniu:** toate funcțiile noi se referă la **șahul standard** (reguli FIDE, motor propriu, validat prin perft); cele 706 variante din atlas nu sunt acoperite (ele își păstrează modul „▶ Joacă” neschimbat).
+
+- **Joc în doi prin FFF.p2p** — două persoane, WebRTC direct între browsere, **fără server**: schimbi manual două coduri (copiere/lipire sau cod QR), apoi jocul rulează în „lockstep”: gazda (albele) validează și numerotează fiecare mutare, oaspetele (negrele) o aplică după ecoul gazdei; la divergență se retrimite starea completă. Remiză și joc nou prin ofertă cu accept/refuz, renunțare, export PGN, trimitere a partidei în analizor. **Limite:** fără ceas de șah; fără anulare de mutare; fără chat; partida nu se reia după reîncărcarea paginii; adversarii își văd reciproc adresa IP; NAT-urile simetrice (rețele mobile/corporative) cer STUN/TURN, care poate fi adăugat opțional (gol implicit) — atunci IP-ul public ajunge la acel server.
+- **Analizor local** — „Analizează poziția” (evaluare în pioni, cea mai bună mutare, clasamentul primelor mutări, mat forțat anunțat explicit când e găsit) și „Analizează partida” (marchează mutările mult mai slabe decât cea mai bună). Poți încărca/exporta FEN și PGN. Căutare alpha-beta cu adâncime fixă (deterministă, nu depinde de ceas); **nu** este un motor de turneu (nu e Stockfish) și evaluarea e aproximativă.
+- **Provocarea zilei** — o problemă „mat forțat în 1 sau 2” generată **determinist din dată** (aceeași pentru toată lumea în aceeași zi, fără rețea); motorul verifică că există o singură primă mutare câștigătoare. Mutare greșită: mesaj cu motivul și, la mat în 2, apărarea adversarului. Serie de zile rezolvate (local). Dacă generarea nu găsește o poziție, aplicația folosește o problemă fixă de rezervă și o spune.
+- **„De ce nu pot muta?”** — atingi o piesă sau un pătrat și aplicația explică în cuvinte: pătrat gol, piesa adversarului, geometria piesei, drum blocat, propriul rege rămâne în șah, rocadă nepermisă (rege mutat, turn mutat, pătrat atacat, piese între ele), en passant, promovare etc.; buton și tasta `W`.
+- **Tastatură și anunțuri audio** — tablă cu 64 de butoane etichetate, săgeți + Enter, câmp de comandă (SAN sau coordonate, ex. `Nf3`, `e2e4`), tastele `L` (ultima mutare), `S` (starea), `M` (piesele care pot muta), `W` (de ce nu pot muta); anunțuri în regiune `aria-live` și, opțional, voce (Web Speech, dacă browserul are o voce; altfel spune explicit că nu există).
+- **Turneu Elo local** — Eu, AI ușor/mediu/avansat și alte persoane la aceeași tablă, round-robin; meciurile se joacă pe tablă sau se simulează AI–AI; clasament Elo recalculat din rezultate, export JSON/CSV și import. Scala Elo este **internă** turneului, nu comparabilă cu FIDE. În simularea AI–AI nivelul avansat folosește adâncime 3 (nu 5), primele 4 semi-mutări sunt aleatoare din sămânța meciului, iar partida se oprește la 200 de semi-mutări (remiză) — spus și în interfață.
+
+**Motorul și puterea lui.** Nivelurile: ușor = adâncime 1 cu alegere dintre mutări aproape egale; mediu = adâncime 2; avansat = adâncime 5 cu buget de noduri. În meciuri de control (3 deschideri aleatoare × 2 culori, 160 de semi-mutări): ușor a câștigat 12–0 față de mutări aleatoare, avansat a câștigat 6–0 față de mediu și 6–0 față de ușor. Eșantioane mici: indică ordinea, nu o putere măsurabilă în Elo. Remiza prin triplă repetare, regula celor 50 de mutări și material insuficient se aplică automat. Fără ceas.
+
+**Limbi.** Textele noi sunt în română, engleză, franceză, italiană, spaniolă, portugheză, maghiară și germană; **traducerile în afară de română și engleză sunt automate și neverificate de vorbitori nativi**. Selectorul de limbă din fila „Accesibilitate” schimbă doar textele noi; dialogurile kitului FFF urmează limba paginii.
+
+Teste: `node tests/fff-r8.test.mjs` (Playwright, rețea blocată, 2 pagini pentru P2P, axe, 1280×800 și 360×740) și `node tests/engine.test.mjs` (motorul în Node: perft, FEN, SAN, remize, mat în N, explicații).
 
 ## Manual de utilizare
 
@@ -35,14 +52,21 @@ Atlas/enciclopedie de variante de șah: 706 variante și 299 intrări de lexicon
 ## Confidențialitate și rețea
 
 - Local: în `localStorage`, cu prefixul `sff:` — starea atlasului (`sff:state:v2`), parcursul (`sff:curriculum:v1`), tema, mărimea textului, sunetul, stilul notației și glifelor, insignele, statisticile jocurilor, ELO-ul jucătorului, starea jocului curent și marcajele „bun venit"/tur văzut.
+- Funcțiile din „Masa de șah” folosesc chei separate `sff_r8_` (preferințe de anunțuri/voce, limba textelor noi, turneu, serie zilnică, cache-ul problemei zilei); kitul FFF adaugă copie de siguranță (export/import/ștergere) și fereastra „Transparență” din numărul versiunii.
+- Singura comunicare de rețea nouă este jocul în doi opțional, prin WebRTC direct între cei doi jucători, cu semnalizare manuală și, doar dacă introduci unul, un server STUN (egress declarat: 0).
 - Rețea: în codul verificat nu există apeluri `fetch` sau scripturi/fonturi încărcate de pe gazde externe. Fișele conțin linkuri către surse (de exemplu Wikipedia, FIDE Handbook, Lichess, chessvariants.com), care se deschid doar dacă le apeși. Textul aplicației afirmă: „Funcționează offline, fără tracking, fără reclame".
 - Motorul AI rulează local în browser.
 
 ## Rulare locală / offline
 
-Descarcă `index.html` (aproximativ 1,9 MB) și deschide-l în browser; funcționează fără internet. Doar linkurile către surse externe necesită conexiune.
+Descarcă `index.html` (aproximativ 2,4 MB) și deschide-l în browser; funcționează fără internet. Doar linkurile către surse externe necesită conexiune.
 
 ## Istoric / Changelog
+
+### v14.4.0 — 14 octombrie 2026 (runda 8, C1a)
+- „Masa de șah” pentru șahul standard: joc în doi P2P (fără server), analizor local, provocarea zilei determinată de dată, „de ce nu pot muta?”, joc de la tastatură cu anunțuri audio, turneu Elo local; 8 limbi pentru textele noi.
+- Kit FFF (core, label, bundle, qr, p2p, tts) cu `app.json`; CSP cu hash-uri recalculate; copie de siguranță și fereastra „Transparență” din numărul versiunii; teste `tests/fff-r8.test.mjs` și `tests/engine.test.mjs`.
+- Atlasul (1005 intrări) și modul „▶ Joacă” existent sunt neschimbate (verificat în test).
 
 ### v14.3.1 — 12 octombrie 2026
 - Versiunea și data ultimei actualizări sunt afișate în aplicație („Despre acest atlas”, subsol); titlul, antetul, statistica „Actualizat” și BibTeX arată v14.3.1 / 12 octombrie 2026.
@@ -79,7 +103,7 @@ Alexio — Alexandru-Ionuț Chiuță, contact: alexio@trom.tf. Aplicația îl pr
 
 ## English summary
 
-Șah fără frontiere is a single-file chess-variants atlas: 706 variants plus 299 lexicon entries, with search, filters, playable engines (local AI, PGN/FEN export, local ELO), a 7-day guided course, badges and CSV/BibTeX export. Everything runs locally; progress is kept in localStorage (`sff:` keys) and no external requests were found in the code. Licensed CC0 1.0 for the author's own contribution (see LICENSE); third-party-derived summaries keep their source licences.
+Șah fără frontiere is a single-file chess-variants atlas: 706 variants plus 299 lexicon entries, with search, filters, playable engines (local AI, PGN/FEN export, local ELO), a 7-day guided course, badges and CSV/BibTeX export. Since 14.4.0 a "Game table" for standard chess adds two-player play over WebRTC (manual signalling, no server), a simple local analyzer, a deterministic daily mate puzzle, "why can't I move?" explanations, keyboard play with spoken announcements and a local Elo tournament (the 706 variants are not covered). Everything runs locally; progress is kept in localStorage (`sff:` keys) and no external requests were found in the code. Licensed CC0 1.0 for the author's own contribution (see LICENSE); third-party-derived summaries keep their source licences.
 
 ## Audit
 

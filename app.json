@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "slug": "sah-fara-frontiere",
+  "name": "Șah fără frontiere — 706 variante + 299 lexicon · 14 Octombrie 2026",
+  "version": "14.4.0",
+  "updated": "2026-10-14",
+  "description": "Enciclopedie șah: 706 variante propriu-zise și 299 intrări lexicon (istorie, AI, jucători, deschideri). Atelier Atlantykron 2026 · Centrul StrING.",
+  "egress": [],
+  "permissions": [
+    "speechSynthesis",
+    "clipboard",
+    "localStorage"
+  ],
+  "storageKeys": [
+    "sff:badges",
+    "sff:gameStats",
+    "sff:glyphStyle",
+    "sff:notationStyle",
+    "sff:playerELO",
+    "sff:playerELOMap",
+    "sff:soundEnabled",
+    "sff:theme",
+    "sff:tourSeen",
+    "sff:welcomeSeen"
+  ],
+  "sizeBytes": 2380707,
+  "sha256": "8b89719f8b652eae84904e77beebc90933adcdd24d38c245822d3e52903f6966",
+  "csp": {
+    "present": true,
+    "directives": {
+      "default-src": "'self'",
+      "img-src": "'self' data: blob:",
+      "style-src": "'self' 'unsafe-inline'",
+      "font-src": "'self' data:",
+      "media-src": "'self' blob: data:",
+      "object-src": "'none'",
+      "base-uri": "'self'",
+      "form-action": "'self'",
+      "worker-src": "'none'",
+      "script-src": "'self' sha256×4",
+      "connect-src": "'self'"
+    },
+    "scriptInline": "hash",
+    "connect": "'self'"
+  },
+  "features": {
+    "export": true,
+    "import": true,
+    "i18n": [
+      "ro",
+      "en",
+      "fr",
+      "it",
+      "es",
+      "pt",
+      "hu",
+      "de"
+    ],
+    "pwa": {
+      "manifest": true,
+      "serviceWorker": false
+    },
+    "modules": [
+      "core",
+      "label",
+      "bundle",
+      "qr",
+      "p2p",
+      "tts"
+    ]
+  },
+  "kit": {
+    "version": "1.0.0",
+    "modules": [
+      "core",
+      "label",
+      "bundle",
+      "qr",
+      "p2p",
+      "tts"
+    ]
+  },
+  "selfSerializing": false
+}
