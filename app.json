@@ -23,8 +23,8 @@
     "sff:tourSeen",
     "sff:welcomeSeen"
   ],
-  "sizeBytes": 2380707,
-  "sha256": "8b89719f8b652eae84904e77beebc90933adcdd24d38c245822d3e52903f6966",
+  "sizeBytes": 2381292,
+  "sha256": "e3bb3b53c2049571801ccaecce644a5f7d077c4cf2a06ddaef141cc14d5423c8",
   "csp": {
     "present": true,
     "directives": {
