@@ -2,7 +2,9 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 14.4.0 · **Ultima actualizare:** 2026-10-14
+**Versiune:** 14.5.0 · **Ultima actualizare:** 2026-10-19
+
+Limbile interfeței: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
 Atlas/enciclopedie de variante de șah: 706 variante și 299 intrări de lexicon, cu motoare jucabile pentru o parte dintre ele.
 
@@ -38,7 +40,7 @@ Se deschid din butonul „Masa de șah” de lângă „Curs”, într-un dialog
 
 **Motorul și puterea lui.** Nivelurile: ușor = adâncime 1 cu alegere dintre mutări aproape egale; mediu = adâncime 2; avansat = adâncime 5 cu buget de noduri. În meciuri de control (3 deschideri aleatoare × 2 culori, 160 de semi-mutări): ușor a câștigat 12–0 față de mutări aleatoare, avansat a câștigat 6–0 față de mediu și 6–0 față de ușor. Eșantioane mici: indică ordinea, nu o putere măsurabilă în Elo. Remiza prin triplă repetare, regula celor 50 de mutări și material insuficient se aplică automat. Fără ceas.
 
-**Limbi.** Textele noi sunt în română, engleză, franceză, italiană, spaniolă, portugheză, maghiară și germană; **traducerile în afară de română și engleză sunt automate și neverificate de vorbitori nativi**. Selectorul de limbă din fila „Accesibilitate” schimbă doar textele noi; dialogurile kitului FFF urmează limba paginii.
+**Limbi.** Interfața este în română, engleză, franceză, italiană, spaniolă, portugheză, maghiară și germană; **traducerile în afară de română și engleză sunt automate și neverificate de vorbitori nativi**. Selectorul de limbă din bara de controale schimbă limba interfeței (conținutul lung al atlasului rămâne în română); dialogurile kitului FFF urmează limba paginii.
 
 Teste: `node tests/fff-r8.test.mjs` (Playwright, rețea blocată, 2 pagini pentru P2P, axe, 1280×800 și 360×740) și `node tests/engine.test.mjs` (motorul în Node: perft, FEN, SAN, remize, mat în N, explicații).
 

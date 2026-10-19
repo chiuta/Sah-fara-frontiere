@@ -2,7 +2,9 @@
 
 [English](README.md) · [Română](README.ro.md) · **Français** · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version :** 14.4.0 · **Dernière mise à jour :** 2026-10-14
+**Version :** 14.5.0 · **Dernière mise à jour :** 2026-10-19
+
+Langues de l'interface : **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
 Atlas/encyclopédie de variantes d'échecs : 706 variantes et 299 entrées de lexique, avec des moteurs jouables pour une partie d'entre elles.
 
@@ -38,7 +40,7 @@ Elles s'ouvrent depuis le bouton « Table de jeu » à côté de « Cours », da
 
 **Le moteur et sa force.** Les niveaux : facile = profondeur 1 avec choix parmi des coups presque égaux ; moyen = profondeur 2 ; avancé = profondeur 5 avec budget de nœuds. Lors de parties de contrôle (3 ouvertures aléatoires × 2 couleurs, 160 demi-coups) : le niveau facile a gagné 12–0 contre des coups aléatoires, l'avancé a gagné 6–0 contre le moyen et 6–0 contre le facile. Petits échantillons : ils indiquent l'ordre, non une force mesurable en Elo. La nulle par triple répétition, la règle des 50 coups et le matériel insuffisant s'appliquent automatiquement. Pas de pendule.
 
-**Langues.** Les nouveaux textes sont en roumain, anglais, français, italien, espagnol, portugais, hongrois et allemand ; **les traductions autres que le roumain et l'anglais sont automatiques et non vérifiées par des locuteurs natifs**. Le sélecteur de langue de l'onglet « Accessibilité » ne change que les nouveaux textes ; les boîtes de dialogue du kit FFF suivent la langue de la page.
+**Langues.** L'interface est en roumain, anglais, français, italien, espagnol, portugais, hongrois et allemand ; **les traductions autres que le roumain et l'anglais sont automatiques et non vérifiées par des locuteurs natifs**. Le sélecteur de langue de la barre de contrôles change la langue de l'interface (le contenu long de l'atlas reste en roumain) ; les boîtes de dialogue du kit FFF suivent la langue de la page.
 
 Tests : `node tests/fff-r8.test.mjs` (Playwright, réseau bloqué, 2 pages pour le P2P, axe, 1280×800 et 360×740) et `node tests/engine.test.mjs` (le moteur sous Node : perft, FEN, SAN, nulles, mat en N, explications).
 

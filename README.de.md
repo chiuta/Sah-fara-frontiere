@@ -2,7 +2,9 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · **Deutsch** · [Magyar](README.hu.md)
 
-**Version:** 14.4.0 · **Zuletzt aktualisiert:** 2026-10-14
+**Version:** 14.5.0 · **Zuletzt aktualisiert:** 2026-10-19
+
+Oberflächensprachen: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
 Atlas/Enzyklopädie von Schachvarianten: 706 Varianten und 299 Lexikoneinträge, mit spielbaren Engines für einen Teil davon.
 
@@ -38,7 +40,7 @@ Sie öffnen sich über die Schaltfläche „Schachtisch“ neben „Kurs“ in e
 
 **Die Engine und ihre Stärke.** Die Stufen: leicht = Tiefe 1 mit Auswahl unter nahezu gleichwertigen Zügen; mittel = Tiefe 2; fortgeschritten = Tiefe 5 mit Knotenbudget. In Kontrollpartien (3 zufällige Eröffnungen × 2 Farben, 160 Halbzüge): leicht gewann 12–0 gegen Zufallszüge, fortgeschritten gewann 6–0 gegen mittel und 6–0 gegen leicht. Kleine Stichproben: Sie zeigen die Rangfolge, keine in Elo messbare Stärke. Remis durch dreifache Stellungswiederholung, die 50-Züge-Regel und unzureichendes Material werden automatisch angewandt. Keine Uhr.
 
-**Sprachen.** Die neuen Texte liegen auf Rumänisch, Englisch, Französisch, Italienisch, Spanisch, Portugiesisch, Ungarisch und Deutsch vor; **die Übersetzungen außer Rumänisch und Englisch sind automatisch und nicht von Muttersprachlern geprüft**. Die Sprachauswahl im Tab „Barrierefreiheit“ ändert nur die neuen Texte; die Dialoge des FFF-Kits folgen der Seitensprache.
+**Sprachen.** Die Oberfläche liegt auf Rumänisch, Englisch, Französisch, Italienisch, Spanisch, Portugiesisch, Ungarisch und Deutsch vor; **die Übersetzungen außer Rumänisch und Englisch sind automatisch und nicht von Muttersprachlern geprüft**. Die Sprachauswahl in der Steuerleiste ändert die Oberflächensprache (die langen Atlasinhalte bleiben auf Rumänisch); die Dialoge des FFF-Kits folgen der Seitensprache.
 
 Tests: `node tests/fff-r8.test.mjs` (Playwright, Netzwerk gesperrt, 2 Seiten für P2P, axe, 1280×800 und 360×740) und `node tests/engine.test.mjs` (die Engine in Node: Perft, FEN, SAN, Remis, Matt in N, Erklärungen).
 

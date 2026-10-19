@@ -2,7 +2,9 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · **Español** · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versión:** 14.4.0 · **Última actualización:** 2026-10-14
+**Versión:** 14.5.0 · **Última actualización:** 2026-10-19
+
+Idiomas de la interfaz: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
 Atlas/enciclopedia de variantes de ajedrez: 706 variantes y 299 entradas de léxico, con motores jugables para una parte de ellas.
 
@@ -38,7 +40,7 @@ Se abren desde el botón «Mesa de ajedrez» junto a «Curso», en un cuadro de 
 
 **El motor y su fuerza.** Los niveles: fácil = profundidad 1 con elección entre jugadas casi iguales; medio = profundidad 2; avanzado = profundidad 5 con presupuesto de nodos. En partidas de control (3 aperturas aleatorias × 2 colores, 160 semijugadas): el fácil ganó 12–0 frente a jugadas aleatorias, el avanzado ganó 6–0 frente al medio y 6–0 frente al fácil. Muestras pequeñas: indican el orden, no una fuerza medible en Elo. Las tablas por triple repetición, la regla de las 50 jugadas y el material insuficiente se aplican automáticamente. Sin reloj.
 
-**Idiomas.** Los textos nuevos están en rumano, inglés, francés, italiano, español, portugués, húngaro y alemán; **las traducciones distintas del rumano y el inglés son automáticas y no están verificadas por hablantes nativos**. El selector de idioma de la pestaña «Accesibilidad» solo cambia los textos nuevos; los cuadros de diálogo del kit FFF siguen el idioma de la página.
+**Idiomas.** La interfaz está en rumano, inglés, francés, italiano, español, portugués, húngaro y alemán; **las traducciones distintas del rumano y el inglés son automáticas y no están verificadas por hablantes nativos**. El selector de idioma de la barra de controles cambia el idioma de la interfaz (el contenido largo del atlas permanece en rumano); los cuadros de diálogo del kit FFF siguen el idioma de la página.
 
 Pruebas: `node tests/fff-r8.test.mjs` (Playwright, red bloqueada, 2 páginas para P2P, axe, 1280×800 y 360×740) y `node tests/engine.test.mjs` (el motor en Node: perft, FEN, SAN, tablas, mate en N, explicaciones).
 

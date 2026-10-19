@@ -2,7 +2,9 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · **Magyar**
 
-**Verzió:** 14.4.0 · **Utolsó frissítés:** 2026-10-14
+**Verzió:** 14.5.0 · **Utolsó frissítés:** 2026-10-19
+
+A felület nyelvei: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
 Sakkváltozatok atlasza/enciklopédiája: 706 változat és 299 szótári bejegyzés, a változatok egy részéhez játszható motorokkal.
 
@@ -38,7 +40,7 @@ A „Tanfolyam” melletti „Sakkasztal” gombról nyílnak meg, ötfülés p�
 
 **A motor és az ereje.** A szintek: könnyű = 1-es mélység a közel egyenértékű lépések közti választással; közepes = 2-es mélység; haladó = 5-ös mélység csomópont-kerettel. Ellenőrző mérkőzéseken (3 véletlen megnyitás × 2 szín, 160 fél lépés): a könnyű 12–0-ra nyert véletlen lépések ellen, a haladó 6–0-ra nyert a közepes ellen és 6–0-ra a könnyű ellen. Kis minták: a sorrendet jelzik, nem Elo-ban mérhető erőt. A háromszori ismétlésből adódó döntetlen, az 50 lépéses szabály és az elégtelen anyag automatikusan érvényesül. Nincs óra.
 
-**Nyelvek.** Az új szövegek románul, angolul, franciául, olaszul, spanyolul, portugálul, magyarul és németül érhetők el; **a romántól és az angoltól eltérő fordítások gépiek, és anyanyelvi beszélők nem ellenőrizték őket**. A „Hozzáférhetőség” fül nyelvválasztója csak az új szövegeket változtatja; az FFF-kit párbeszédablakai az oldal nyelvét követik.
+**Nyelvek.** A felület románul, angolul, franciául, olaszul, spanyolul, portugálul, magyarul és németül érhető el; **a romántól és az angoltól eltérő fordítások gépiek, és anyanyelvi beszélők nem ellenőrizték őket**. A vezérlősáv nyelvválasztója a felület nyelvét váltja (az atlasz hosszú tartalma románul marad); az FFF-kit párbeszédablakai az oldal nyelvét követik.
 
 Tesztek: `node tests/fff-r8.test.mjs` (Playwright, letiltott hálózat, 2 oldal a P2P-hez, axe, 1280×800 és 360×740) és `node tests/engine.test.mjs` (a motor Node-ban: perft, FEN, SAN, döntetlenek, matt N lépésben, magyarázatok).
 

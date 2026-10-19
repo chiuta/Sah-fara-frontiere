@@ -2,7 +2,9 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · **Português** · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versão:** 14.4.0 · **Última atualização:** 2026-10-14
+**Versão:** 14.5.0 · **Última atualização:** 2026-10-19
+
+Idiomas da interface: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
 Atlas/enciclopédia de variantes de xadrez: 706 variantes e 299 entradas de léxico, com motores jogáveis para uma parte delas.
 
@@ -38,7 +40,7 @@ Abrem-se a partir do botão «Mesa de xadrez» junto a «Curso», numa caixa de 
 
 **O motor e a sua força.** Os níveis: fácil = profundidade 1 com escolha entre lances quase iguais; médio = profundidade 2; avançado = profundidade 5 com orçamento de nós. Em encontros de controlo (3 aberturas aleatórias × 2 cores, 160 meios-lances): o fácil ganhou 12–0 contra lances aleatórios, o avançado ganhou 6–0 contra o médio e 6–0 contra o fácil. Amostras pequenas: indicam a ordem, não uma força mensurável em Elo. O empate por tripla repetição, a regra dos 50 lances e o material insuficiente aplicam-se automaticamente. Sem relógio.
 
-**Línguas.** Os textos novos estão em romeno, inglês, francês, italiano, espanhol, português, húngaro e alemão; **as traduções que não sejam romeno e inglês são automáticas e não verificadas por falantes nativos**. O seletor de língua no separador «Acessibilidade» altera apenas os textos novos; as caixas de diálogo do kit FFF seguem a língua da página.
+**Línguas.** A interface está em romeno, inglês, francês, italiano, espanhol, português, húngaro e alemão; **as traduções que não sejam romeno e inglês são automáticas e não verificadas por falantes nativos**. O seletor de língua na barra de controlos altera a língua da interface (o conteúdo longo do atlas permanece em romeno); as caixas de diálogo do kit FFF seguem a língua da página.
 
 Testes: `node tests/fff-r8.test.mjs` (Playwright, rede bloqueada, 2 páginas para P2P, axe, 1280×800 e 360×740) e `node tests/engine.test.mjs` (o motor em Node: perft, FEN, SAN, empates, mate em N, explicações).
 

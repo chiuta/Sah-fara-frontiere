@@ -2,7 +2,9 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 14.4.0 · **Last updated:** 2026-10-14
+**Version:** 14.5.0 · **Last updated:** 2026-10-19
+
+Interface languages: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
 An atlas/encyclopedia of chess variants: 706 variants and 299 lexicon entries, with playable engines for some of them.
 
@@ -38,7 +40,7 @@ They open from the "Game table" button next to "Course", in a dialog with five t
 
 **The engine and its strength.** The levels: easy = depth 1 with a choice among nearly equal moves; medium = depth 2; advanced = depth 5 with a node budget. In control matches (3 random openings × 2 colours, 160 half-moves): easy won 12–0 against random moves, advanced won 6–0 against medium and 6–0 against easy. Small samples: they indicate the order, not a measurable strength in Elo. Draw by threefold repetition, the 50-move rule and insufficient material are applied automatically. No clock.
 
-**Languages.** The new texts are in Romanian, English, French, Italian, Spanish, Portuguese, Hungarian and German; **the translations other than Romanian and English are automatic and not verified by native speakers**. The language selector in the "Accessibility" tab changes only the new texts; the FFF kit dialogs follow the page language.
+**Languages.** The interface is in Romanian, English, French, Italian, Spanish, Portuguese, Hungarian and German; **the translations other than Romanian and English are automatic and not verified by native speakers**. The language selector in the controls bar switches the interface language (the long atlas content remains in Romanian); the FFF kit dialogs follow the page language.
 
 Tests: `node tests/fff-r8.test.mjs` (Playwright, network blocked, 2 pages for P2P, axe, 1280×800 and 360×740) and `node tests/engine.test.mjs` (the engine in Node: perft, FEN, SAN, draws, mate in N, explanations).
 

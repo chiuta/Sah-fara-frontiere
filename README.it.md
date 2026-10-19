@@ -2,7 +2,9 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · **Italiano** · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versione:** 14.4.0 · **Ultimo aggiornamento:** 2026-10-14
+**Versione:** 14.5.0 · **Ultimo aggiornamento:** 2026-10-19
+
+Lingue dell'interfaccia: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
 Atlante/enciclopedia di varianti degli scacchi: 706 varianti e 299 voci di lessico, con motori giocabili per una parte di esse.
 
@@ -38,7 +40,7 @@ Si aprono dal pulsante «Tavolo da gioco» accanto a «Corso», in una finestra 
 
 **Il motore e la sua forza.** I livelli: facile = profondità 1 con scelta tra mosse quasi equivalenti; medio = profondità 2; avanzato = profondità 5 con budget di nodi. In incontri di controllo (3 aperture casuali × 2 colori, 160 semimosse): il facile ha vinto 12–0 contro mosse casuali, l'avanzato ha vinto 6–0 contro il medio e 6–0 contro il facile. Campioni piccoli: indicano l'ordine, non una forza misurabile in Elo. La patta per triplice ripetizione, la regola delle 50 mosse e il materiale insufficiente si applicano automaticamente. Nessun orologio.
 
-**Lingue.** I nuovi testi sono in rumeno, inglese, francese, italiano, spagnolo, portoghese, ungherese e tedesco; **le traduzioni diverse dal rumeno e dall'inglese sono automatiche e non verificate da madrelingua**. Il selettore di lingua nella scheda «Accessibilità» cambia solo i nuovi testi; le finestre del kit FFF seguono la lingua della pagina.
+**Lingue.** L'interfaccia è in rumeno, inglese, francese, italiano, spagnolo, portoghese, ungherese e tedesco; **le traduzioni diverse dal rumeno e dall'inglese sono automatiche e non verificate da madrelingua**. Il selettore di lingua nella barra dei controlli cambia la lingua dell'interfaccia (il contenuto lungo dell'atlante resta in rumeno); le finestre del kit FFF seguono la lingua della pagina.
 
 Test: `node tests/fff-r8.test.mjs` (Playwright, rete bloccata, 2 pagine per il P2P, axe, 1280×800 e 360×740) e `node tests/engine.test.mjs` (il motore in Node: perft, FEN, SAN, patte, matto in N, spiegazioni).
 
