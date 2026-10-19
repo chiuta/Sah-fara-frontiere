@@ -1,105 +1,107 @@
 # Șah fără frontiere
 
-**Versiune:** 14.4.0 · **Ultima actualizare:** 14 octombrie 2026
+**English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-Atlas/enciclopedie de variante de șah: 706 variante și 299 intrări de lexicon, cu motoare jucabile pentru o parte dintre ele.
+**Version:** 14.4.0 · **Last updated:** 2026-10-14
 
-**Live:** https://chiuta.github.io/Sah-fara-frontiere/
+An atlas/encyclopedia of chess variants: 706 variants and 299 lexicon entries, with playable engines for some of them.
 
-![Captura de ecran](screenshot.png)
+**Live app:** https://chiuta.github.io/Sah-fara-frontiere/
 
-## Ce este
+![Screenshot](screenshot.png)
 
-Șah fără frontiere este un atlas dintr-un singur fișier HTML (v14.4.0, actualizat la 14 octombrie 2026; realizat pentru atelierul Atlantykron 2026) cu 1005 intrări: 706 variante de șah (online, moderne, istorice, regionale, geometrice, fairy, pe table mari, cu AI) și 299 de termeni de lexicon (istorie, AI, jucători, deschideri). Potrivit secțiunii „Despre acest atlas", fișierul este generat dintr-un script Python și un JSON de date, fără dependențe la rulare, cu implementare în iterații asistate de AI.
+## What it is
 
-## Funcții
+Șah fără frontiere ("Chess without borders") is an atlas in a single HTML file (v14.4.0, updated on 14 October 2026; made for the Atlantykron 2026 workshop) with 1005 entries: 706 chess variants (online, modern, historical, regional, geometric, fairy, large-board, with AI) and 299 lexicon terms (history, AI, players, openings). According to the "About this atlas" section, the file is generated from a Python script and a JSON data file, with no runtime dependencies, implemented in AI-assisted iterations.
 
-- Căutare și filtre: Toate / Variante / Lexicon; categorii (Online, Moderne, Istorice, Regionale, Geometrice, Fairy, Table Mari, Cu AI); „Toate intrările", „Doar jucabile", „Doar documentate"; marcaje de sursă (sursă verificată, joc înrudit din Chaturanga, experimentală/sintetică) și niveluri de dificultate.
-- Colecții curate: „Varianta de astăzi" (aleasă determinist), „Esențiale", „Exotice", „Geometrii noi".
-- Butoane „Începători" și „Surprinde-mă" (variantă aleatoare).
-- Fișă pentru fiecare intrare, cu „▶ Joacă" pentru variantele cu motor: tablă interactivă, „Reguli: ON", „AI" și „AI vs AI", „Anulează", „Reset", „Pas", „Flip", sunet, notație (CJK / WXF), ecran complet, export „PGN" și „FEN"; clasament ELO local.
-- „Curs": parcurs ghidat de 7 zile și 17 realizări (insigne) deblocabile.
-- „Export CSV (toate intrările)" și „Citează ca BibTeX"; buton „Link" pentru partajare.
-- Tema închisă/deschisă, trei mărimi de text, zoom.
-- „Copie de siguranță a progresului” (în „Despre acest atlas”): exportă și importă într-un fișier JSON parcursul, insignele, ELO-ul și preferințele locale (cheile `sff:`); la import se validează fișierul și se cere confirmarea.
+## Features
 
-## Funcții noi (14.4.0) — „Masa de șah”
+- Search and filters: All / Variants / Lexicon; categories (Online, Modern, Historical, Regional, Geometric, Fairy, Large Boards, With AI); "All entries", "Playable only", "Documented only"; source markers (verified source, related game from Chaturanga, experimental/synthetic) and difficulty levels.
+- Curated collections: "Variant of the day" (chosen deterministically), "Essentials", "Exotic", "New geometries".
+- "Beginners" and "Surprise me" buttons (random variant).
+- A sheet for every entry, with "▶ Play" for variants that have an engine: interactive board, "Rules: ON", "AI" and "AI vs AI", "Undo", "Reset", "Step", "Flip", sound, notation (CJK / WXF), full screen, "PGN" and "FEN" export; local ELO ranking.
+- "Course": a guided 7-day path and 17 unlockable achievements (badges).
+- "Export CSV (all entries)" and "Cite as BibTeX"; a "Link" button for sharing.
+- Dark/light theme, three text sizes, zoom.
+- "Progress backup" (in "About this atlas"): exports and imports to/from a JSON file the progress, badges, ELO and local preferences (the `sff:` keys); on import the file is validated and confirmation is requested.
 
-Se deschid din butonul „Masa de șah” de lângă „Curs”, într-un dialog cu cinci file. **Domeniu:** toate funcțiile noi se referă la **șahul standard** (reguli FIDE, motor propriu, validat prin perft); cele 706 variante din atlas nu sunt acoperite (ele își păstrează modul „▶ Joacă” neschimbat).
+## New features (14.4.0) — "Game table"
 
-- **Joc în doi prin FFF.p2p** — două persoane, WebRTC direct între browsere, **fără server**: schimbi manual două coduri (copiere/lipire sau cod QR), apoi jocul rulează în „lockstep”: gazda (albele) validează și numerotează fiecare mutare, oaspetele (negrele) o aplică după ecoul gazdei; la divergență se retrimite starea completă. Remiză și joc nou prin ofertă cu accept/refuz, renunțare, export PGN, trimitere a partidei în analizor. **Limite:** fără ceas de șah; fără anulare de mutare; fără chat; partida nu se reia după reîncărcarea paginii; adversarii își văd reciproc adresa IP; NAT-urile simetrice (rețele mobile/corporative) cer STUN/TURN, care poate fi adăugat opțional (gol implicit) — atunci IP-ul public ajunge la acel server.
-- **Analizor local** — „Analizează poziția” (evaluare în pioni, cea mai bună mutare, clasamentul primelor mutări, mat forțat anunțat explicit când e găsit) și „Analizează partida” (marchează mutările mult mai slabe decât cea mai bună). Poți încărca/exporta FEN și PGN. Căutare alpha-beta cu adâncime fixă (deterministă, nu depinde de ceas); **nu** este un motor de turneu (nu e Stockfish) și evaluarea e aproximativă.
-- **Provocarea zilei** — o problemă „mat forțat în 1 sau 2” generată **determinist din dată** (aceeași pentru toată lumea în aceeași zi, fără rețea); motorul verifică că există o singură primă mutare câștigătoare. Mutare greșită: mesaj cu motivul și, la mat în 2, apărarea adversarului. Serie de zile rezolvate (local). Dacă generarea nu găsește o poziție, aplicația folosește o problemă fixă de rezervă și o spune.
-- **„De ce nu pot muta?”** — atingi o piesă sau un pătrat și aplicația explică în cuvinte: pătrat gol, piesa adversarului, geometria piesei, drum blocat, propriul rege rămâne în șah, rocadă nepermisă (rege mutat, turn mutat, pătrat atacat, piese între ele), en passant, promovare etc.; buton și tasta `W`.
-- **Tastatură și anunțuri audio** — tablă cu 64 de butoane etichetate, săgeți + Enter, câmp de comandă (SAN sau coordonate, ex. `Nf3`, `e2e4`), tastele `L` (ultima mutare), `S` (starea), `M` (piesele care pot muta), `W` (de ce nu pot muta); anunțuri în regiune `aria-live` și, opțional, voce (Web Speech, dacă browserul are o voce; altfel spune explicit că nu există).
-- **Turneu Elo local** — Eu, AI ușor/mediu/avansat și alte persoane la aceeași tablă, round-robin; meciurile se joacă pe tablă sau se simulează AI–AI; clasament Elo recalculat din rezultate, export JSON/CSV și import. Scala Elo este **internă** turneului, nu comparabilă cu FIDE. În simularea AI–AI nivelul avansat folosește adâncime 3 (nu 5), primele 4 semi-mutări sunt aleatoare din sămânța meciului, iar partida se oprește la 200 de semi-mutări (remiză) — spus și în interfață.
+They open from the "Game table" button next to "Course", in a dialog with five tabs. **Scope:** all the new features concern **standard chess** (FIDE rules, own engine, validated by perft); the 706 variants in the atlas are not covered (they keep their "▶ Play" mode unchanged).
 
-**Motorul și puterea lui.** Nivelurile: ușor = adâncime 1 cu alegere dintre mutări aproape egale; mediu = adâncime 2; avansat = adâncime 5 cu buget de noduri. În meciuri de control (3 deschideri aleatoare × 2 culori, 160 de semi-mutări): ușor a câștigat 12–0 față de mutări aleatoare, avansat a câștigat 6–0 față de mediu și 6–0 față de ușor. Eșantioane mici: indică ordinea, nu o putere măsurabilă în Elo. Remiza prin triplă repetare, regula celor 50 de mutări și material insuficient se aplică automat. Fără ceas.
+- **Two-player game via FFF.p2p** — two people, WebRTC directly between browsers, **without a server**: you manually exchange two codes (copy/paste or QR code), then the game runs in "lockstep": the host (White) validates and numbers every move, the guest (Black) applies it after the host's echo; on divergence the full state is resent. Draw and new game by offer with accept/decline, resignation, PGN export, sending the game to the analyzer. **Limits:** no chess clock; no move takeback; no chat; the game does not resume after the page is reloaded; the opponents see each other's IP address; symmetric NATs (mobile/corporate networks) require STUN/TURN, which can be added optionally (empty by default) — in that case the public IP reaches that server.
+- **Local analyzer** — "Analyze position" (evaluation in pawns, best move, ranking of the top moves, forced mate announced explicitly when found) and "Analyze game" (marks the moves much weaker than the best one). You can load/export FEN and PGN. Fixed-depth alpha-beta search (deterministic, independent of the clock); it is **not** a tournament engine (it is not Stockfish) and the evaluation is approximate.
+- **Challenge of the day** — a "forced mate in 1 or 2" problem generated **deterministically from the date** (the same for everyone on the same day, without network); the engine checks that there is exactly one winning first move. Wrong move: a message with the reason and, for mate in 2, the opponent's defence. Streak of solved days (local). If generation finds no position, the application uses a fixed fallback problem and says so.
+- **"Why can't I move?"** — you touch a piece or a square and the application explains in words: empty square, opponent's piece, piece geometry, blocked path, own king would remain in check, castling not allowed (king moved, rook moved, attacked square, pieces in between), en passant, promotion, etc.; button and the `W` key.
+- **Keyboard and audio announcements** — a board with 64 labelled buttons, arrows + Enter, a command field (SAN or coordinates, e.g. `Nf3`, `e2e4`), the keys `L` (last move), `S` (status), `M` (pieces that can move), `W` (why can't I move); announcements in an `aria-live` region and, optionally, voice (Web Speech, if the browser has a voice; otherwise it says explicitly that there is none).
+- **Local Elo tournament** — Me, easy/medium/advanced AI and other people at the same board, round-robin; matches are played on the board or simulated AI–AI; Elo ranking recomputed from the results, JSON/CSV export and import. The Elo scale is **internal** to the tournament, not comparable with FIDE. In the AI–AI simulation the advanced level uses depth 3 (not 5), the first 4 half-moves are random from the match seed, and the game stops at 200 half-moves (draw) — also stated in the interface.
 
-**Limbi.** Textele noi sunt în română, engleză, franceză, italiană, spaniolă, portugheză, maghiară și germană; **traducerile în afară de română și engleză sunt automate și neverificate de vorbitori nativi**. Selectorul de limbă din fila „Accesibilitate” schimbă doar textele noi; dialogurile kitului FFF urmează limba paginii.
+**The engine and its strength.** The levels: easy = depth 1 with a choice among nearly equal moves; medium = depth 2; advanced = depth 5 with a node budget. In control matches (3 random openings × 2 colours, 160 half-moves): easy won 12–0 against random moves, advanced won 6–0 against medium and 6–0 against easy. Small samples: they indicate the order, not a measurable strength in Elo. Draw by threefold repetition, the 50-move rule and insufficient material are applied automatically. No clock.
 
-Teste: `node tests/fff-r8.test.mjs` (Playwright, rețea blocată, 2 pagini pentru P2P, axe, 1280×800 și 360×740) și `node tests/engine.test.mjs` (motorul în Node: perft, FEN, SAN, remize, mat în N, explicații).
+**Languages.** The new texts are in Romanian, English, French, Italian, Spanish, Portuguese, Hungarian and German; **the translations other than Romanian and English are automatic and not verified by native speakers**. The language selector in the "Accessibility" tab changes only the new texts; the FFF kit dialogs follow the page language.
 
-## Manual de utilizare
+Tests: `node tests/fff-r8.test.mjs` (Playwright, network blocked, 2 pages for P2P, axe, 1280×800 and 360×740) and `node tests/engine.test.mjs` (the engine in Node: perft, FEN, SAN, draws, mate in N, explanations).
 
-1. Folosește câmpul de căutare și filtrele (Toate, Variante, Lexicon, categorii) pentru a găsi o intrare; apasă pe o carte pentru a o deschide.
-2. În fișă citește regulile; dacă există motor, apasă „▶ Joacă".
-3. Scurtături de tastatură (din fereastra „?"): `/` focalizează căutarea; `R` variantă aleatoare; `B` variante pentru începători; `T` schimbă tema; `A` schimbă mărimea textului; `C` deschide parcursul ghidat; `?` ajutor; `Esc` închide ferestrele; `Enter` sau `Space` deschide cardul focalizat; `Tab` / `Shift+Tab` navigare.
-4. „📚 Curs" deschide parcursul de 7 zile; progresul se salvează local, iar „Resetează progres" îl șterge.
-5. În partidă poți exporta poziția sau partida cu „PGN" / „FEN".
-6. „Despre acest atlas →" conține informații despre atlas, versiune și autor; de acolo se pot exporta intrările în CSV sau BibTeX.
+## User guide
 
-## Confidențialitate și rețea
+1. Use the search field and the filters (All, Variants, Lexicon, categories) to find an entry; click a card to open it.
+2. In the sheet read the rules; if there is an engine, press "▶ Play".
+3. Keyboard shortcuts (from the "?" window): `/` focuses the search; `R` random variant; `B` variants for beginners; `T` switches the theme; `A` switches the text size; `C` opens the guided path; `?` help; `Esc` closes the windows; `Enter` or `Space` opens the focused card; `Tab` / `Shift+Tab` navigation.
+4. "📚 Course" opens the 7-day path; progress is saved locally, and "Reset progress" deletes it.
+5. During a game you can export the position or the game with "PGN" / "FEN".
+6. "About this atlas →" contains information about the atlas, version and author; from there the entries can be exported to CSV or BibTeX.
 
-- Local: în `localStorage`, cu prefixul `sff:` — starea atlasului (`sff:state:v2`), parcursul (`sff:curriculum:v1`), tema, mărimea textului, sunetul, stilul notației și glifelor, insignele, statisticile jocurilor, ELO-ul jucătorului, starea jocului curent și marcajele „bun venit"/tur văzut.
-- Funcțiile din „Masa de șah” folosesc chei separate `sff_r8_` (preferințe de anunțuri/voce, limba textelor noi, turneu, serie zilnică, cache-ul problemei zilei); kitul FFF adaugă copie de siguranță (export/import/ștergere) și fereastra „Transparență” din numărul versiunii.
-- Singura comunicare de rețea nouă este jocul în doi opțional, prin WebRTC direct între cei doi jucători, cu semnalizare manuală și, doar dacă introduci unul, un server STUN (egress declarat: 0).
-- Rețea: în codul verificat nu există apeluri `fetch` sau scripturi/fonturi încărcate de pe gazde externe. Fișele conțin linkuri către surse (de exemplu Wikipedia, FIDE Handbook, Lichess, chessvariants.com), care se deschid doar dacă le apeși. Textul aplicației afirmă: „Funcționează offline, fără tracking, fără reclame".
-- Motorul AI rulează local în browser.
+## Privacy and network
 
-## Rulare locală / offline
+- Local: in `localStorage`, with the prefix `sff:` — the atlas state (`sff:state:v2`), the course (`sff:curriculum:v1`), the theme, text size, sound, notation and glyph style, the badges, game statistics, the player's ELO, the current game state and the "welcome"/seen-tour markers.
+- The "Game table" features use separate `sff_r8_` keys (announcement/voice preferences, language of the new texts, tournament, daily streak, the cache of the problem of the day); the FFF kit adds backup (export/import/delete) and the "Transparency" window from the version number.
+- The only new network communication is the optional two-player game, through WebRTC directly between the two players, with manual signalling and, only if you enter one, a STUN server (declared egress: 0).
+- Network: in the checked code there are no `fetch` calls and no scripts/fonts loaded from external hosts. The sheets contain links to sources (for example Wikipedia, FIDE Handbook, Lichess, chessvariants.com), which open only if you click them. The application text states: "Works offline, no tracking, no ads".
+- The AI engine runs locally in the browser.
 
-Descarcă `index.html` (aproximativ 2,4 MB) și deschide-l în browser; funcționează fără internet. Doar linkurile către surse externe necesită conexiune.
+## Running locally / offline
 
-## Istoric / Changelog
+Download `index.html` (about 2.4 MB) and open it in a browser; it works without internet. Only the links to external sources require a connection.
 
-### v14.4.0 — 14 octombrie 2026 (runda 8, C1a)
-- „Masa de șah” pentru șahul standard: joc în doi P2P (fără server), analizor local, provocarea zilei determinată de dată, „de ce nu pot muta?”, joc de la tastatură cu anunțuri audio, turneu Elo local; 8 limbi pentru textele noi.
-- Kit FFF (core, label, bundle, qr, p2p, tts) cu `app.json`; CSP cu hash-uri recalculate; copie de siguranță și fereastra „Transparență” din numărul versiunii; teste `tests/fff-r8.test.mjs` și `tests/engine.test.mjs`.
-- Atlasul (1005 intrări) și modul „▶ Joacă” existent sunt neschimbate (verificat în test).
+## History / Changelog
 
-### v14.3.1 — 12 octombrie 2026
-- Versiunea și data ultimei actualizări sunt afișate în aplicație („Despre acest atlas”, subsol); titlul, antetul, statistica „Actualizat” și BibTeX arată v14.3.1 / 12 octombrie 2026.
+### v14.4.0 — 14 October 2026 (round 8, C1a)
+- "Game table" for standard chess: two-player P2P game (no server), local analyzer, date-determined challenge of the day, "why can't I move?", keyboard play with audio announcements, local Elo tournament; 8 languages for the new texts.
+- FFF kit (core, label, bundle, qr, p2p, tts) with `app.json`; CSP with recomputed hashes; backup and the "Transparency" window from the version number; tests `tests/fff-r8.test.mjs` and `tests/engine.test.mjs`.
+- The atlas (1005 entries) and the existing "▶ Play" mode are unchanged (verified in a test).
 
-### v14.3 — 11 octombrie 2026
-- Pe ecrane înguste (≤820 px) sau scurte (≤560 px) bara de comenzi nu mai rămâne lipită sus: pe telefon ocupa ≈620 px din 740 și acoperea cardurile (clicul pe primele carduri nu mai ajungea la ele); pe desktop, cardurile au `scroll-margin-top` ca să nu rămână sub bara lipită.
-- Indicator vizual „AI gândește… N s” sub tablă cât timp calculează AI-ul (starea rămâne anunțată și prin regiunea `aria-live` existentă); respectă `prefers-reduced-motion`.
-- Bannerul „Bun venit” apare acum în vârful conținutului (înainte de „Varianta de astăzi”), nu sub secțiunile curate.
-- Dimensiunea (≈1,9 MB) rămâne: ~1,05 MB sunt datele (deja compacte) și ~230 KB fonturi base64 pentru funcționare offline.
+### v14.3.1 — 12 October 2026
+- The version and the last-updated date are shown in the app ("About this atlas", footer); the title, header, the "Updated" statistic and BibTeX show v14.3.1 / 12 October 2026.
 
-### v14.2 — 11 octombrie 2026
-- Securitate: politica CSP nu mai conține `'unsafe-inline'`, `'wasm-unsafe-eval'` și `blob:` pentru scripturi (scripturile inline sunt acum autorizate prin hash SHA-256); `worker-src` este `'none'`.
-- Export/import al progresului local (insigne, parcurs, ELO, preferințe) din „Despre acest atlas”.
-- Versiune actualizată la v14.2 (README, afișare în aplicație, BibTeX).
+### v14.3 — 11 October 2026
+- On narrow (≤820 px) or short (≤560 px) screens the command bar no longer stays stuck at the top: on a phone it took ≈620 px out of 740 and covered the cards (clicking the first cards no longer reached them); on desktop, the cards have `scroll-margin-top` so they do not stay under the sticky bar.
+- A visual "AI is thinking… N s" indicator under the board while the AI computes (the state is still announced through the existing `aria-live` region); it respects `prefers-reduced-motion`.
+- The "Welcome" banner now appears at the top of the content (before "Variant of the day"), not under the curated sections.
+- The size (≈1.9 MB) remains: ~1.05 MB is data (already compact) and ~230 KB base64 fonts for offline operation.
 
-### v14.1 — 11 octombrie 2026
-- Accesibilitate: dialogul de detalii are acum titlu implicit (nume accesibil), blocul „Sprijină” este regiune (aside) etichetată; verificare axe fără încălcări.
-- Eliminat handlerul inline onclick din avertismentul de browser incompatibil (înlocuit cu listener).
-- Date și versiune actualizate: v14.1, 11 octombrie 2026 (titlu, antet, statistică „Actualizat”, BibTeX).
+### v14.2 — 11 October 2026
+- Security: the CSP policy no longer contains `'unsafe-inline'`, `'wasm-unsafe-eval'` and `blob:` for scripts (inline scripts are now authorized by SHA-256 hash); `worker-src` is `'none'`.
+- Export/import of local progress (badges, course, ELO, preferences) from "About this atlas".
+- Version updated to v14.2 (README, in-app display, BibTeX).
 
-## Licență
+### v14.1 — 11 October 2026
+- Accessibility: the details dialog now has an implicit title (accessible name), the "Support" block is a labelled region (aside); axe check with no violations.
+- Removed the inline onclick handler from the incompatible-browser warning (replaced with a listener).
+- Date and version updated: v14.1, 11 October 2026 (title, header, "Updated" statistic, BibTeX).
 
-MIT — vezi fișierul `LICENSE`. Antetul din `index.html` și textul din interfață indică aceeași licență (o mențiune anterioară „CC-BY-SA 4.0” din interfață a fost eliminată la audit, 2026-10-11, pentru a elimina contradicția).
+## License
 
-Excepție — materiale terțe: rezumatele și descrierile unor variante se sprijină pe surse publice (Wikipedia, FIDE, Lichess, chessvariants.com), indicate în aplicație ca linkuri și mulțumiri. Licența MIT acoperă contribuția originală a autorului (cod, selecție, texte proprii); orice text preluat sau adaptat de la terți rămâne sub licența sursei (de ex. CC BY-SA pentru Wikipedia) și trebuie verificat de cine îl reutilizează.
+MIT — see the `LICENSE` file. The header in `index.html` and the interface text indicate the same license (an earlier "CC-BY-SA 4.0" mention in the interface was removed during the audit, 2026-10-11, to eliminate the contradiction).
 
-## Mărci
+Exception — third-party material: the summaries and descriptions of some variants rely on public sources (Wikipedia, FIDE, Lichess, chessvariants.com), indicated in the application as links and acknowledgements. The MIT license covers the author's original contribution (code, selection, own texts); any text taken or adapted from third parties remains under the source's license (e.g. CC BY-SA for Wikipedia) and must be checked by whoever reuses it.
 
-Numele de jocuri sunt denumiri comerciale ale deținătorilor lor, folosite descriptiv; proiectul nu este afiliat cu aceștia.
+## Trademarks
 
-## Autor
+Game names are trade names of their holders, used descriptively; the project is not affiliated with them.
 
-Alexio — Alexandru-Ionuț Chiuță, contact: alexio@trom.tf. Aplicația îl prezintă ca autor, dezvoltator și muzician, cu mențiuni pentru proiectul TROM, Editura Tornada și Centrul StrING.
+## Author
+
+Alexio — Alexandru-Ionuț Chiuță, contact: alexio@trom.tf. The application presents him as author, developer and musician, with mentions of the TROM project, Editura Tornada and Centrul StrING.
 
 ## English summary
 
@@ -107,4 +109,4 @@ Alexio — Alexandru-Ionuț Chiuță, contact: alexio@trom.tf. Aplicația îl pr
 
 ## Audit
 
-Audit: 2026-10-10 — claimul „fără rețea” verificat (0 `fetch`/XHR/WebSocket, CSP `connect-src 'self'`, doar linkuri `<a>` externe); corectat contrastul din tema deschisă și semantica cardurilor (butoanele de tag din carduri nu mai sunt imbricate într-un `role="button"`). Licența a fost unificată (2026-10-11) și ulterior stabilită ca MIT și s-a adăugat `LICENSE`. Unele variante sunt marcate în aplicație ca „experimentale/sintetice” (fără sursă primară): tratează regulile lor ca neverificate.
+Audit: 2026-10-10 — the "no network" claim verified (0 `fetch`/XHR/WebSocket, CSP `connect-src 'self'`, only external `<a>` links); light-theme contrast and card semantics corrected (the tag buttons in cards are no longer nested inside a `role="button"`). The license was unified (2026-10-11) and later established as MIT, and `LICENSE` was added. Some variants are marked in the application as "experimental/synthetic" (no primary source): treat their rules as unverified.
