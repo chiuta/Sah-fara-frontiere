@@ -2,8 +2,8 @@
   "schema": 1,
   "slug": "sah-fara-frontiere",
   "name": "Șah fără frontiere — 706 variante + 299 lexicon · 14 Octombrie 2026",
-  "version": "14.4.0",
-  "updated": "2026-10-14",
+  "version": "14.5.0",
+  "updated": "2026-10-19",
   "description": "Enciclopedie șah: 706 variante propriu-zise și 299 intrări lexicon (istorie, AI, jucători, deschideri). Atelier Atlantykron 2026 · Centrul StrING.",
   "egress": [],
   "permissions": [
@@ -16,6 +16,7 @@
     "sff:curriculum:v1",
     "sff:gameStats",
     "sff:glyphStyle",
+    "sff:lang",
     "sff:notationStyle",
     "sff:playerELO",
     "sff:playerELOMap",
@@ -26,8 +27,8 @@
     "sff:tourSeen",
     "sff:welcomeSeen"
   ],
-  "sizeBytes": 2158023,
-  "sha256": "052e981f89bca6dc48c99e585f9f5a68fd07f403f6b0bbeae3f75f9517fe3525",
+  "sizeBytes": 2352855,
+  "sha256": "72b245f341c150ca3abd5a1d38cc5522baa4edf0a55af530fb2d2a9b32ae8b87",
   "csp": {
     "present": true,
     "directives": {
@@ -40,7 +41,7 @@
       "base-uri": "'self'",
       "form-action": "'self'",
       "worker-src": "'none'",
-      "script-src": "'self' sha256×3",
+      "script-src": "'self' sha256×4",
       "connect-src": "'self'"
     },
     "scriptInline": "hash",
