@@ -105,8 +105,7 @@ Les noms de jeux sont des dénominations commerciales de leurs titulaires, utili
 
 Alexio — Alexandru-Ionuț Chiuță, contact : alexio@trom.tf. L'application le présente comme auteur, développeur et musicien, avec des mentions du projet TROM, des éditions Tornada et du Centrul StrING.
 
-## Résumé en anglais
-
+## Résumé
 Șah fără frontiere est un atlas de variantes d'échecs en un seul fichier : 706 variantes plus 299 entrées de lexique, avec recherche, filtres, moteurs jouables (IA locale, export PGN/FEN, ELO local), un cours guidé de 7 jours, des badges et un export CSV/BibTeX. Depuis la 14.4.0, une « Table de jeu » pour les échecs standard ajoute le jeu à deux via WebRTC (signalisation manuelle, sans serveur), un analyseur local simple, un problème de mat quotidien déterministe, des explications « pourquoi ne puis-je pas jouer ? », le jeu au clavier avec annonces vocales et un tournoi Elo local (les 706 variantes ne sont pas couvertes). Tout s'exécute en local ; la progression est conservée dans localStorage (clés `sff:`) et aucune requête externe n'a été trouvée dans le code. Sous licence MIT pour la contribution propre de l'auteur (voir LICENSE) ; les résumés dérivés de tiers conservent leurs licences d'origine.
 
 ## Audit

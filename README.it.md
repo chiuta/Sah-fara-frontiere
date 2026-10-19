@@ -105,8 +105,7 @@ I nomi dei giochi sono denominazioni commerciali dei rispettivi titolari, usate 
 
 Alexio — Alexandru-Ionuț Chiuță, contatto: alexio@trom.tf. L'applicazione lo presenta come autore, sviluppatore e musicista, con menzioni del progetto TROM, di Editura Tornada e del Centrul StrING.
 
-## Riepilogo in inglese
-
+## Riepilogo
 Șah fără frontiere è un atlante di varianti degli scacchi a file singolo: 706 varianti più 299 voci di lessico, con ricerca, filtri, motori giocabili (IA locale, esportazione PGN/FEN, ELO locale), un corso guidato di 7 giorni, badge ed esportazione CSV/BibTeX. Dalla 14.4.0 un «Tavolo da gioco» per gli scacchi standard aggiunge il gioco in due via WebRTC (segnalazione manuale, senza server), un semplice analizzatore locale, un problema di matto quotidiano deterministico, spiegazioni «perché non posso muovere?», il gioco da tastiera con annunci vocali e un torneo Elo locale (le 706 varianti non sono coperte). Tutto gira in locale; i progressi sono conservati in localStorage (chiavi `sff:`) e nel codice non sono state trovate richieste esterne. Concesso in licenza MIT per il contributo proprio dell'autore (vedi LICENSE); i riassunti derivati da terzi mantengono le licenze d'origine.
 
 ## Audit

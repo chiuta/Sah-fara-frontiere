@@ -105,8 +105,7 @@ A játékok nevei a jogtulajdonosaik kereskedelmi megnevezései, leíró jellegg
 
 Alexio — Alexandru-Ionuț Chiuță, kapcsolat: alexio@trom.tf. Az alkalmazás szerzőként, fejlesztőként és zenészként mutatja be, a TROM projekt, az Editura Tornada és a Centrul StrING említésével.
 
-## Angol nyelvű összefoglaló
-
+## Összefoglaló
 A Șah fără frontiere egyfájlos sakkváltozat-atlasz: 706 változat és 299 szótári bejegyzés, kereséssel, szűrőkkel, játszható motorokkal (helyi MI, PGN/FEN-export, helyi ELO), 7 napos vezetett tanfolyammal, jelvényekkel és CSV/BibTeX-exporttal. A 14.4.0 óta a hagyományos sakkhoz tartozó „Sakkasztal” kétszemélyes játékot ad WebRTC-n keresztül (kézi jelzés, szerver nélkül), egyszerű helyi elemzőt, determinisztikus napi mattfeladványt, „miért nem léphetek?” magyarázatokat, billentyűzetes játékot hangbemondással és helyi Elo-versenyt (a 706 változat nem érintett). Minden helyben fut; a haladás a localStorage-ban tárolódik (`sff:` kulcsok), és a kódban nem találtunk külső kéréseket. A szerző saját hozzájárulására MIT licenc vonatkozik (lásd LICENSE); a harmadik féltől származtatott összefoglalók megtartják forráslicencüket.
 
 ## Audit

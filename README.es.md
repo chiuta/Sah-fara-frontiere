@@ -105,7 +105,7 @@ Los nombres de juegos son denominaciones comerciales de sus titulares, usadas de
 
 Alexio — Alexandru-Ionuț Chiuță, contacto: alexio@trom.tf. La aplicación lo presenta como autor, desarrollador y músico, con menciones del proyecto TROM, de Editura Tornada y del Centrul StrING.
 
-## Resumen en inglés
+## Resumen
 
 Șah fără frontiere es un atlas de variantes de ajedrez en un solo archivo: 706 variantes más 299 entradas de léxico, con búsqueda, filtros, motores jugables (IA local, exportación PGN/FEN, ELO local), un curso guiado de 7 días, insignias y exportación CSV/BibTeX. Desde la 14.4.0 una «Mesa de ajedrez» para el ajedrez estándar añade juego de dos mediante WebRTC (señalización manual, sin servidor), un analizador local sencillo, un problema de mate diario determinista, explicaciones «¿por qué no puedo mover?», juego con teclado con anuncios hablados y un torneo Elo local (las 706 variantes no están cubiertas). Todo se ejecuta en local; el progreso se guarda en localStorage (claves `sff:`) y no se encontraron solicitudes externas en el código. Licenciado bajo MIT para la contribución propia del autor (véase LICENSE); los resúmenes derivados de terceros conservan sus licencias de origen.
 

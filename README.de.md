@@ -105,8 +105,7 @@ Spielnamen sind Handelsbezeichnungen ihrer Inhaber, beschreibend verwendet; das 
 
 Alexio — Alexandru-Ionuț Chiuță, Kontakt: alexio@trom.tf. Die Anwendung stellt ihn als Autor, Entwickler und Musiker vor, mit Erwähnungen des Projekts TROM, der Editura Tornada und des Centrul StrING.
 
-## Englische Zusammenfassung
-
+## Zusammenfassung
 Șah fără frontiere ist ein Atlas von Schachvarianten in einer einzigen Datei: 706 Varianten plus 299 Lexikoneinträge, mit Suche, Filtern, spielbaren Engines (lokale KI, PGN-/FEN-Export, lokales ELO), einem geführten 7-Tage-Kurs, Abzeichen und CSV-/BibTeX-Export. Seit 14.4.0 ergänzt ein „Schachtisch“ für Standardschach das Spiel zu zweit über WebRTC (manuelle Signalisierung, ohne Server), einen einfachen lokalen Analysator, eine deterministische tägliche Mattaufgabe, Erklärungen „Warum kann ich nicht ziehen?“, Tastaturspiel mit gesprochenen Ansagen und ein lokales Elo-Turnier (die 706 Varianten sind nicht abgedeckt). Alles läuft lokal; der Fortschritt wird in localStorage (`sff:`-Schlüssel) gehalten, und im Code wurden keine externen Anfragen gefunden. Für den eigenen Beitrag des Autors unter MIT-Lizenz (siehe LICENSE); von Dritten abgeleitete Zusammenfassungen behalten ihre Quelllizenzen.
 
 ## Audit

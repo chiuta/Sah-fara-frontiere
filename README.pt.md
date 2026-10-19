@@ -105,8 +105,7 @@ Os nomes de jogos são designações comerciais dos seus titulares, usadas de fo
 
 Alexio — Alexandru-Ionuț Chiuță, contacto: alexio@trom.tf. A aplicação apresenta-o como autor, programador e músico, com menções do projeto TROM, da Editura Tornada e do Centrul StrING.
 
-## Resumo em inglês
-
+## Resumo
 Șah fără frontiere é um atlas de variantes de xadrez num único ficheiro: 706 variantes mais 299 entradas de léxico, com pesquisa, filtros, motores jogáveis (IA local, exportação PGN/FEN, ELO local), um curso guiado de 7 dias, emblemas e exportação CSV/BibTeX. Desde a 14.4.0, uma «Mesa de xadrez» para o xadrez padrão acrescenta jogo a dois via WebRTC (sinalização manual, sem servidor), um analisador local simples, um problema de mate diário determinista, explicações «porque não posso mover?», jogo por teclado com anúncios falados e um torneio Elo local (as 706 variantes não estão abrangidas). Tudo corre localmente; o progresso é guardado em localStorage (chaves `sff:`) e não foram encontrados pedidos externos no código. Licenciado sob MIT para a contribuição própria do autor (veja LICENSE); os resumos derivados de terceiros mantêm as licenças de origem.
 
 ## Auditoria
