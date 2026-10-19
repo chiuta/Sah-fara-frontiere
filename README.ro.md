@@ -105,9 +105,9 @@ Numele de jocuri sunt denumiri comerciale ale deținătorilor lor, folosite desc
 
 Alexio — Alexandru-Ionuț Chiuță, contact: alexio@trom.tf. Aplicația îl prezintă ca autor, dezvoltator și muzician, cu mențiuni pentru proiectul TROM, Editura Tornada și Centrul StrING.
 
-## English summary
+## Rezumat
 
-Șah fără frontiere is a single-file chess-variants atlas: 706 variants plus 299 lexicon entries, with search, filters, playable engines (local AI, PGN/FEN export, local ELO), a 7-day guided course, badges and CSV/BibTeX export. Since 14.4.0 a "Game table" for standard chess adds two-player play over WebRTC (manual signalling, no server), a simple local analyzer, a deterministic daily mate puzzle, "why can't I move?" explanations, keyboard play with spoken announcements and a local Elo tournament (the 706 variants are not covered). Everything runs locally; progress is kept in localStorage (`sff:` keys) and no external requests were found in the code. Licensed MIT for the author's own contribution (see LICENSE); third-party-derived summaries keep their source licences.
+Șah fără frontiere este un atlas al variantelor de șah într-un singur fișier: 706 variante plus 299 de intrări de lexicon, cu căutare, filtre, motoare jucabile (AI local, export PGN/FEN, ELO local), un curs ghidat de 7 zile, insigne și export CSV/BibTeX. Din 14.4.0, o „Masă de joc” pentru șahul standard adaugă joc în doi prin WebRTC (semnalizare manuală, fără server), un analizor local simplu, o problemă zilnică de mat determinist, explicații „de ce nu pot muta?”, joc cu tastatura cu anunțuri vocale și un turneu Elo local (cele 706 variante nu sunt acoperite). Totul rulează local; progresul se păstrează în localStorage (chei `sff:`) și nu s-au găsit cereri externe în cod. Licență MIT pentru contribuția proprie a autorului (vezi LICENSE); rezumatele derivate din terți își păstrează licențele sursă.
 
 ## Audit
 
