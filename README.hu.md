@@ -10,7 +10,7 @@ Sakkváltozatok atlasza/enciklopédiája: 706 változat és 299 szótári bejegy
 
 **Online alkalmazás:** https://chiuta.github.io/Sah-fara-frontiere/
 
-![Képernyőkép](screenshot.png)
+![Képernyőkép](screenshot.hu.png)
 
 ## Mi ez
 

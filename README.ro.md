@@ -10,7 +10,7 @@ Atlas/enciclopedie de variante de șah: 706 variante și 299 intrări de lexicon
 
 **Live:** https://chiuta.github.io/Sah-fara-frontiere/
 
-![Captura de ecran](screenshot.png)
+![Captura de ecran](screenshot.ro.png)
 
 ## Ce este
 

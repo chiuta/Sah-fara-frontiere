@@ -10,7 +10,7 @@ An atlas/encyclopedia of chess variants: 706 variants and 299 lexicon entries, w
 
 **Live app:** https://chiuta.github.io/Sah-fara-frontiere/
 
-![Screenshot](screenshot.png)
+![Screenshot](screenshot.en.png)
 
 ## What it is
 

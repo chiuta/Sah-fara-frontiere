@@ -10,7 +10,7 @@ Atlas/encyclopédie de variantes d'échecs : 706 variantes et 299 entrées de le
 
 **Application en ligne :** https://chiuta.github.io/Sah-fara-frontiere/
 
-![Capture d'écran](screenshot.png)
+![Capture d'écran](screenshot.fr.png)
 
 ## Présentation
 

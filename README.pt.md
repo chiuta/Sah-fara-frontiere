@@ -10,7 +10,7 @@ Atlas/enciclopédia de variantes de xadrez: 706 variantes e 299 entradas de léx
 
 **Aplicação online:** https://chiuta.github.io/Sah-fara-frontiere/
 
-![Captura de ecrã](screenshot.png)
+![Captura de ecrã](screenshot.pt.png)
 
 ## O que é
 

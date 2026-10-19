@@ -10,7 +10,7 @@ Atlante/enciclopedia di varianti degli scacchi: 706 varianti e 299 voci di lessi
 
 **App online:** https://chiuta.github.io/Sah-fara-frontiere/
 
-![Schermata](screenshot.png)
+![Schermata](screenshot.it.png)
 
 ## Che cos'è
 

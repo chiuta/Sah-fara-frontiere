@@ -10,7 +10,7 @@ Atlas/Enzyklopädie von Schachvarianten: 706 Varianten und 299 Lexikoneinträge,
 
 **Online-App:** https://chiuta.github.io/Sah-fara-frontiere/
 
-![Screenshot](screenshot.png)
+![Screenshot](screenshot.de.png)
 
 ## Was es ist
 
