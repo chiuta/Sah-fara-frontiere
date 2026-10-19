@@ -13,18 +13,21 @@
   ],
   "storageKeys": [
     "sff:badges",
+    "sff:curriculum:v1",
     "sff:gameStats",
     "sff:glyphStyle",
     "sff:notationStyle",
     "sff:playerELO",
     "sff:playerELOMap",
     "sff:soundEnabled",
+    "sff:state:v2",
+    "sff:textsize",
     "sff:theme",
     "sff:tourSeen",
     "sff:welcomeSeen"
   ],
-  "sizeBytes": 2157391,
-  "sha256": "b52a7acf7ff7e2010c223eebcc37220a9fc7ca6346fa98804bbee64e0f3e109c",
+  "sizeBytes": 2158023,
+  "sha256": "052e981f89bca6dc48c99e585f9f5a68fd07f403f6b0bbeae3f75f9517fe3525",
   "csp": {
     "present": true,
     "directives": {
@@ -37,7 +40,7 @@
       "base-uri": "'self'",
       "form-action": "'self'",
       "worker-src": "'none'",
-      "script-src": "'self' sha256×4",
+      "script-src": "'self' sha256×3",
       "connect-src": "'self'"
     },
     "scriptInline": "hash",
@@ -61,7 +64,7 @@
     ]
   },
   "kit": {
-    "version": "1.0.0",
+    "version": "1.1.1",
     "modules": [
       "core",
       "label",
