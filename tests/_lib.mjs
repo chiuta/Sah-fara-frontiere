@@ -54,7 +54,8 @@ export async function kitLabel(page, slug) {
   const d = page.locator("dialog.fff-dlg").first();
   check(`kit (${slug}): fereastra Transparență se deschide din versiune`, await d.isVisible());
   const t = await d.innerText();
-  check(`kit (${slug}): afișează 0 cereri externe și SHA-256`, /0 cereri externe/i.test(t) && /SHA-256/i.test(t), t.slice(0, 300));
+  const egress = await page.evaluate(() => { try { return JSON.parse(document.getElementById("fff-info").textContent).egress.length; } catch (e) { return -1; } });
+  check(`kit (${slug}): declară 0 cereri externe (fff-info) și afișează SHA-256, în orice limbă`, egress === 0 && /(^|\D)0 \D/.test(t) && /SHA-256/i.test(t), [egress, t.slice(0, 300)]);
   await page.keyboard.press("Escape");
   await page.waitForTimeout(200);
 }
