@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · **Italiano** · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versione:** 14.6.3 · **Ultimo aggiornamento:** 2026-10-21
+**Versione:** 14.6.4 · **Ultimo aggiornamento:** 2026-10-22
 
 Lingue dell'interfaccia: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -14,7 +14,7 @@ Atlante/enciclopedia di varianti degli scacchi: 706 varianti e 299 voci di lessi
 
 ## Che cos'è
 
-Șah fără frontiere («Scacchi senza frontiere») è un atlante in un unico file HTML (v14.6.3, aggiornato il 21 ottobre 2026; il contenuto dell'atlante è datato 14 ottobre 2026; realizzato per il laboratorio Atlantykron 2026) con 1005 voci: 706 varianti di scacchi (online, moderne, storiche, regionali, geometriche, eterodosse, su scacchiere grandi, con IA) e 299 termini di lessico (storia, IA, giocatori, aperture). Secondo la sezione «Informazioni su questo atlante», il file è generato da uno script Python e da un JSON di dati, senza dipendenze a runtime, con implementazione in iterazioni assistite dall'IA.
+Șah fără frontiere («Scacchi senza frontiere») è un atlante in un unico file HTML (v14.6.4, aggiornato il 22 ottobre 2026; il contenuto dell'atlante è datato 14 ottobre 2026; realizzato per il laboratorio Atlantykron 2026) con 1005 voci: 706 varianti di scacchi (online, moderne, storiche, regionali, geometriche, eterodosse, su scacchiere grandi, con IA) e 299 termini di lessico (storia, IA, giocatori, aperture). Secondo la sezione «Informazioni su questo atlante», il file è generato da uno script Python e da un JSON di dati, senza dipendenze a runtime, con implementazione in iterazioni assistite dall'IA.
 
 ## Funzionalità
 
@@ -66,6 +66,9 @@ Test: `node tests/fff-r8.test.mjs` (Playwright, rete bloccata, 2 pagine per il P
 Scarica `index.html` (circa 2,4 MB) e aprilo in un browser; funziona senza internet. Solo i link verso fonti esterne richiedono una connessione.
 
 ## Cronologia / Changelog
+
+### v14.6.4 — 22 ottobre 2026
+- Corretta la voce 460 (Armenia): i tre titoli olimpici (2006, 2008, 2012) non furono consecutivi (nel 2010 vinse l'Ucraina) e Aronian era secondo, non terzo, al mondo nel 2014; la formula «tripletta» è stata rimossa in tutte e 8 le lingue. Verificate le 26 voci segnalate; nessun altro errore trovato.
 
 ### v14.6.3 — 21 ottobre 2026
 - Verificate e corrette 26 voci dell'atlante (ad es. l'Olimpiade non ufficiale di Monaco 1936, la biografia di Steinitz, il numero di federazioni); sei concetti di scacchi eterodossi non attestati riportano ora la nota «concetto non attestato». Altre circa 2.700 etichette tradotte nelle 7 lingue non rumene (3.183 righe in totale); nomi propri, anni e sigle restano invariati.

@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · **Français** · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version :** 14.6.3 · **Dernière mise à jour :** 2026-10-21
+**Version :** 14.6.4 · **Dernière mise à jour :** 2026-10-22
 
 Langues de l'interface : **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -14,7 +14,7 @@ Atlas/encyclopédie de variantes d'échecs : 706 variantes et 299 entrées de le
 
 ## Présentation
 
-Șah fără frontiere (« Échecs sans frontières ») est un atlas dans un seul fichier HTML (v14.6.3, mis à jour le 21 octobre 2026 ; le contenu de l'atlas est daté du 14 octobre 2026 ; réalisé pour l'atelier Atlantykron 2026) comptant 1005 entrées : 706 variantes d'échecs (en ligne, modernes, historiques, régionales, géométriques, féeriques, sur grands échiquiers, avec IA) et 299 termes de lexique (histoire, IA, joueurs, ouvertures). Selon la section « À propos de cet atlas », le fichier est généré à partir d'un script Python et d'un JSON de données, sans dépendances à l'exécution, avec une mise en œuvre par itérations assistées par IA.
+Șah fără frontiere (« Échecs sans frontières ») est un atlas dans un seul fichier HTML (v14.6.4, mis à jour le 22 octobre 2026 ; le contenu de l'atlas est daté du 14 octobre 2026 ; réalisé pour l'atelier Atlantykron 2026) comptant 1005 entrées : 706 variantes d'échecs (en ligne, modernes, historiques, régionales, géométriques, féeriques, sur grands échiquiers, avec IA) et 299 termes de lexique (histoire, IA, joueurs, ouvertures). Selon la section « À propos de cet atlas », le fichier est généré à partir d'un script Python et d'un JSON de données, sans dépendances à l'exécution, avec une mise en œuvre par itérations assistées par IA.
 
 ## Fonctionnalités
 
@@ -66,6 +66,9 @@ Tests : `node tests/fff-r8.test.mjs` (Playwright, réseau bloqué, 2 pages pour 
 Téléchargez `index.html` (environ 2,4 Mo) et ouvrez-le dans un navigateur ; il fonctionne sans internet. Seuls les liens vers des sources externes nécessitent une connexion.
 
 ## Historique / Changelog
+
+### v14.6.4 — 22 octobre 2026
+- Entrée 460 (Arménie) corrigée : les trois titres olympiques (2006, 2008, 2012) n'étaient pas consécutifs (l'Ukraine a gagné en 2010) et Aronian était deuxième, et non troisième, mondial en 2014 ; la formule « triplé » a été retirée dans les 8 langues. Vérification factuelle des 26 entrées signalées ; aucune autre erreur trouvée.
 
 ### v14.6.3 — 21 octobre 2026
 - 26 entrées de l'atlas vérifiées et corrigées (p. ex. l'Olympiade non officielle de Munich 1936, la biographie de Steinitz, le nombre de fédérations) ; six concepts d'échecs féeriques non attestés portent désormais la mention « concept non attesté ». Environ 2 700 libellés supplémentaires traduits dans les 7 langues non roumaines (3 183 lignes au total) ; noms propres, années et sigles restent inchangés.

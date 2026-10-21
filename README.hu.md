@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · **Magyar**
 
-**Verzió:** 14.6.3 · **Utolsó frissítés:** 2026-10-21
+**Verzió:** 14.6.4 · **Utolsó frissítés:** 2026-10-22
 
 A felület nyelvei: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -14,7 +14,7 @@ Sakkváltozatok atlasza/enciklopédiája: 706 változat és 299 szótári bejegy
 
 ## Mi ez
 
-A Șah fără frontiere („Sakk határok nélkül”) egyetlen HTML-fájlból álló atlasz (v14.6.3, frissítve 2026. október 21-én; az atlasz tartalma 2026. október 14-i keltezésű; az Atlantykron 2026 műhelyhez készült) 1005 bejegyzéssel: 706 sakkváltozat (online, modern, történelmi, regionális, geometriai, tündérsakk, nagy táblás, MI-s) és 299 szótári kifejezés (történelem, MI, játékosok, megnyitások). Az „Erről az atlaszról” szakasz szerint a fájlt egy Python-szkript és egy JSON-adatfájl generálja, futásidejű függőségek nélkül, MI-támogatású iterációkban megvalósítva.
+A Șah fără frontiere („Sakk határok nélkül”) egyetlen HTML-fájlból álló atlasz (v14.6.4, frissítve 2026. október 22-én; az atlasz tartalma 2026. október 14-i keltezésű; az Atlantykron 2026 műhelyhez készült) 1005 bejegyzéssel: 706 sakkváltozat (online, modern, történelmi, regionális, geometriai, tündérsakk, nagy táblás, MI-s) és 299 szótári kifejezés (történelem, MI, játékosok, megnyitások). Az „Erről az atlaszról” szakasz szerint a fájlt egy Python-szkript és egy JSON-adatfájl generálja, futásidejű függőségek nélkül, MI-támogatású iterációkban megvalósítva.
 
 ## Funkciók
 
@@ -66,6 +66,9 @@ Tesztek: `node tests/fff-r8.test.mjs` (Playwright, letiltott hálózat, 2 oldal 
 Töltsd le az `index.html` fájlt (körülbelül 2,4 MB), és nyisd meg böngészőben; internet nélkül is működik. Csak a külső forrásokra mutató hivatkozásokhoz kell kapcsolat.
 
 ## Előzmények / Changelog
+
+### v14.6.4 — 2026. október 22.
+- Javítva a 460. bejegyzés (Örményország): a három olimpiai cím (2006, 2008, 2012) nem egymást követő volt (2010-ben Ukrajna nyert), Aronján pedig 2014-ben a világ második, nem harmadik játékosa volt; a „mesterhármas” megfogalmazás mind a 8 nyelvből kikerült. A 26 átvizsgálásra jelölt bejegyzés tényellenőrzése megtörtént; további hiba nem volt.
 
 ### v14.6.3 — 2026. október 21.
 - 26 atlaszbejegyzés ellenőrizve és javítva (pl. a nem hivatalos 1936-os müncheni olimpia, Steinitz életrajza, a szövetségek száma); hat nem igazolt tündérsakk-fogalom mostantól „nem igazolt fogalom” megjegyzést kap. További kb. 2700 felirat lefordítva a 7 nem román nyelvre (összesen 3183 sor); a tulajdonnevek, évszámok és mozaikszavak változatlanok.

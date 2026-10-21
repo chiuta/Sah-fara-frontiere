@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · **Deutsch** · [Magyar](README.hu.md)
 
-**Version:** 14.6.3 · **Zuletzt aktualisiert:** 2026-10-21
+**Version:** 14.6.4 · **Zuletzt aktualisiert:** 2026-10-22
 
 Oberflächensprachen: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -14,7 +14,7 @@ Atlas/Enzyklopädie von Schachvarianten: 706 Varianten und 299 Lexikoneinträge,
 
 ## Was es ist
 
-Șah fără frontiere („Schach ohne Grenzen“) ist ein Atlas in einer einzigen HTML-Datei (v14.6.3, aktualisiert am 21. Oktober 2026; der Atlasinhalt ist auf den 14. Oktober 2026 datiert; für den Workshop Atlantykron 2026 erstellt) mit 1005 Einträgen: 706 Schachvarianten (Online, modern, historisch, regional, geometrisch, Märchenschach, auf großen Brettern, mit KI) und 299 Lexikonbegriffe (Geschichte, KI, Spieler, Eröffnungen). Laut dem Abschnitt „Über diesen Atlas“ wird die Datei aus einem Python-Skript und einer JSON-Datendatei erzeugt, ohne Laufzeitabhängigkeiten, mit Umsetzung in KI-gestützten Iterationen.
+Șah fără frontiere („Schach ohne Grenzen“) ist ein Atlas in einer einzigen HTML-Datei (v14.6.4, aktualisiert am 22. Oktober 2026; der Atlasinhalt ist auf den 14. Oktober 2026 datiert; für den Workshop Atlantykron 2026 erstellt) mit 1005 Einträgen: 706 Schachvarianten (Online, modern, historisch, regional, geometrisch, Märchenschach, auf großen Brettern, mit KI) und 299 Lexikonbegriffe (Geschichte, KI, Spieler, Eröffnungen). Laut dem Abschnitt „Über diesen Atlas“ wird die Datei aus einem Python-Skript und einer JSON-Datendatei erzeugt, ohne Laufzeitabhängigkeiten, mit Umsetzung in KI-gestützten Iterationen.
 
 ## Funktionen
 
@@ -66,6 +66,9 @@ Tests: `node tests/fff-r8.test.mjs` (Playwright, Netzwerk gesperrt, 2 Seiten fü
 Lade `index.html` (etwa 2,4 MB) herunter und öffne sie in einem Browser; sie funktioniert ohne Internet. Nur die Links zu externen Quellen benötigen eine Verbindung.
 
 ## Verlauf / Changelog
+
+### v14.6.4 — 22. Oktober 2026
+- Eintrag 460 (Armenien) korrigiert: Die drei Olympiasiege (2006, 2008, 2012) waren nicht aufeinanderfolgend (2010 siegte die Ukraine), und Aronjan war 2014 Zweiter, nicht Dritter der Welt; die Formulierung „Hattrick“ wurde in allen 8 Sprachen entfernt. Die 26 zur Prüfung markierten Einträge wurden faktengeprüft; keine weiteren Fehler gefunden.
 
 ### v14.6.3 — 21. Oktober 2026
 - 26 Atlaseinträge geprüft und korrigiert (z. B. die inoffizielle Olympiade München 1936, Steinitz' Biografie, die Zahl der Verbände); sechs nicht belegte Märchenschach-Konzepte tragen nun den Hinweis „Konzept nicht belegt“. Rund 2.700 weitere Bezeichnungen in die 7 nichtrumänischen Sprachen übersetzt (insgesamt 3.183 Zeilen); Eigennamen, Jahreszahlen und Akronyme bleiben unverändert.

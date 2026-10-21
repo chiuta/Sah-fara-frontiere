@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · **Português** · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versão:** 14.6.3 · **Última atualização:** 2026-10-21
+**Versão:** 14.6.4 · **Última atualização:** 2026-10-22
 
 Idiomas da interface: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -14,7 +14,7 @@ Atlas/enciclopédia de variantes de xadrez: 706 variantes e 299 entradas de léx
 
 ## O que é
 
-Șah fără frontiere («Xadrez sem fronteiras») é um atlas num único ficheiro HTML (v14.6.3, atualizado a 21 de outubro de 2026; o conteúdo do atlas está datado de 14 de outubro de 2026; realizado para o atelier Atlantykron 2026) com 1005 entradas: 706 variantes de xadrez (online, modernas, históricas, regionais, geométricas, heterodoxas, em tabuleiros grandes, com IA) e 299 termos de léxico (história, IA, jogadores, aberturas). De acordo com a secção «Acerca deste atlas», o ficheiro é gerado a partir de um script Python e de um JSON de dados, sem dependências em tempo de execução, com implementação em iterações assistidas por IA.
+Șah fără frontiere («Xadrez sem fronteiras») é um atlas num único ficheiro HTML (v14.6.4, atualizado a 22 de outubro de 2026; o conteúdo do atlas está datado de 14 de outubro de 2026; realizado para o atelier Atlantykron 2026) com 1005 entradas: 706 variantes de xadrez (online, modernas, históricas, regionais, geométricas, heterodoxas, em tabuleiros grandes, com IA) e 299 termos de léxico (história, IA, jogadores, aberturas). De acordo com a secção «Acerca deste atlas», o ficheiro é gerado a partir de um script Python e de um JSON de dados, sem dependências em tempo de execução, com implementação em iterações assistidas por IA.
 
 ## Funcionalidades
 
@@ -66,6 +66,9 @@ Testes: `node tests/fff-r8.test.mjs` (Playwright, rede bloqueada, 2 páginas par
 Transfira `index.html` (cerca de 2,4 MB) e abra-o num navegador; funciona sem internet. Apenas as ligações para fontes externas exigem ligação.
 
 ## Histórico / Changelog
+
+### v14.6.4 — 22 de outubro de 2026
+- Corrigida a entrada 460 (Arménia): os três títulos olímpicos (2006, 2008, 2012) não foram consecutivos (em 2010 ganhou a Ucrânia) e Aronian era segundo, e não terceiro, do mundo em 2014; a fórmula «tripleta» foi removida nas 8 línguas. Verificadas as 26 entradas assinaladas; não se encontraram mais erros.
 
 ### v14.6.3 — 21 de outubro de 2026
 - Verificadas e corrigidas 26 entradas do atlas (p. ex. a Olimpíada não oficial de Munique 1936, a biografia de Steinitz, o número de federações); seis conceitos de xadrez heterodoxo não atestados passam a ter a nota «conceito não atestado». Cerca de 2.700 rótulos adicionais traduzidos para os 7 idiomas não romenos (3.183 linhas no total); nomes próprios, anos e siglas permanecem inalterados.

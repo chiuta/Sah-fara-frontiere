@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · **Español** · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versión:** 14.6.3 · **Última actualización:** 2026-10-21
+**Versión:** 14.6.4 · **Última actualización:** 2026-10-22
 
 Idiomas de la interfaz: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -14,7 +14,7 @@ Atlas/enciclopedia de variantes de ajedrez: 706 variantes y 299 entradas de léx
 
 ## Qué es
 
-Șah fără frontiere («Ajedrez sin fronteras») es un atlas en un solo archivo HTML (v14.6.3, actualizado el 21 de octubre de 2026; el contenido del atlas está fechado el 14 de octubre de 2026; realizado para el taller Atlantykron 2026) con 1005 entradas: 706 variantes de ajedrez (en línea, modernas, históricas, regionales, geométricas, heterodoxas, en tableros grandes, con IA) y 299 términos de léxico (historia, IA, jugadores, aperturas). Según la sección «Acerca de este atlas», el archivo se genera a partir de un script de Python y un JSON de datos, sin dependencias en tiempo de ejecución, con implementación en iteraciones asistidas por IA.
+Șah fără frontiere («Ajedrez sin fronteras») es un atlas en un solo archivo HTML (v14.6.4, actualizado el 22 de octubre de 2026; el contenido del atlas está fechado el 14 de octubre de 2026; realizado para el taller Atlantykron 2026) con 1005 entradas: 706 variantes de ajedrez (en línea, modernas, históricas, regionales, geométricas, heterodoxas, en tableros grandes, con IA) y 299 términos de léxico (historia, IA, jugadores, aperturas). Según la sección «Acerca de este atlas», el archivo se genera a partir de un script de Python y un JSON de datos, sin dependencias en tiempo de ejecución, con implementación en iteraciones asistidas por IA.
 
 ## Funciones
 
@@ -66,6 +66,9 @@ Pruebas: `node tests/fff-r8.test.mjs` (Playwright, red bloqueada, 2 páginas par
 Descarga `index.html` (unos 2,4 MB) y ábrelo en un navegador; funciona sin internet. Solo los enlaces a fuentes externas requieren conexión.
 
 ## Historial / Changelog
+
+### v14.6.4 — 22 de octubre de 2026
+- Corregida la entrada 460 (Armenia): los tres títulos olímpicos (2006, 2008, 2012) no fueron consecutivos (en 2010 ganó Ucrania) y Aronián era segundo, no tercero, del mundo en 2014; se eliminó la fórmula «triplete» en los 8 idiomas. Verificadas las 26 entradas marcadas; no se encontraron más errores.
 
 ### v14.6.3 — 21 de octubre de 2026
 - Verificadas y corregidas 26 entradas del atlas (p. ej. la Olimpiada no oficial de Múnich 1936, la biografía de Steinitz, el número de federaciones); seis conceptos de ajedrez heterodoxo no atestiguados llevan ahora la nota «concepto no atestiguado». Unas 2.700 etiquetas más traducidas a los 7 idiomas no rumanos (3.183 filas en total); nombres propios, años y siglas no cambian.

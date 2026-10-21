@@ -2,7 +2,7 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 14.6.3 · **Last updated:** 2026-10-21
+**Version:** 14.6.4 · **Last updated:** 2026-10-22
 
 Interface languages: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -14,7 +14,7 @@ An atlas/encyclopedia of chess variants: 706 variants and 299 lexicon entries, w
 
 ## What it is
 
-Șah fără frontiere ("Chess without borders") is an atlas in a single HTML file (v14.6.3, last updated on 21 October 2026; the atlas content is dated 14 October 2026; made for the Atlantykron 2026 workshop) with 1005 entries: 706 chess variants (online, modern, historical, regional, geometric, fairy, large-board, with AI) and 299 lexicon terms (history, AI, players, openings). According to the "About this atlas" section, the file is generated from a Python script and a JSON data file, with no runtime dependencies, implemented in AI-assisted iterations.
+Șah fără frontiere ("Chess without borders") is an atlas in a single HTML file (v14.6.4, last updated on 22 October 2026; the atlas content is dated 14 October 2026; made for the Atlantykron 2026 workshop) with 1005 entries: 706 chess variants (online, modern, historical, regional, geometric, fairy, large-board, with AI) and 299 lexicon terms (history, AI, players, openings). According to the "About this atlas" section, the file is generated from a Python script and a JSON data file, with no runtime dependencies, implemented in AI-assisted iterations.
 
 ## Features
 
@@ -66,6 +66,9 @@ Tests: `node tests/fff-r8.test.mjs` (Playwright, network blocked, 2 pages for P2
 Download `index.html` (about 2.4 MB) and open it in a browser; it works without internet. Only the links to external sources require a connection.
 
 ## History / Changelog
+
+### v14.6.4 — 22 October 2026
+- Corrected entry 460 (Armenia): the three Olympiad titles (2006, 2008, 2012) were not consecutive (Ukraine won in 2010) and Aronian was second, not third, in the world in 2014; the "hat-trick" wording was removed in all 8 languages. Fact-checked the 26 entries flagged for review; no further errors found.
 
 ### v14.6.3 — 21 October 2026
 - Fact-checked and corrected 26 atlas entries (e.g. the unofficial 1936 Munich Olympiad, Steinitz's biography, the federation count); six unattested fairy-chess concepts now carry a "concept not attested" note. About 2,700 more labels translated into the 7 non-Romanian languages (3,183 rows in total); proper names, years and acronyms stay unchanged.

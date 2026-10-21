@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 14.6.3 · **Ultima actualizare:** 2026-10-21
+**Versiune:** 14.6.4 · **Ultima actualizare:** 2026-10-22
 
 Limbile interfeței: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -14,7 +14,7 @@ Atlas/enciclopedie de variante de șah: 706 variante și 299 intrări de lexicon
 
 ## Ce este
 
-Șah fără frontiere este un atlas dintr-un singur fișier HTML (v14.6.3, actualizat la 21 octombrie 2026; conținutul atlasului este datat 14 octombrie 2026; realizat pentru atelierul Atlantykron 2026) cu 1005 intrări: 706 variante de șah (online, moderne, istorice, regionale, geometrice, fairy, pe table mari, cu AI) și 299 de termeni de lexicon (istorie, AI, jucători, deschideri). Potrivit secțiunii „Despre acest atlas", fișierul este generat dintr-un script Python și un JSON de date, fără dependențe la rulare, cu implementare în iterații asistate de AI.
+Șah fără frontiere este un atlas dintr-un singur fișier HTML (v14.6.4, actualizat la 22 octombrie 2026; conținutul atlasului este datat 14 octombrie 2026; realizat pentru atelierul Atlantykron 2026) cu 1005 intrări: 706 variante de șah (online, moderne, istorice, regionale, geometrice, fairy, pe table mari, cu AI) și 299 de termeni de lexicon (istorie, AI, jucători, deschideri). Potrivit secțiunii „Despre acest atlas", fișierul este generat dintr-un script Python și un JSON de date, fără dependențe la rulare, cu implementare în iterații asistate de AI.
 
 ## Funcții
 
@@ -66,6 +66,9 @@ Teste: `node tests/fff-r8.test.mjs` (Playwright, rețea blocată, 2 pagini pentr
 Descarcă `index.html` (aproximativ 2,4 MB) și deschide-l în browser; funcționează fără internet. Doar linkurile către surse externe necesită conexiune.
 
 ## Istoric / Changelog
+
+### v14.6.4 — 22 octombrie 2026
+- Corectată intrarea 460 (Armenia): cele trei titluri olimpice (2006, 2008, 2012) nu au fost consecutive (în 2010 a câștigat Ucraina), iar Aronian a fost al doilea, nu al treilea, din lume în 2014; formularea „hat-trick” a fost eliminată în toate cele 8 limbi. Verificate factual cele 26 de intrări marcate pentru revizuire; nu s-au găsit alte erori.
 
 ### v14.6.3 — 21 octombrie 2026
 - Verificate și corectate 26 de intrări din atlas (de ex. Olimpiada neoficială de la München 1936, biografia lui Steinitz, numărul de federații); șase concepte de șah feeric neatestate poartă acum nota „concept neatestat”. Încă ~2.700 de etichete traduse în cele 7 limbi non-române (3.183 de rânduri în total); numele proprii, anii și acronimele rămân neschimbate.
