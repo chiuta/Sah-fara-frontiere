@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · **Magyar**
 
-**Verzió:** 14.6.2 · **Utolsó frissítés:** 2026-10-19
+**Verzió:** 14.6.3 · **Utolsó frissítés:** 2026-10-21
 
 A felület nyelvei: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -14,7 +14,7 @@ Sakkváltozatok atlasza/enciklopédiája: 706 változat és 299 szótári bejegy
 
 ## Mi ez
 
-A Șah fără frontiere („Sakk határok nélkül”) egyetlen HTML-fájlból álló atlasz (v14.4.0, frissítve 2026. október 14-én; az Atlantykron 2026 műhelyhez készült) 1005 bejegyzéssel: 706 sakkváltozat (online, modern, történelmi, regionális, geometriai, tündérsakk, nagy táblás, MI-s) és 299 szótári kifejezés (történelem, MI, játékosok, megnyitások). Az „Erről az atlaszról” szakasz szerint a fájlt egy Python-szkript és egy JSON-adatfájl generálja, futásidejű függőségek nélkül, MI-támogatású iterációkban megvalósítva.
+A Șah fără frontiere („Sakk határok nélkül”) egyetlen HTML-fájlból álló atlasz (v14.6.3, frissítve 2026. október 21-én; az atlasz tartalma 2026. október 14-i keltezésű; az Atlantykron 2026 műhelyhez készült) 1005 bejegyzéssel: 706 sakkváltozat (online, modern, történelmi, regionális, geometriai, tündérsakk, nagy táblás, MI-s) és 299 szótári kifejezés (történelem, MI, játékosok, megnyitások). Az „Erről az atlaszról” szakasz szerint a fájlt egy Python-szkript és egy JSON-adatfájl generálja, futásidejű függőségek nélkül, MI-támogatású iterációkban megvalósítva.
 
 ## Funkciók
 
@@ -40,7 +40,7 @@ A „Tanfolyam” melletti „Sakkasztal” gombról nyílnak meg, ötfülés p�
 
 **A motor és az ereje.** A szintek: könnyű = 1-es mélység a közel egyenértékű lépések közti választással; közepes = 2-es mélység; haladó = 5-ös mélység csomópont-kerettel. Ellenőrző mérkőzéseken (3 véletlen megnyitás × 2 szín, 160 fél lépés): a könnyű 12–0-ra nyert véletlen lépések ellen, a haladó 6–0-ra nyert a közepes ellen és 6–0-ra a könnyű ellen. Kis minták: a sorrendet jelzik, nem Elo-ban mérhető erőt. A háromszori ismétlésből adódó döntetlen, az 50 lépéses szabály és az elégtelen anyag automatikusan érvényesül. Nincs óra.
 
-**Nyelvek.** A felület románul, angolul, franciául, olaszul, spanyolul, portugálul, magyarul és németül érhető el; **a romántól és az angoltól eltérő fordítások gépiek, és anyanyelvi beszélők nem ellenőrizték őket**. A vezérlősáv nyelvválasztója a felület nyelvét váltja (az atlasz hosszú tartalma románul marad); az FFF-kit párbeszédablakai az oldal nyelvét követik.
+**Nyelvek.** A felület, az FFF-kit párbeszédablakai és a Sakkasztal az oldal nyelvét követik, és románul, angolul, franciául, olaszul, spanyolul, portugálul, magyarul és németül érhetők el; a vezérlősáv nyelvválasztója (vagy az asztal Hozzáférhetőség fülének választója) az egész oldal nyelvét váltja. Az atlasz tartalma így van lefordítva: mind az 1005 bejegyzés (706 változat + 299 szótári bejegyzés) szabályszövege és alcíme mind a 8 nyelven megvan, ugyanígy a tanfolyam, az „Erről az atlaszról” szakasz, a meta leírás és mintegy 430 általános címke. **Románul maradt:** mintegy 4000 egyedi címke (különálló kifejezések, pl. „960 állás”), néhány angol nevű vagy kifejezés jellegű címke (Lichess, Streaming, …), valamint természetesen a tulajdonnevek (játékosok, motorok, termékek, szervezetek, megnyitások) és a mozaikszók (FIDE, NNUE…). **A romántól és az angoltól eltérő fordítások gépiek, és anyanyelvi beszélők nem ellenőrizték őket.**
 
 Tesztek: `node tests/fff-r8.test.mjs` (Playwright, letiltott hálózat, 2 oldal a P2P-hez, axe, 1280×800 és 360×740) és `node tests/engine.test.mjs` (a motor Node-ban: perft, FEN, SAN, döntetlenek, matt N lépésben, magyarázatok).
 
@@ -56,7 +56,7 @@ Tesztek: `node tests/fff-r8.test.mjs` (Playwright, letiltott hálózat, 2 oldal 
 ## Adatvédelem és hálózat
 
 - Helyi: a `localStorage`-ban, `sff:` előtaggal — az atlasz állapota (`sff:state:v2`), a tanfolyam (`sff:curriculum:v1`), a téma, a szövegméret, a hang, a jelölés és a figurák stílusa, a jelvények, a játékstatisztikák, a játékos ELO-ja, az aktuális játék állapota, valamint az „üdvözlő”/látott túra jelölések.
-- A „Sakkasztal” funkciói külön `sff_r8_` kulcsokat használnak (bemondás-/hangbeállítások, az új szövegek nyelve, verseny, napi sorozat, a nap feladványának gyorsítótára); az FFF-kit biztonsági mentést (export/import/törlés) és a verziószámból megnyíló „Átláthatóság” ablakot adja hozzá.
+- A „Sakkasztal” funkciói külön `sff_r8_` kulcsokat használnak (bemondás-/hangbeállítások, verseny, napi sorozat, a nap feladványának gyorsítótára); az FFF-kit biztonsági mentést (export/import/törlés) és a verziószámból megnyíló „Átláthatóság” ablakot adja hozzá.
 - Az egyetlen új hálózati kommunikáció az opcionális kétszemélyes játék, WebRTC-n keresztül közvetlenül a két játékos között, kézi jelzéssel és — csak ha megadsz egyet — STUN-szerverrel (deklarált kimenő forgalom: 0).
 - Hálózat: az ellenőrzött kódban nincs `fetch` hívás, sem külső gazdagépekről betöltött szkript/betűtípus. Az adatlapok forrásokra mutató hivatkozásokat tartalmaznak (például Wikipedia, FIDE Handbook, Lichess, chessvariants.com), amelyek csak kattintásra nyílnak meg. Az alkalmazás szövege kijelenti: „Offline működik, követés nélkül, reklámok nélkül”.
 - Az MI-motor helyben fut a böngészőben.
@@ -66,6 +66,13 @@ Tesztek: `node tests/fff-r8.test.mjs` (Playwright, letiltott hálózat, 2 oldal 
 Töltsd le az `index.html` fájlt (körülbelül 2,4 MB), és nyisd meg böngészőben; internet nélkül is működik. Csak a külső forrásokra mutató hivatkozásokhoz kell kapcsolat.
 
 ## Előzmények / Changelog
+
+### v14.6.3 — 2026. október 21.
+- 26 atlaszbejegyzés ellenőrizve és javítva (pl. a nem hivatalos 1936-os müncheni olimpia, Steinitz életrajza, a szövetségek száma); hat nem igazolt tündérsakk-fogalom mostantól „nem igazolt fogalom” megjegyzést kap. További kb. 2700 felirat lefordítva a 7 nem román nyelvre (összesen 3183 sor); a tulajdonnevek, évszámok és mozaikszavak változatlanok.
+
+### v14.6.2 — 2026. október 19.
+- A „Sakkasztal” és funkciói (kétszemélyes játék, elemző, a nap feladványa, „miért nem léphetek?”, billentyűzetes és hangos játék, helyi Elo-verseny) megvannak a jelenlegi verzióban: a szkriptet egy korábbi takarításkor tévedésből eltávolították, és (14.6.0) azonos viselkedéssel helyreállítottuk; a teszteket frissítettük. Az asztal szövegei mostantól az oldal nyelvét követik (a különálló nyelvi beállítást eltávolítottuk).
+- Az atlasz tartalma 8 nyelvre lefordítva: mind az 1005 bejegyzés szabályszövege és alcíme, a tanfolyam, az „Erről az atlaszról” szakasz, a meta leírás és mintegy 430 általános címke; javítva: a „ȘAH” címet egyes nyelveken tévesen a sakkadás („check”) értelmében fordította az alkalmazás.
 
 ### v14.4.0 — 2026. október 14. (8. kör, C1a)
 - „Sakkasztal” a hagyományos sakkhoz: kétszemélyes P2P játék (szerver nélkül), helyi elemző, a dátum által meghatározott napi feladvány, „miért nem léphetek?”, billentyűzetes játék hangbemondással, helyi Elo-verseny; 8 nyelv az új szövegekhez.

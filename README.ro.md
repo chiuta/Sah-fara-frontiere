@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 14.6.2 · **Ultima actualizare:** 2026-10-19
+**Versiune:** 14.6.3 · **Ultima actualizare:** 2026-10-21
 
 Limbile interfeței: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -14,7 +14,7 @@ Atlas/enciclopedie de variante de șah: 706 variante și 299 intrări de lexicon
 
 ## Ce este
 
-Șah fără frontiere este un atlas dintr-un singur fișier HTML (v14.4.0, actualizat la 14 octombrie 2026; realizat pentru atelierul Atlantykron 2026) cu 1005 intrări: 706 variante de șah (online, moderne, istorice, regionale, geometrice, fairy, pe table mari, cu AI) și 299 de termeni de lexicon (istorie, AI, jucători, deschideri). Potrivit secțiunii „Despre acest atlas", fișierul este generat dintr-un script Python și un JSON de date, fără dependențe la rulare, cu implementare în iterații asistate de AI.
+Șah fără frontiere este un atlas dintr-un singur fișier HTML (v14.6.3, actualizat la 21 octombrie 2026; conținutul atlasului este datat 14 octombrie 2026; realizat pentru atelierul Atlantykron 2026) cu 1005 intrări: 706 variante de șah (online, moderne, istorice, regionale, geometrice, fairy, pe table mari, cu AI) și 299 de termeni de lexicon (istorie, AI, jucători, deschideri). Potrivit secțiunii „Despre acest atlas", fișierul este generat dintr-un script Python și un JSON de date, fără dependențe la rulare, cu implementare în iterații asistate de AI.
 
 ## Funcții
 
@@ -40,7 +40,7 @@ Se deschid din butonul „Masa de șah” de lângă „Curs”, într-un dialog
 
 **Motorul și puterea lui.** Nivelurile: ușor = adâncime 1 cu alegere dintre mutări aproape egale; mediu = adâncime 2; avansat = adâncime 5 cu buget de noduri. În meciuri de control (3 deschideri aleatoare × 2 culori, 160 de semi-mutări): ușor a câștigat 12–0 față de mutări aleatoare, avansat a câștigat 6–0 față de mediu și 6–0 față de ușor. Eșantioane mici: indică ordinea, nu o putere măsurabilă în Elo. Remiza prin triplă repetare, regula celor 50 de mutări și material insuficient se aplică automat. Fără ceas.
 
-**Limbi.** Interfața este în română, engleză, franceză, italiană, spaniolă, portugheză, maghiară și germană; **traducerile în afară de română și engleză sunt automate și neverificate de vorbitori nativi**. Selectorul de limbă din bara de controale schimbă limba interfeței (conținutul lung al atlasului rămâne în română); dialogurile kitului FFF urmează limba paginii.
+**Limbi.** Interfața, dialogurile kitului FFF și Masa de șah urmează limba paginii și sunt disponibile în română, engleză, franceză, italiană, spaniolă, portugheză, maghiară și germană; selectorul din bara de controale (sau cel din fila Accesibilitate a mesei) schimbă limba întregii pagini. Conținutul atlasului este tradus astfel: textul regulilor și subtitlul tuturor celor 1005 intrări (706 variante + 299 de intrări de lexicon) există în toate cele 8 limbi, la fel cursul, secțiunea „Despre acest atlas”, descrierea meta și circa 430 de etichete generice. **Rămân în română:** circa 4000 de etichete unice (fraze izolate, de ex. „960 poziții”), unele etichete care sunt nume sau termeni englezești (Lichess, Streaming, …) și, firesc, numele proprii (jucători, motoare, produse, organizații, deschideri) și acronimele (FIDE, NNUE…). **Traducerile în afară de română și engleză sunt automate și neverificate de vorbitori nativi.**
 
 Teste: `node tests/fff-r8.test.mjs` (Playwright, rețea blocată, 2 pagini pentru P2P, axe, 1280×800 și 360×740) și `node tests/engine.test.mjs` (motorul în Node: perft, FEN, SAN, remize, mat în N, explicații).
 
@@ -56,7 +56,7 @@ Teste: `node tests/fff-r8.test.mjs` (Playwright, rețea blocată, 2 pagini pentr
 ## Confidențialitate și rețea
 
 - Local: în `localStorage`, cu prefixul `sff:` — starea atlasului (`sff:state:v2`), parcursul (`sff:curriculum:v1`), tema, mărimea textului, sunetul, stilul notației și glifelor, insignele, statisticile jocurilor, ELO-ul jucătorului, starea jocului curent și marcajele „bun venit"/tur văzut.
-- Funcțiile din „Masa de șah” folosesc chei separate `sff_r8_` (preferințe de anunțuri/voce, limba textelor noi, turneu, serie zilnică, cache-ul problemei zilei); kitul FFF adaugă copie de siguranță (export/import/ștergere) și fereastra „Transparență” din numărul versiunii.
+- Funcțiile din „Masa de șah” folosesc chei separate `sff_r8_` (preferințe de anunțuri/voce, turneu, serie zilnică, cache-ul problemei zilei); kitul FFF adaugă copie de siguranță (export/import/ștergere) și fereastra „Transparență” din numărul versiunii.
 - Singura comunicare de rețea nouă este jocul în doi opțional, prin WebRTC direct între cei doi jucători, cu semnalizare manuală și, doar dacă introduci unul, un server STUN (egress declarat: 0).
 - Rețea: în codul verificat nu există apeluri `fetch` sau scripturi/fonturi încărcate de pe gazde externe. Fișele conțin linkuri către surse (de exemplu Wikipedia, FIDE Handbook, Lichess, chessvariants.com), care se deschid doar dacă le apeși. Textul aplicației afirmă: „Funcționează offline, fără tracking, fără reclame".
 - Motorul AI rulează local în browser.
@@ -66,6 +66,13 @@ Teste: `node tests/fff-r8.test.mjs` (Playwright, rețea blocată, 2 pagini pentr
 Descarcă `index.html` (aproximativ 2,4 MB) și deschide-l în browser; funcționează fără internet. Doar linkurile către surse externe necesită conexiune.
 
 ## Istoric / Changelog
+
+### v14.6.3 — 21 octombrie 2026
+- Verificate și corectate 26 de intrări din atlas (de ex. Olimpiada neoficială de la München 1936, biografia lui Steinitz, numărul de federații); șase concepte de șah feeric neatestate poartă acum nota „concept neatestat”. Încă ~2.700 de etichete traduse în cele 7 limbi non-române (3.183 de rânduri în total); numele proprii, anii și acronimele rămân neschimbate.
+
+### v14.6.2 — 19 octombrie 2026
+- „Masa de șah” și funcțiile ei (joc în doi, analizor, provocarea zilei, „de ce nu pot muta?”, joc cu tastatura și audio, turneu Elo local) sunt prezente în versiunea curentă: scriptul fusese eliminat din greșeală într-o curățare anterioară și a fost restaurat (14.6.0) cu același comportament; testele au fost actualizate. Textele mesei urmează acum limba paginii (preferința separată de limbă a fost eliminată).
+- Conținutul atlasului tradus în 8 limbi: textul regulilor și subtitlul tuturor celor 1005 intrări, cursul, „Despre acest atlas”, descrierea meta și circa 430 de etichete generice; corectat: în limbile traduse titlul „ȘAH” era redat greșit prin „check” (șahul din partidă) în loc de „chess”.
 
 ### v14.4.0 — 14 octombrie 2026 (runda 8, C1a)
 - „Masa de șah” pentru șahul standard: joc în doi P2P (fără server), analizor local, provocarea zilei determinată de dată, „de ce nu pot muta?”, joc de la tastatură cu anunțuri audio, turneu Elo local; 8 limbi pentru textele noi.

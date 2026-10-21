@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · **Deutsch** · [Magyar](README.hu.md)
 
-**Version:** 14.6.2 · **Zuletzt aktualisiert:** 2026-10-19
+**Version:** 14.6.3 · **Zuletzt aktualisiert:** 2026-10-21
 
 Oberflächensprachen: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -14,7 +14,7 @@ Atlas/Enzyklopädie von Schachvarianten: 706 Varianten und 299 Lexikoneinträge,
 
 ## Was es ist
 
-Șah fără frontiere („Schach ohne Grenzen“) ist ein Atlas in einer einzigen HTML-Datei (v14.4.0, aktualisiert am 14. Oktober 2026; für den Workshop Atlantykron 2026 erstellt) mit 1005 Einträgen: 706 Schachvarianten (Online, modern, historisch, regional, geometrisch, Märchenschach, auf großen Brettern, mit KI) und 299 Lexikonbegriffe (Geschichte, KI, Spieler, Eröffnungen). Laut dem Abschnitt „Über diesen Atlas“ wird die Datei aus einem Python-Skript und einer JSON-Datendatei erzeugt, ohne Laufzeitabhängigkeiten, mit Umsetzung in KI-gestützten Iterationen.
+Șah fără frontiere („Schach ohne Grenzen“) ist ein Atlas in einer einzigen HTML-Datei (v14.6.3, aktualisiert am 21. Oktober 2026; der Atlasinhalt ist auf den 14. Oktober 2026 datiert; für den Workshop Atlantykron 2026 erstellt) mit 1005 Einträgen: 706 Schachvarianten (Online, modern, historisch, regional, geometrisch, Märchenschach, auf großen Brettern, mit KI) und 299 Lexikonbegriffe (Geschichte, KI, Spieler, Eröffnungen). Laut dem Abschnitt „Über diesen Atlas“ wird die Datei aus einem Python-Skript und einer JSON-Datendatei erzeugt, ohne Laufzeitabhängigkeiten, mit Umsetzung in KI-gestützten Iterationen.
 
 ## Funktionen
 
@@ -40,7 +40,7 @@ Sie öffnen sich über die Schaltfläche „Schachtisch“ neben „Kurs“ in e
 
 **Die Engine und ihre Stärke.** Die Stufen: leicht = Tiefe 1 mit Auswahl unter nahezu gleichwertigen Zügen; mittel = Tiefe 2; fortgeschritten = Tiefe 5 mit Knotenbudget. In Kontrollpartien (3 zufällige Eröffnungen × 2 Farben, 160 Halbzüge): leicht gewann 12–0 gegen Zufallszüge, fortgeschritten gewann 6–0 gegen mittel und 6–0 gegen leicht. Kleine Stichproben: Sie zeigen die Rangfolge, keine in Elo messbare Stärke. Remis durch dreifache Stellungswiederholung, die 50-Züge-Regel und unzureichendes Material werden automatisch angewandt. Keine Uhr.
 
-**Sprachen.** Die Oberfläche liegt auf Rumänisch, Englisch, Französisch, Italienisch, Spanisch, Portugiesisch, Ungarisch und Deutsch vor; **die Übersetzungen außer Rumänisch und Englisch sind automatisch und nicht von Muttersprachlern geprüft**. Die Sprachauswahl in der Steuerleiste ändert die Oberflächensprache (die langen Atlasinhalte bleiben auf Rumänisch); die Dialoge des FFF-Kits folgen der Seitensprache.
+**Sprachen.** Die Oberfläche, die Dialoge des FFF-Kits und der Schachtisch folgen der Seitensprache und liegen auf Rumänisch, Englisch, Französisch, Italienisch, Spanisch, Portugiesisch, Ungarisch und Deutsch vor; die Sprachauswahl in der Steuerleiste (oder die im Tab Barrierefreiheit des Tisches) ändert die Sprache der gesamten Seite. Die Atlasinhalte sind wie folgt übersetzt: Regeltext und Untertitel aller 1005 Einträge (706 Varianten + 299 Lexikoneinträge) gibt es in allen 8 Sprachen, ebenso den Kurs, den Abschnitt „Über diesen Atlas“, die Meta-Beschreibung und rund 430 allgemeine Schlagwörter. **Weiterhin auf Rumänisch:** rund 4000 einmalige Schlagwörter (einzelne Wendungen, z. B. „960 Positionen“), einige Schlagwörter, die englische Namen oder Begriffe sind (Lichess, Streaming, …) und natürlich Eigennamen (Spieler, Engines, Produkte, Organisationen, Eröffnungen) und Akronyme (FIDE, NNUE…). **Die Übersetzungen außer Rumänisch und Englisch sind automatisch und nicht von Muttersprachlern geprüft.**
 
 Tests: `node tests/fff-r8.test.mjs` (Playwright, Netzwerk gesperrt, 2 Seiten für P2P, axe, 1280×800 und 360×740) und `node tests/engine.test.mjs` (die Engine in Node: Perft, FEN, SAN, Remis, Matt in N, Erklärungen).
 
@@ -56,7 +56,7 @@ Tests: `node tests/fff-r8.test.mjs` (Playwright, Netzwerk gesperrt, 2 Seiten fü
 ## Datenschutz und Netzwerk
 
 - Lokal: in `localStorage`, mit dem Präfix `sff:` — der Zustand des Atlas (`sff:state:v2`), der Kurs (`sff:curriculum:v1`), das Thema, die Textgröße, der Ton, der Stil von Notation und Glyphen, die Abzeichen, die Spielstatistiken, das ELO des Spielers, der Zustand des laufenden Spiels und die Markierungen „Willkommen“/Tour gesehen.
-- Die Funktionen des „Schachtischs“ verwenden gesonderte `sff_r8_`-Schlüssel (Ansage-/Spracheinstellungen, Sprache der neuen Texte, Turnier, tägliche Serie, Cache der Aufgabe des Tages); das FFF-Kit fügt eine Sicherung (Export/Import/Löschen) und das Fenster „Transparenz“ über die Versionsnummer hinzu.
+- Die Funktionen des „Schachtischs“ verwenden gesonderte `sff_r8_`-Schlüssel (Ansage-/Spracheinstellungen, Turnier, tägliche Serie, Cache der Aufgabe des Tages); das FFF-Kit fügt eine Sicherung (Export/Import/Löschen) und das Fenster „Transparenz“ über die Versionsnummer hinzu.
 - Die einzige neue Netzwerkkommunikation ist das optionale Zwei-Personen-Spiel über WebRTC direkt zwischen den beiden Spielern, mit manueller Signalisierung und, nur wenn du einen eingibst, einem STUN-Server (deklarierter Egress: 0).
 - Netzwerk: Im geprüften Code gibt es keine `fetch`-Aufrufe und keine von externen Hosts geladenen Skripte/Schriften. Die Blätter enthalten Links zu Quellen (zum Beispiel Wikipedia, FIDE Handbook, Lichess, chessvariants.com), die sich nur per Klick öffnen. Der Anwendungstext erklärt: „Funktioniert offline, ohne Tracking, ohne Werbung“.
 - Die KI-Engine läuft lokal im Browser.
@@ -66,6 +66,13 @@ Tests: `node tests/fff-r8.test.mjs` (Playwright, Netzwerk gesperrt, 2 Seiten fü
 Lade `index.html` (etwa 2,4 MB) herunter und öffne sie in einem Browser; sie funktioniert ohne Internet. Nur die Links zu externen Quellen benötigen eine Verbindung.
 
 ## Verlauf / Changelog
+
+### v14.6.3 — 21. Oktober 2026
+- 26 Atlaseinträge geprüft und korrigiert (z. B. die inoffizielle Olympiade München 1936, Steinitz' Biografie, die Zahl der Verbände); sechs nicht belegte Märchenschach-Konzepte tragen nun den Hinweis „Konzept nicht belegt“. Rund 2.700 weitere Bezeichnungen in die 7 nichtrumänischen Sprachen übersetzt (insgesamt 3.183 Zeilen); Eigennamen, Jahreszahlen und Akronyme bleiben unverändert.
+
+### v14.6.2 — 19. Oktober 2026
+- Der „Schachtisch“ und seine Funktionen (Zwei-Personen-Spiel, Analysator, Aufgabe des Tages, „warum kann ich nicht ziehen?“, Tastatur- und Audiospiel, lokales Elo-Turnier) sind in der aktuellen Version vorhanden: Das Skript war bei einer früheren Bereinigung versehentlich entfernt worden und wurde (14.6.0) mit demselben Verhalten wiederhergestellt; die Tests wurden aktualisiert. Die Texte des Tisches folgen jetzt der Seitensprache (die separate Spracheinstellung wurde entfernt).
+- Atlasinhalt in 8 Sprachen übersetzt: Regeltext und Untertitel aller 1005 Einträge, der Kurs, „Über diesen Atlas“, die Meta-Beschreibung und rund 430 allgemeine Schlagwörter; korrigiert: Der Titel „ȘAH“ wurde in einigen Sprachen fälschlich als Schachgebot („check“) übersetzt.
 
 ### v14.4.0 — 14. Oktober 2026 (Runde 8, C1a)
 - „Schachtisch“ für Standardschach: P2P-Zwei-Personen-Spiel (ohne Server), lokaler Analysator, vom Datum bestimmte Aufgabe des Tages, „warum kann ich nicht ziehen?“, Tastaturspiel mit Audioansagen, lokales Elo-Turnier; 8 Sprachen für die neuen Texte.

@@ -2,7 +2,7 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 14.6.2 · **Last updated:** 2026-10-19
+**Version:** 14.6.3 · **Last updated:** 2026-10-21
 
 Interface languages: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -14,7 +14,7 @@ An atlas/encyclopedia of chess variants: 706 variants and 299 lexicon entries, w
 
 ## What it is
 
-Șah fără frontiere ("Chess without borders") is an atlas in a single HTML file (v14.4.0, updated on 14 October 2026; made for the Atlantykron 2026 workshop) with 1005 entries: 706 chess variants (online, modern, historical, regional, geometric, fairy, large-board, with AI) and 299 lexicon terms (history, AI, players, openings). According to the "About this atlas" section, the file is generated from a Python script and a JSON data file, with no runtime dependencies, implemented in AI-assisted iterations.
+Șah fără frontiere ("Chess without borders") is an atlas in a single HTML file (v14.6.3, last updated on 21 October 2026; the atlas content is dated 14 October 2026; made for the Atlantykron 2026 workshop) with 1005 entries: 706 chess variants (online, modern, historical, regional, geometric, fairy, large-board, with AI) and 299 lexicon terms (history, AI, players, openings). According to the "About this atlas" section, the file is generated from a Python script and a JSON data file, with no runtime dependencies, implemented in AI-assisted iterations.
 
 ## Features
 
@@ -27,9 +27,9 @@ An atlas/encyclopedia of chess variants: 706 variants and 299 lexicon entries, w
 - Dark/light theme, three text sizes, zoom.
 - "Progress backup" (in "About this atlas"): exports and imports to/from a JSON file the progress, badges, ELO and local preferences (the `sff:` keys); on import the file is validated and confirmation is requested.
 
-## New features (14.4.0) — "Game table"
+## New features (14.4.0) — "Chess table"
 
-They open from the "Game table" button next to "Course", in a dialog with five tabs. **Scope:** all the new features concern **standard chess** (FIDE rules, own engine, validated by perft); the 706 variants in the atlas are not covered (they keep their "▶ Play" mode unchanged).
+They open from the "Chess table" button next to "Course", in a dialog with five tabs. **Scope:** all the new features concern **standard chess** (FIDE rules, own engine, validated by perft); the 706 variants in the atlas are not covered (they keep their "▶ Play" mode unchanged).
 
 - **Two-player game via FFF.p2p** — two people, WebRTC directly between browsers, **without a server**: you manually exchange two codes (copy/paste or QR code), then the game runs in "lockstep": the host (White) validates and numbers every move, the guest (Black) applies it after the host's echo; on divergence the full state is resent. Draw and new game by offer with accept/decline, resignation, PGN export, sending the game to the analyzer. **Limits:** no chess clock; no move takeback; no chat; the game does not resume after the page is reloaded; the opponents see each other's IP address; symmetric NATs (mobile/corporate networks) require STUN/TURN, which can be added optionally (empty by default) — in that case the public IP reaches that server.
 - **Local analyzer** — "Analyze position" (evaluation in pawns, best move, ranking of the top moves, forced mate announced explicitly when found) and "Analyze game" (marks the moves much weaker than the best one). You can load/export FEN and PGN. Fixed-depth alpha-beta search (deterministic, independent of the clock); it is **not** a tournament engine (it is not Stockfish) and the evaluation is approximate.
@@ -40,7 +40,7 @@ They open from the "Game table" button next to "Course", in a dialog with five t
 
 **The engine and its strength.** The levels: easy = depth 1 with a choice among nearly equal moves; medium = depth 2; advanced = depth 5 with a node budget. In control matches (3 random openings × 2 colours, 160 half-moves): easy won 12–0 against random moves, advanced won 6–0 against medium and 6–0 against easy. Small samples: they indicate the order, not a measurable strength in Elo. Draw by threefold repetition, the 50-move rule and insufficient material are applied automatically. No clock.
 
-**Languages.** The interface is in Romanian, English, French, Italian, Spanish, Portuguese, Hungarian and German; **the translations other than Romanian and English are automatic and not verified by native speakers**. The language selector in the controls bar switches the interface language (the long atlas content remains in Romanian); the FFF kit dialogs follow the page language.
+**Languages.** The interface, the dialogs of the FFF kit and the Chess table follow the page language and are available in Romanian, English, French, Italian, Spanish, Portuguese, Hungarian and German; the selector in the controls bar (or the one in the table's Accessibility tab) switches the whole page. The atlas content is translated as follows: the rules text and the subtitle of all 1005 entries (706 variants + 299 lexicon entries) exist in all 8 languages, as do the course, the "About this atlas" section, the meta description and about 430 generic tags. **Still in Romanian:** about 4000 one-off tags (unique phrases, e.g. "960 positions"), some tags that are English names or terms (Lichess, Streaming, …) and, naturally, proper names (players, engines, products, organisations, openings) and acronyms (FIDE, NNUE…). **The translations other than Romanian and English are automatic and not verified by native speakers.**
 
 Tests: `node tests/fff-r8.test.mjs` (Playwright, network blocked, 2 pages for P2P, axe, 1280×800 and 360×740) and `node tests/engine.test.mjs` (the engine in Node: perft, FEN, SAN, draws, mate in N, explanations).
 
@@ -56,7 +56,7 @@ Tests: `node tests/fff-r8.test.mjs` (Playwright, network blocked, 2 pages for P2
 ## Privacy and network
 
 - Local: in `localStorage`, with the prefix `sff:` — the atlas state (`sff:state:v2`), the course (`sff:curriculum:v1`), the theme, text size, sound, notation and glyph style, the badges, game statistics, the player's ELO, the current game state and the "welcome"/seen-tour markers.
-- The "Game table" features use separate `sff_r8_` keys (announcement/voice preferences, language of the new texts, tournament, daily streak, the cache of the problem of the day); the FFF kit adds backup (export/import/delete) and the "Transparency" window from the version number.
+- The "Chess table" features use separate `sff_r8_` keys (announcement/voice preferences, tournament, daily streak, the cache of the problem of the day); the FFF kit adds backup (export/import/delete) and the "Transparency" window from the version number.
 - The only new network communication is the optional two-player game, through WebRTC directly between the two players, with manual signalling and, only if you enter one, a STUN server (declared egress: 0).
 - Network: in the checked code there are no `fetch` calls and no scripts/fonts loaded from external hosts. The sheets contain links to sources (for example Wikipedia, FIDE Handbook, Lichess, chessvariants.com), which open only if you click them. The application text states: "Works offline, no tracking, no ads".
 - The AI engine runs locally in the browser.
@@ -67,8 +67,15 @@ Download `index.html` (about 2.4 MB) and open it in a browser; it works without 
 
 ## History / Changelog
 
+### v14.6.3 — 21 October 2026
+- Fact-checked and corrected 26 atlas entries (e.g. the unofficial 1936 Munich Olympiad, Steinitz's biography, the federation count); six unattested fairy-chess concepts now carry a "concept not attested" note. About 2,700 more labels translated into the 7 non-Romanian languages (3,183 rows in total); proper names, years and acronyms stay unchanged.
+
+### v14.6.2 — 19 October 2026
+- The "Chess table" and its features (two-player game, analyzer, challenge of the day, "why can't I move?", keyboard and audio play, local Elo tournament) are present in the current version: the script had been removed by mistake in an earlier cleanup and was restored (14.6.0) with the same behaviour; the tests were updated. The table's texts now follow the page language (the separate language preference was removed).
+- Atlas content translated into 8 languages: rules text and subtitle of all 1005 entries, the course, "About this atlas", the meta description and about 430 generic tags; fixed: the title "ȘAH" was wrongly translated as "check" (the chess move) in some languages.
+
 ### v14.4.0 — 14 October 2026 (round 8, C1a)
-- "Game table" for standard chess: two-player P2P game (no server), local analyzer, date-determined challenge of the day, "why can't I move?", keyboard play with audio announcements, local Elo tournament; 8 languages for the new texts.
+- "Chess table" for standard chess: two-player P2P game (no server), local analyzer, date-determined challenge of the day, "why can't I move?", keyboard play with audio announcements, local Elo tournament; 8 languages for the new texts.
 - FFF kit (core, label, bundle, qr, p2p, tts) with `app.json`; CSP with recomputed hashes; backup and the "Transparency" window from the version number; tests `tests/fff-r8.test.mjs` and `tests/engine.test.mjs`.
 - The atlas (1005 entries) and the existing "▶ Play" mode are unchanged (verified in a test).
 
@@ -107,7 +114,7 @@ Alexio — Alexandru-Ionuț Chiuță, contact: alexio@trom.tf. The application p
 
 ## English summary
 
-Șah fără frontiere is a single-file chess-variants atlas: 706 variants plus 299 lexicon entries, with search, filters, playable engines (local AI, PGN/FEN export, local ELO), a 7-day guided course, badges and CSV/BibTeX export. Since 14.4.0 a "Game table" for standard chess adds two-player play over WebRTC (manual signalling, no server), a simple local analyzer, a deterministic daily mate puzzle, "why can't I move?" explanations, keyboard play with spoken announcements and a local Elo tournament (the 706 variants are not covered). Everything runs locally; progress is kept in localStorage (`sff:` keys) and no external requests were found in the code. Licensed MIT for the author's own contribution (see LICENSE); third-party-derived summaries keep their source licences.
+Șah fără frontiere is a single-file chess-variants atlas: 706 variants plus 299 lexicon entries, with search, filters, playable engines (local AI, PGN/FEN export, local ELO), a 7-day guided course, badges and CSV/BibTeX export. Since 14.4.0 a "Chess table" for standard chess adds two-player play over WebRTC (manual signalling, no server), a simple local analyzer, a deterministic daily mate puzzle, "why can't I move?" explanations, keyboard play with spoken announcements and a local Elo tournament (the 706 variants are not covered). Everything runs locally; progress is kept in localStorage (`sff:` keys) and no external requests were found in the code. Licensed MIT for the author's own contribution (see LICENSE); third-party-derived summaries keep their source licences.
 
 ## Audit
 

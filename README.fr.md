@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · **Français** · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version :** 14.6.2 · **Dernière mise à jour :** 2026-10-19
+**Version :** 14.6.3 · **Dernière mise à jour :** 2026-10-21
 
 Langues de l'interface : **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -14,7 +14,7 @@ Atlas/encyclopédie de variantes d'échecs : 706 variantes et 299 entrées de le
 
 ## Présentation
 
-Șah fără frontiere (« Échecs sans frontières ») est un atlas dans un seul fichier HTML (v14.4.0, mis à jour le 14 octobre 2026 ; réalisé pour l'atelier Atlantykron 2026) comptant 1005 entrées : 706 variantes d'échecs (en ligne, modernes, historiques, régionales, géométriques, féeriques, sur grands échiquiers, avec IA) et 299 termes de lexique (histoire, IA, joueurs, ouvertures). Selon la section « À propos de cet atlas », le fichier est généré à partir d'un script Python et d'un JSON de données, sans dépendances à l'exécution, avec une mise en œuvre par itérations assistées par IA.
+Șah fără frontiere (« Échecs sans frontières ») est un atlas dans un seul fichier HTML (v14.6.3, mis à jour le 21 octobre 2026 ; le contenu de l'atlas est daté du 14 octobre 2026 ; réalisé pour l'atelier Atlantykron 2026) comptant 1005 entrées : 706 variantes d'échecs (en ligne, modernes, historiques, régionales, géométriques, féeriques, sur grands échiquiers, avec IA) et 299 termes de lexique (histoire, IA, joueurs, ouvertures). Selon la section « À propos de cet atlas », le fichier est généré à partir d'un script Python et d'un JSON de données, sans dépendances à l'exécution, avec une mise en œuvre par itérations assistées par IA.
 
 ## Fonctionnalités
 
@@ -27,9 +27,9 @@ Atlas/encyclopédie de variantes d'échecs : 706 variantes et 299 entrées de le
 - Thème sombre/clair, trois tailles de texte, zoom.
 - « Sauvegarde de la progression » (dans « À propos de cet atlas ») : exporte et importe dans un fichier JSON le parcours, les badges, l'ELO et les préférences locales (les clés `sff:`) ; à l'import, le fichier est validé et une confirmation est demandée.
 
-## Nouvelles fonctionnalités (14.4.0) — « Table de jeu »
+## Nouvelles fonctionnalités (14.4.0) — « Table d'échecs »
 
-Elles s'ouvrent depuis le bouton « Table de jeu » à côté de « Cours », dans une boîte de dialogue à cinq onglets. **Périmètre :** toutes les nouvelles fonctionnalités concernent les **échecs standard** (règles FIDE, moteur propre, validé par perft) ; les 706 variantes de l'atlas ne sont pas couvertes (elles conservent inchangé leur mode « ▶ Jouer »).
+Elles s'ouvrent depuis le bouton « Table d'échecs » à côté de « Cours », dans une boîte de dialogue à cinq onglets. **Périmètre :** toutes les nouvelles fonctionnalités concernent les **échecs standard** (règles FIDE, moteur propre, validé par perft) ; les 706 variantes de l'atlas ne sont pas couvertes (elles conservent inchangé leur mode « ▶ Jouer »).
 
 - **Partie à deux via FFF.p2p** — deux personnes, WebRTC directement entre navigateurs, **sans serveur** : vous échangez manuellement deux codes (copier/coller ou code QR), puis la partie se déroule en « lockstep » : l'hôte (les Blancs) valide et numérote chaque coup, l'invité (les Noirs) l'applique après l'écho de l'hôte ; en cas de divergence, l'état complet est renvoyé. Nulle et nouvelle partie par offre avec acceptation/refus, abandon, export PGN, envoi de la partie à l'analyseur. **Limites :** pas de pendule ; pas d'annulation de coup ; pas de chat ; la partie ne reprend pas après le rechargement de la page ; les adversaires voient mutuellement leur adresse IP ; les NAT symétriques (réseaux mobiles/d'entreprise) exigent STUN/TURN, qui peut être ajouté en option (vide par défaut) — l'IP publique parvient alors à ce serveur.
 - **Analyseur local** — « Analyser la position » (évaluation en pions, meilleur coup, classement des meilleurs coups, mat forcé annoncé explicitement lorsqu'il est trouvé) et « Analyser la partie » (signale les coups bien plus faibles que le meilleur). Vous pouvez charger/exporter FEN et PGN. Recherche alpha-bêta à profondeur fixe (déterministe, indépendante de l'horloge) ; ce **n'est pas** un moteur de tournoi (ce n'est pas Stockfish) et l'évaluation est approximative.
@@ -40,7 +40,7 @@ Elles s'ouvrent depuis le bouton « Table de jeu » à côté de « Cours », da
 
 **Le moteur et sa force.** Les niveaux : facile = profondeur 1 avec choix parmi des coups presque égaux ; moyen = profondeur 2 ; avancé = profondeur 5 avec budget de nœuds. Lors de parties de contrôle (3 ouvertures aléatoires × 2 couleurs, 160 demi-coups) : le niveau facile a gagné 12–0 contre des coups aléatoires, l'avancé a gagné 6–0 contre le moyen et 6–0 contre le facile. Petits échantillons : ils indiquent l'ordre, non une force mesurable en Elo. La nulle par triple répétition, la règle des 50 coups et le matériel insuffisant s'appliquent automatiquement. Pas de pendule.
 
-**Langues.** L'interface est en roumain, anglais, français, italien, espagnol, portugais, hongrois et allemand ; **les traductions autres que le roumain et l'anglais sont automatiques et non vérifiées par des locuteurs natifs**. Le sélecteur de langue de la barre de contrôles change la langue de l'interface (le contenu long de l'atlas reste en roumain) ; les boîtes de dialogue du kit FFF suivent la langue de la page.
+**Langues.** L'interface, les boîtes de dialogue du kit FFF et la Table d'échecs suivent la langue de la page et sont disponibles en roumain, anglais, français, italien, espagnol, portugais, hongrois et allemand ; le sélecteur de la barre de contrôles (ou celui de l'onglet Accessibilité de la table) change la langue de toute la page. Le contenu de l'atlas est traduit ainsi : le texte des règles et le sous-titre des 1005 entrées (706 variantes + 299 entrées de lexique) existent dans les 8 langues, de même que le cours, la section « À propos de cet atlas », la méta-description et environ 430 étiquettes génériques. **Restent en roumain :** environ 4000 étiquettes uniques (phrases isolées, par ex. « 960 positions »), certaines étiquettes qui sont des noms ou termes anglais (Lichess, Streaming, …) et, naturellement, les noms propres (joueurs, moteurs, produits, organisations, ouvertures) et les acronymes (FIDE, NNUE…). **Les traductions autres que le roumain et l'anglais sont automatiques et non vérifiées par des locuteurs natifs.**
 
 Tests : `node tests/fff-r8.test.mjs` (Playwright, réseau bloqué, 2 pages pour le P2P, axe, 1280×800 et 360×740) et `node tests/engine.test.mjs` (le moteur sous Node : perft, FEN, SAN, nulles, mat en N, explications).
 
@@ -56,7 +56,7 @@ Tests : `node tests/fff-r8.test.mjs` (Playwright, réseau bloqué, 2 pages pour 
 ## Confidentialité et réseau
 
 - Local : dans `localStorage`, avec le préfixe `sff:` — l'état de l'atlas (`sff:state:v2`), le parcours (`sff:curriculum:v1`), le thème, la taille du texte, le son, le style de notation et de glyphes, les badges, les statistiques de jeu, l'ELO du joueur, l'état de la partie en cours et les marqueurs « bienvenue »/visite vue.
-- Les fonctionnalités de la « Table de jeu » utilisent des clés distinctes `sff_r8_` (préférences d'annonces/voix, langue des nouveaux textes, tournoi, série quotidienne, cache du problème du jour) ; le kit FFF ajoute une sauvegarde (export/import/suppression) et la fenêtre « Transparence » depuis le numéro de version.
+- Les fonctionnalités de la « Table d'échecs » utilisent des clés distinctes `sff_r8_` (préférences d'annonces/voix, tournoi, série quotidienne, cache du problème du jour) ; le kit FFF ajoute une sauvegarde (export/import/suppression) et la fenêtre « Transparence » depuis le numéro de version.
 - La seule nouvelle communication réseau est la partie à deux facultative, via WebRTC directement entre les deux joueurs, avec signalisation manuelle et, uniquement si vous en saisissez un, un serveur STUN (egress déclaré : 0).
 - Réseau : dans le code vérifié, il n'y a aucun appel `fetch` ni script/police chargé depuis des hôtes externes. Les fiches contiennent des liens vers des sources (par exemple Wikipedia, FIDE Handbook, Lichess, chessvariants.com), qui ne s'ouvrent que si vous cliquez dessus. Le texte de l'application affirme : « Fonctionne hors ligne, sans pistage, sans publicités ».
 - Le moteur d'IA s'exécute localement dans le navigateur.
@@ -67,8 +67,15 @@ Téléchargez `index.html` (environ 2,4 Mo) et ouvrez-le dans un navigateur ; il
 
 ## Historique / Changelog
 
+### v14.6.3 — 21 octobre 2026
+- 26 entrées de l'atlas vérifiées et corrigées (p. ex. l'Olympiade non officielle de Munich 1936, la biographie de Steinitz, le nombre de fédérations) ; six concepts d'échecs féeriques non attestés portent désormais la mention « concept non attesté ». Environ 2 700 libellés supplémentaires traduits dans les 7 langues non roumaines (3 183 lignes au total) ; noms propres, années et sigles restent inchangés.
+
+### v14.6.2 — 19 octobre 2026
+- La « Table d'échecs » et ses fonctionnalités (partie à deux, analyseur, défi du jour, « pourquoi ne puis-je pas jouer ? », jeu au clavier et audio, tournoi Elo local) sont présentes dans la version actuelle : le script avait été supprimé par erreur lors d'un nettoyage antérieur et a été restauré (14.6.0) avec le même comportement ; les tests ont été mis à jour. Les textes de la table suivent désormais la langue de la page (la préférence de langue distincte a été supprimée).
+- Contenu de l'atlas traduit en 8 langues : texte des règles et sous-titre des 1005 entrées, cours, « À propos de cet atlas », méta-description et environ 430 étiquettes génériques ; corrigé : le titre « ȘAH » était traduit à tort par « échec » (le coup) au lieu de « échecs » (le jeu).
+
 ### v14.4.0 — 14 octobre 2026 (tour 8, C1a)
-- « Table de jeu » pour les échecs standard : partie à deux P2P (sans serveur), analyseur local, défi du jour déterminé par la date, « pourquoi ne puis-je pas jouer ? », jeu au clavier avec annonces audio, tournoi Elo local ; 8 langues pour les nouveaux textes.
+- « Table d'échecs » pour les échecs standard : partie à deux P2P (sans serveur), analyseur local, défi du jour déterminé par la date, « pourquoi ne puis-je pas jouer ? », jeu au clavier avec annonces audio, tournoi Elo local ; 8 langues pour les nouveaux textes.
 - Kit FFF (core, label, bundle, qr, p2p, tts) avec `app.json` ; CSP avec hachages recalculés ; sauvegarde et fenêtre « Transparence » depuis le numéro de version ; tests `tests/fff-r8.test.mjs` et `tests/engine.test.mjs`.
 - L'atlas (1005 entrées) et le mode « ▶ Jouer » existant sont inchangés (vérifié par test).
 
@@ -106,7 +113,7 @@ Les noms de jeux sont des dénominations commerciales de leurs titulaires, utili
 Alexio — Alexandru-Ionuț Chiuță, contact : alexio@trom.tf. L'application le présente comme auteur, développeur et musicien, avec des mentions du projet TROM, des éditions Tornada et du Centrul StrING.
 
 ## Résumé
-Șah fără frontiere est un atlas de variantes d'échecs en un seul fichier : 706 variantes plus 299 entrées de lexique, avec recherche, filtres, moteurs jouables (IA locale, export PGN/FEN, ELO local), un cours guidé de 7 jours, des badges et un export CSV/BibTeX. Depuis la 14.4.0, une « Table de jeu » pour les échecs standard ajoute le jeu à deux via WebRTC (signalisation manuelle, sans serveur), un analyseur local simple, un problème de mat quotidien déterministe, des explications « pourquoi ne puis-je pas jouer ? », le jeu au clavier avec annonces vocales et un tournoi Elo local (les 706 variantes ne sont pas couvertes). Tout s'exécute en local ; la progression est conservée dans localStorage (clés `sff:`) et aucune requête externe n'a été trouvée dans le code. Sous licence MIT pour la contribution propre de l'auteur (voir LICENSE) ; les résumés dérivés de tiers conservent leurs licences d'origine.
+Șah fără frontiere est un atlas de variantes d'échecs en un seul fichier : 706 variantes plus 299 entrées de lexique, avec recherche, filtres, moteurs jouables (IA locale, export PGN/FEN, ELO local), un cours guidé de 7 jours, des badges et un export CSV/BibTeX. Depuis la 14.4.0, une « Table d'échecs » pour les échecs standard ajoute le jeu à deux via WebRTC (signalisation manuelle, sans serveur), un analyseur local simple, un problème de mat quotidien déterministe, des explications « pourquoi ne puis-je pas jouer ? », le jeu au clavier avec annonces vocales et un tournoi Elo local (les 706 variantes ne sont pas couvertes). Tout s'exécute en local ; la progression est conservée dans localStorage (clés `sff:`) et aucune requête externe n'a été trouvée dans le code. Sous licence MIT pour la contribution propre de l'auteur (voir LICENSE) ; les résumés dérivés de tiers conservent leurs licences d'origine.
 
 ## Audit
 

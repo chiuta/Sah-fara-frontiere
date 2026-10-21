@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · **Español** · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versión:** 14.6.2 · **Última actualización:** 2026-10-19
+**Versión:** 14.6.3 · **Última actualización:** 2026-10-21
 
 Idiomas de la interfaz: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -14,7 +14,7 @@ Atlas/enciclopedia de variantes de ajedrez: 706 variantes y 299 entradas de léx
 
 ## Qué es
 
-Șah fără frontiere («Ajedrez sin fronteras») es un atlas en un solo archivo HTML (v14.4.0, actualizado el 14 de octubre de 2026; realizado para el taller Atlantykron 2026) con 1005 entradas: 706 variantes de ajedrez (en línea, modernas, históricas, regionales, geométricas, heterodoxas, en tableros grandes, con IA) y 299 términos de léxico (historia, IA, jugadores, aperturas). Según la sección «Acerca de este atlas», el archivo se genera a partir de un script de Python y un JSON de datos, sin dependencias en tiempo de ejecución, con implementación en iteraciones asistidas por IA.
+Șah fără frontiere («Ajedrez sin fronteras») es un atlas en un solo archivo HTML (v14.6.3, actualizado el 21 de octubre de 2026; el contenido del atlas está fechado el 14 de octubre de 2026; realizado para el taller Atlantykron 2026) con 1005 entradas: 706 variantes de ajedrez (en línea, modernas, históricas, regionales, geométricas, heterodoxas, en tableros grandes, con IA) y 299 términos de léxico (historia, IA, jugadores, aperturas). Según la sección «Acerca de este atlas», el archivo se genera a partir de un script de Python y un JSON de datos, sin dependencias en tiempo de ejecución, con implementación en iteraciones asistidas por IA.
 
 ## Funciones
 
@@ -40,7 +40,7 @@ Se abren desde el botón «Mesa de ajedrez» junto a «Curso», en un cuadro de 
 
 **El motor y su fuerza.** Los niveles: fácil = profundidad 1 con elección entre jugadas casi iguales; medio = profundidad 2; avanzado = profundidad 5 con presupuesto de nodos. En partidas de control (3 aperturas aleatorias × 2 colores, 160 semijugadas): el fácil ganó 12–0 frente a jugadas aleatorias, el avanzado ganó 6–0 frente al medio y 6–0 frente al fácil. Muestras pequeñas: indican el orden, no una fuerza medible en Elo. Las tablas por triple repetición, la regla de las 50 jugadas y el material insuficiente se aplican automáticamente. Sin reloj.
 
-**Idiomas.** La interfaz está en rumano, inglés, francés, italiano, español, portugués, húngaro y alemán; **las traducciones distintas del rumano y el inglés son automáticas y no están verificadas por hablantes nativos**. El selector de idioma de la barra de controles cambia el idioma de la interfaz (el contenido largo del atlas permanece en rumano); los cuadros de diálogo del kit FFF siguen el idioma de la página.
+**Idiomas.** La interfaz, los cuadros de diálogo del kit FFF y la Mesa de ajedrez siguen el idioma de la página y están disponibles en rumano, inglés, francés, italiano, español, portugués, húngaro y alemán; el selector de la barra de controles (o el de la pestaña Accesibilidad de la mesa) cambia el idioma de toda la página. El contenido del atlas está traducido así: el texto de las reglas y el subtítulo de las 1005 entradas (706 variantes + 299 entradas de léxico) existen en los 8 idiomas, igual que el curso, la sección «Acerca de este atlas», la meta descripción y unas 430 etiquetas genéricas. **Siguen en rumano:** unas 4000 etiquetas únicas (frases aisladas, p. ej. «960 posiciones»), algunas etiquetas que son nombres o términos ingleses (Lichess, Streaming, …) y, como es natural, los nombres propios (jugadores, motores, productos, organizaciones, aperturas) y las siglas (FIDE, NNUE…). **Las traducciones distintas del rumano y el inglés son automáticas y no están verificadas por hablantes nativos.**
 
 Pruebas: `node tests/fff-r8.test.mjs` (Playwright, red bloqueada, 2 páginas para P2P, axe, 1280×800 y 360×740) y `node tests/engine.test.mjs` (el motor en Node: perft, FEN, SAN, tablas, mate en N, explicaciones).
 
@@ -56,7 +56,7 @@ Pruebas: `node tests/fff-r8.test.mjs` (Playwright, red bloqueada, 2 páginas par
 ## Privacidad y red
 
 - Local: en `localStorage`, con el prefijo `sff:` — el estado del atlas (`sff:state:v2`), el recorrido (`sff:curriculum:v1`), el tema, el tamaño del texto, el sonido, el estilo de notación y de glifos, las insignias, las estadísticas de juego, el ELO del jugador, el estado de la partida en curso y las marcas de «bienvenida»/recorrido visto.
-- Las funciones de la «Mesa de ajedrez» usan claves distintas `sff_r8_` (preferencias de anuncios/voz, idioma de los textos nuevos, torneo, racha diaria, caché del problema del día); el kit FFF añade copia de seguridad (exportar/importar/borrar) y la ventana «Transparencia» desde el número de versión.
+- Las funciones de la «Mesa de ajedrez» usan claves distintas `sff_r8_` (preferencias de anuncios/voz, torneo, racha diaria, caché del problema del día); el kit FFF añade copia de seguridad (exportar/importar/borrar) y la ventana «Transparencia» desde el número de versión.
 - La única comunicación de red nueva es la partida de dos opcional, mediante WebRTC directamente entre los dos jugadores, con señalización manual y, solo si introduces uno, un servidor STUN (egress declarado: 0).
 - Red: en el código verificado no hay llamadas `fetch` ni scripts/fuentes cargados desde hosts externos. Las fichas contienen enlaces a fuentes (por ejemplo Wikipedia, FIDE Handbook, Lichess, chessvariants.com), que solo se abren si haces clic en ellos. El texto de la aplicación afirma: «Funciona sin conexión, sin rastreo, sin anuncios».
 - El motor de IA se ejecuta localmente en el navegador.
@@ -66,6 +66,13 @@ Pruebas: `node tests/fff-r8.test.mjs` (Playwright, red bloqueada, 2 páginas par
 Descarga `index.html` (unos 2,4 MB) y ábrelo en un navegador; funciona sin internet. Solo los enlaces a fuentes externas requieren conexión.
 
 ## Historial / Changelog
+
+### v14.6.3 — 21 de octubre de 2026
+- Verificadas y corregidas 26 entradas del atlas (p. ej. la Olimpiada no oficial de Múnich 1936, la biografía de Steinitz, el número de federaciones); seis conceptos de ajedrez heterodoxo no atestiguados llevan ahora la nota «concepto no atestiguado». Unas 2.700 etiquetas más traducidas a los 7 idiomas no rumanos (3.183 filas en total); nombres propios, años y siglas no cambian.
+
+### v14.6.2 — 19 de octubre de 2026
+- La «Mesa de ajedrez» y sus funciones (partida de dos, analizador, desafío del día, «¿por qué no puedo mover?», juego con teclado y audio, torneo Elo local) están presentes en la versión actual: el script se había eliminado por error en una limpieza anterior y se restauró (14.6.0) con el mismo comportamiento; se actualizaron las pruebas. Los textos de la mesa siguen ahora el idioma de la página (se eliminó la preferencia de idioma independiente).
+- Contenido del atlas traducido a 8 idiomas: texto de las reglas y subtítulo de las 1005 entradas, el curso, «Acerca de este atlas», la meta descripción y unas 430 etiquetas genéricas; corregido: el título «ȘAH» se traducía por error como «jaque» (la jugada) en lugar de «ajedrez».
 
 ### v14.4.0 — 14 de octubre de 2026 (ronda 8, C1a)
 - «Mesa de ajedrez» para el ajedrez estándar: partida de dos P2P (sin servidor), analizador local, desafío del día determinado por la fecha, «¿por qué no puedo mover?», juego con teclado con anuncios de audio, torneo Elo local; 8 idiomas para los textos nuevos.
