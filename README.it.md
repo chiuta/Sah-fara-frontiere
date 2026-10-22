@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · **Italiano** · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versione:** 14.6.5 · **Ultimo aggiornamento:** 2026-10-22
+**Versione:** 14.6.6 · **Ultimo aggiornamento:** 2026-10-22
 
 Lingue dell'interfaccia: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -67,6 +67,7 @@ Scarica `index.html` (circa 2,4 MB) e aprilo in un browser; funziona senza inter
 
 ## Cronologia / Changelog
 
+- **14.6.6 — 2026-10-22:** i suggerimenti e le etichette di accessibilità dei badge «variante sperimentale» e «gioco affine» sono ora tradotti in tutte le lingue (erano rimasti in rumeno).
 ### 14.6.5 — 2026-10-22
 - Correzioni di traduzione: il titolo della pagina e i meta tag seguono la lingua dell’interfaccia; le etichette dei pulsanti di filtro per tag e dei tipi di scacchiera sono tradotte nelle 8 lingue.
 

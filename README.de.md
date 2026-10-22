@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · **Deutsch** · [Magyar](README.hu.md)
 
-**Version:** 14.6.5 · **Zuletzt aktualisiert:** 2026-10-22
+**Version:** 14.6.6 · **Zuletzt aktualisiert:** 2026-10-22
 
 Oberflächensprachen: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -67,6 +67,7 @@ Lade `index.html` (etwa 2,4 MB) herunter und öffne sie in einem Browser; sie fu
 
 ## Verlauf / Changelog
 
+- **14.6.6 — 2026-10-22:** die Tooltips und Barrierefreiheits-Labels der Abzeichen „experimentelle Variante“ und „verwandtes Spiel“ sind jetzt in alle Sprachen übersetzt (sie waren rumänisch geblieben).
 ### 14.6.5 — 2026-10-22
 - Übersetzungskorrekturen: Seitentitel und Meta-Tags folgen der Oberflächensprache; Beschriftungen der Tag-Filter-Schaltflächen und der Brett-/Typangaben sind in allen 8 Sprachen übersetzt.
 

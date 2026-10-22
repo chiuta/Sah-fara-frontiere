@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · **Français** · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version :** 14.6.5 · **Dernière mise à jour :** 2026-10-22
+**Version :** 14.6.6 · **Dernière mise à jour :** 2026-10-22
 
 Langues de l'interface : **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -67,6 +67,7 @@ Téléchargez `index.html` (environ 2,4 Mo) et ouvrez-le dans un navigateur ; il
 
 ## Historique / Changelog
 
+- **14.6.6 — 2026-10-22:** les infobulles et étiquettes d'accessibilité des badges « variante expérimentale » et « jeu apparenté » sont désormais traduites dans toutes les langues (elles restaient en roumain).
 ### 14.6.5 — 2026-10-22
 - Corrections de traduction : le titre de la page et les balises meta suivent la langue de l’interface ; les libellés des boutons de filtre par étiquette et des types d’échiquier sont traduits dans les 8 langues.
 

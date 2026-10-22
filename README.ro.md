@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 14.6.5 · **Ultima actualizare:** 2026-10-22
+**Versiune:** 14.6.6 · **Ultima actualizare:** 2026-10-22
 
 Limbile interfeței: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -67,6 +67,7 @@ Descarcă `index.html` (aproximativ 2,4 MB) și deschide-l în browser; funcțio
 
 ## Istoric / Changelog
 
+- **14.6.6 — 2026-10-22:** titlurile și etichetele de accesibilitate ale insignelor „variantă experimentală” și „joc înrudit” sunt acum traduse în toate limbile.
 ### 14.6.5 — 2026-10-22
 - Corecturi de traducere: titlul paginii și meta-etichetele urmează limba interfeței; etichetele butoanelor de filtrare după tag și etichetele de tablă/tip sunt traduse în toate cele 8 limbi.
 
