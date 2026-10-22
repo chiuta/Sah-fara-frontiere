@@ -2,7 +2,7 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 14.6.8 · **Last updated:** 2026-10-22
+**Version:** 14.6.9 · **Last updated:** 2026-10-22
 
 Interface languages: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -66,6 +66,10 @@ Tests: `node tests/fff-r8.test.mjs` (Playwright, network blocked, 2 pages for P2
 Download `index.html` (about 2.4 MB) and open it in a browser; it works without internet. Only the links to external sources require a connection.
 
 ## History / Changelog
+
+### 14.6.9 — 2026-10-22
+
+fff-kit 1.1.4: touch targets and minimum text size; touch targets and text size corrected.
 
 - 14.6.8 — 2026-10-22: fff-kit 1.1.2: PBKDF2 600,000 iterations, anti-clickjacking protection
 - 14.6.7 — 2026-10-22: confirmations and copy fallbacks now use translated inline dialogs instead of confirm()/prompt(); real service worker and manifest for offline start; mobile and accessibility polish: text at least 12 px and touch targets at least 24 px.

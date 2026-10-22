@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · **Français** · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version :** 14.6.8 · **Dernière mise à jour :** 2026-10-22
+**Version :** 14.6.9 · **Dernière mise à jour :** 2026-10-22
 
 Langues de l'interface : **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -66,6 +66,10 @@ Tests : `node tests/fff-r8.test.mjs` (Playwright, réseau bloqué, 2 pages pour 
 Téléchargez `index.html` (environ 2,4 Mo) et ouvrez-le dans un navigateur ; il fonctionne sans internet. Seuls les liens vers des sources externes nécessitent une connexion.
 
 ## Historique / Changelog
+
+### 14.6.9 — 2026-10-22
+
+fff-kit 1.1.4 : cibles tactiles et taille de texte minimale; cibles tactiles et texte corrigés.
 
 - 14.6.8 — 2026-10-22 : fff-kit 1.1.2 : PBKDF2 à 600 000 itérations, protection anti-clickjacking
 - 14.6.7 — 2026-10-22: les confirmations et solutions de copie utilisent des dialogues intégrés traduits au lieu de confirm()/prompt() ; vrai service worker et manifeste pour un démarrage hors ligne ; finitions mobile et accessibilité : texte d’au moins 12 px et cibles tactiles d’au moins 24 px.
