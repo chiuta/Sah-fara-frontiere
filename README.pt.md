@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · **Português** · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versão:** 14.6.7 · **Última atualização:** 2026-10-22
+**Versão:** 14.6.8 · **Última atualização:** 2026-10-22
 
 Idiomas da interface: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -67,6 +67,7 @@ Transfira `index.html` (cerca de 2,4 MB) e abra-o num navegador; funciona sem in
 
 ## Histórico / Changelog
 
+- 14.6.8 — 2026-10-22: fff-kit 1.1.2: PBKDF2 com 600.000 iterações, proteção anti-clickjacking
 - 14.6.7 — 2026-10-22: as confirmações e alternativas de cópia usam diálogos integrados traduzidos em vez de confirm()/prompt(); service worker e manifesto reais para arranque offline; melhorias para telemóvel e acessibilidade: texto de pelo menos 12 px e áreas táteis de pelo menos 24 px.
 - **14.6.6 — 2026-10-22:** as dicas e etiquetas de acessibilidade dos emblemas «variante experimental» e «jogo aparentado» estão agora traduzidas em todos os idiomas (estavam em romeno).
 ### 14.6.5 — 2026-10-22

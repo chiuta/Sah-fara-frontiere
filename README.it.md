@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · **Italiano** · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versione:** 14.6.7 · **Ultimo aggiornamento:** 2026-10-22
+**Versione:** 14.6.8 · **Ultimo aggiornamento:** 2026-10-22
 
 Lingue dell'interfaccia: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -67,6 +67,7 @@ Scarica `index.html` (circa 2,4 MB) e aprilo in un browser; funziona senza inter
 
 ## Cronologia / Changelog
 
+- 14.6.8 — 2026-10-22: fff-kit 1.1.2: PBKDF2 con 600.000 iterazioni, protezione anti-clickjacking
 - 14.6.7 — 2026-10-22: conferme e alternative di copia usano finestre inline tradotte al posto di confirm()/prompt(); service worker e manifest reali per l’avvio offline; rifiniture per mobile e accessibilità: testo di almeno 12 px e aree tattili di almeno 24 px.
 - **14.6.6 — 2026-10-22:** i suggerimenti e le etichette di accessibilità dei badge «variante sperimentale» e «gioco affine» sono ora tradotti in tutte le lingue (erano rimasti in rumeno).
 ### 14.6.5 — 2026-10-22

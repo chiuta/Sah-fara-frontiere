@@ -2,7 +2,7 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 14.6.7 · **Last updated:** 2026-10-22
+**Version:** 14.6.8 · **Last updated:** 2026-10-22
 
 Interface languages: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -67,6 +67,7 @@ Download `index.html` (about 2.4 MB) and open it in a browser; it works without 
 
 ## History / Changelog
 
+- 14.6.8 — 2026-10-22: fff-kit 1.1.2: PBKDF2 600,000 iterations, anti-clickjacking protection
 - 14.6.7 — 2026-10-22: confirmations and copy fallbacks now use translated inline dialogs instead of confirm()/prompt(); real service worker and manifest for offline start; mobile and accessibility polish: text at least 12 px and touch targets at least 24 px.
 - **14.6.6 — 2026-10-22:** the tooltips and accessibility labels of the "experimental variant" and "related game" badges are now translated into all languages (they were left in Romanian).
 ### 14.6.5 — 2026-10-22

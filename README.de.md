@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · **Deutsch** · [Magyar](README.hu.md)
 
-**Version:** 14.6.7 · **Zuletzt aktualisiert:** 2026-10-22
+**Version:** 14.6.8 · **Zuletzt aktualisiert:** 2026-10-22
 
 Oberflächensprachen: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -67,6 +67,7 @@ Lade `index.html` (etwa 2,4 MB) herunter und öffne sie in einem Browser; sie fu
 
 ## Verlauf / Changelog
 
+- 14.6.8 — 2026-10-22: fff-kit 1.1.2: PBKDF2 mit 600.000 Iterationen, Schutz vor Clickjacking
 - 14.6.7 — 2026-10-22: Bestätigungen und Kopier-Ersatz nutzen übersetzte Inline-Dialoge statt confirm()/prompt(); echter Service Worker und Manifest für Offline-Start; Feinschliff für Mobilgeräte und Barrierefreiheit: Text mit mindestens 12 px und Touch-Ziele von mindestens 24 px.
 - **14.6.6 — 2026-10-22:** die Tooltips und Barrierefreiheits-Labels der Abzeichen „experimentelle Variante“ und „verwandtes Spiel“ sind jetzt in alle Sprachen übersetzt (sie waren rumänisch geblieben).
 ### 14.6.5 — 2026-10-22
