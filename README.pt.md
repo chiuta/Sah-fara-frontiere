@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · **Português** · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versão:** 14.6.11 · **Última atualização:** 2026-10-23
+**Versão:** 14.6.12 · **Última atualização:** 2026-10-23
 
 Idiomas da interface: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -25,7 +25,7 @@ Atlas/enciclopédia de variantes de xadrez: 706 variantes e 299 entradas de léx
 - «Curso»: um percurso guiado de 7 dias e 17 conquistas (emblemas) desbloqueáveis.
 - «Exportar CSV (todas as entradas)» e «Citar como BibTeX»; botão «Ligação» para partilha.
 - Tema escuro/claro, três tamanhos de texto, zoom.
-- «Cópia de segurança do progresso» (em «Acerca deste atlas»): exporta e importa num ficheiro JSON o percurso, os emblemas, o ELO e as preferências locais (as chaves `sff:`); na importação o ficheiro é validado e é pedida confirmação.
+- «Cópia de segurança do progresso» (em «Acerca deste atlas»): exporta e importa num ficheiro JSON o percurso, os emblemas, o ELO e as preferências locais (as chaves `sah-fara-frontiere.`); na importação o ficheiro é validado e é pedida confirmação.
 
 ## Novas funcionalidades (14.4.0) — «Mesa de xadrez»
 
@@ -55,7 +55,7 @@ Testes: `node tests/fff-r8.test.mjs` (Playwright, rede bloqueada, 2 páginas par
 
 ## Privacidade e rede
 
-- Local: em `localStorage`, com o prefixo `sff:` — o estado do atlas (`sff:state:v2`), o percurso (`sff:curriculum:v1`), o tema, o tamanho do texto, o som, o estilo de notação e de glifos, os emblemas, as estatísticas de jogo, o ELO do jogador, o estado do jogo em curso e as marcas de «boas-vindas»/visita vista.
+- Local: em `localStorage`, com o prefixo `sah-fara-frontiere.` — o estado do atlas (`sah-fara-frontiere.state:v2`), o percurso (`sah-fara-frontiere.curriculum:v1`), o tema, o tamanho do texto, o som, o estilo de notação e de glifos, os emblemas, as estatísticas de jogo, o ELO do jogador, o estado do jogo em curso e as marcas de «boas-vindas»/visita vista.
 - As funcionalidades da «Mesa de xadrez» usam chaves distintas `sff_r8_` (preferências de anúncios/voz, torneio, sequência diária, cache do problema do dia); o kit FFF acrescenta cópia de segurança (exportar/importar/apagar) e a janela «Transparência» a partir do número da versão.
 - A única nova comunicação de rede é o jogo a dois opcional, através de WebRTC diretamente entre os dois jogadores, com sinalização manual e, apenas se introduzir um, um servidor STUN (egress declarado: 0).
 - Rede: no código verificado não há chamadas `fetch` nem scripts/tipos de letra carregados de anfitriões externos. As fichas contêm ligações para fontes (por exemplo Wikipédia, FIDE Handbook, Lichess, chessvariants.com), que só se abrem se clicar nelas. O texto da aplicação afirma: «Funciona offline, sem rastreio, sem anúncios».
@@ -66,6 +66,10 @@ Testes: `node tests/fff-r8.test.mjs` (Playwright, rede bloqueada, 2 páginas par
 Transfira `index.html` (cerca de 2,4 MB) e abra-o num navegador; funciona sem internet. Apenas as ligações para fontes externas exigem ligação.
 
 ## Histórico / Changelog
+### 14.6.12 — 2026-10-23
+
+- As chaves do armazenamento local passam a usar o prefixo `sah-fara-frontiere.` (`FFF.store.migrate` no arranque, antes de qualquer leitura): os dados existentes são mantidos automaticamente e as cópias `.fff.json` antigas continuam a poder ser importadas.
+
 - **14.6.10 — 2026-10-22:** Peso e DOM: a página desce de 8,4 MB para 3,2 MB e de cerca de 22.500 para cerca de 1.700 nós DOM ao iniciar. As 1.005 fichas são criadas como esqueletos leves (aria-label, tabindex) e o seu conteúdo só é construído quando se aproximam da janela (IntersectionObserver, margem de 1.400 px) e libertado quando se afastam, mantendo a altura medida para o deslocamento não saltar; o realce da pesquisa aplica-se na hidratação. As traduções do conteúdo (en, fr, it, es, pt, de, hu; 5,3 MB) passaram para `i18n/vi18n-<idioma>.js`, carregados só para o idioma escolhido (mais o inglês como reserva); o service worker guarda-os em cache e, quando a página está inativa, descarrega o resto em segundo plano (não com Save-Data / ligações lentas), pelo que a aplicação continua totalmente offline; se um pacote não puder ser carregado, mostra-se um aviso no idioma escolhido. Alvos táteis de 44 px com ponteiro grosseiro nos botões de conquistas, acerca, banner de boas-vindas e ajuda. Novo teste: `tests/lazy.test.mjs`.
 
 ### 14.6.9 — 2026-10-22
@@ -127,7 +131,7 @@ Os nomes de jogos são designações comerciais dos seus titulares, usadas de fo
 Alexio — Alexandru-Ionuț Chiuță, contacto: alexio@trom.tf. A aplicação apresenta-o como autor, programador e músico, com menções do projeto TROM, da Editura Tornada e do Centrul StrING.
 
 ## Resumo
-Șah fără frontiere é um atlas de variantes de xadrez num único ficheiro: 706 variantes mais 299 entradas de léxico, com pesquisa, filtros, motores jogáveis (IA local, exportação PGN/FEN, ELO local), um curso guiado de 7 dias, emblemas e exportação CSV/BibTeX. Desde a 14.4.0, uma «Mesa de xadrez» para o xadrez padrão acrescenta jogo a dois via WebRTC (sinalização manual, sem servidor), um analisador local simples, um problema de mate diário determinista, explicações «porque não posso mover?», jogo por teclado com anúncios falados e um torneio Elo local (as 706 variantes não estão abrangidas). Tudo corre localmente; o progresso é guardado em localStorage (chaves `sff:`) e não foram encontrados pedidos externos no código. Licenciado sob MIT para a contribuição própria do autor (veja LICENSE); os resumos derivados de terceiros mantêm as licenças de origem.
+Șah fără frontiere é um atlas de variantes de xadrez num único ficheiro: 706 variantes mais 299 entradas de léxico, com pesquisa, filtros, motores jogáveis (IA local, exportação PGN/FEN, ELO local), um curso guiado de 7 dias, emblemas e exportação CSV/BibTeX. Desde a 14.4.0, uma «Mesa de xadrez» para o xadrez padrão acrescenta jogo a dois via WebRTC (sinalização manual, sem servidor), um analisador local simples, um problema de mate diário determinista, explicações «porque não posso mover?», jogo por teclado com anúncios falados e um torneio Elo local (as 706 variantes não estão abrangidas). Tudo corre localmente; o progresso é guardado em localStorage (chaves `sah-fara-frontiere.`) e não foram encontrados pedidos externos no código. Licenciado sob MIT para a contribuição própria do autor (veja LICENSE); os resumos derivados de terceiros mantêm as licenças de origem.
 
 ## Auditoria
 

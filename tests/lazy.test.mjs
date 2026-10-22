@@ -18,7 +18,7 @@ const browser = await chromium.launch({executablePath: "/opt/pw-browsers/chromiu
 const errs = [];
 async function mk(o = {}) {
   const ctx = await browser.newContext({viewport: {width: o.w || 1366, height: o.h || 850}, locale: o.locale || "en-US", hasTouch: !!o.touch, isMobile: !!o.touch});
-  await ctx.addInitScript(l => { try { if (l) localStorage.setItem("sff:lang", l); localStorage.setItem("sff:welcomeSeen", "1"); } catch (e) {} }, o.ul || null);
+  await ctx.addInitScript(l => { try { if (l) localStorage.setItem("sah-fara-frontiere.lang", l); localStorage.setItem("sah-fara-frontiere.welcomeSeen", "1"); } catch (e) {} }, o.ul || null);
   const page = await ctx.newPage(); page.reqs = [];
   page.on("request", r => { if (r.resourceType() !== "fetch") page.reqs.push(r.url().replace(BASE, "")); }); /* prefetch-ul de fundal folosește fetch() */
   page.on("pageerror", e => errs.push(e.message));

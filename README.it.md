@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · **Italiano** · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versione:** 14.6.11 · **Ultimo aggiornamento:** 2026-10-23
+**Versione:** 14.6.12 · **Ultimo aggiornamento:** 2026-10-23
 
 Lingue dell'interfaccia: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -25,7 +25,7 @@ Atlante/enciclopedia di varianti degli scacchi: 706 varianti e 299 voci di lessi
 - «Corso»: un percorso guidato di 7 giorni e 17 traguardi (badge) da sbloccare.
 - «Esporta CSV (tutte le voci)» e «Cita come BibTeX»; pulsante «Link» per la condivisione.
 - Tema scuro/chiaro, tre dimensioni del testo, zoom.
-- «Backup dei progressi» (in «Informazioni su questo atlante»): esporta e importa in un file JSON il percorso, i badge, l'ELO e le preferenze locali (le chiavi `sff:`); all'importazione il file viene convalidato e viene richiesta una conferma.
+- «Backup dei progressi» (in «Informazioni su questo atlante»): esporta e importa in un file JSON il percorso, i badge, l'ELO e le preferenze locali (le chiavi `sah-fara-frontiere.`); all'importazione il file viene convalidato e viene richiesta una conferma.
 
 ## Nuove funzionalità (14.4.0) — «Tavolo da scacchi»
 
@@ -55,7 +55,7 @@ Test: `node tests/fff-r8.test.mjs` (Playwright, rete bloccata, 2 pagine per il P
 
 ## Privacy e rete
 
-- Locale: in `localStorage`, con il prefisso `sff:` — lo stato dell'atlante (`sff:state:v2`), il percorso (`sff:curriculum:v1`), il tema, la dimensione del testo, il suono, lo stile di notazione e dei glifi, i badge, le statistiche di gioco, l'ELO del giocatore, lo stato della partita in corso e gli indicatori «benvenuto»/tour visto.
+- Locale: in `localStorage`, con il prefisso `sah-fara-frontiere.` — lo stato dell'atlante (`sah-fara-frontiere.state:v2`), il percorso (`sah-fara-frontiere.curriculum:v1`), il tema, la dimensione del testo, il suono, lo stile di notazione e dei glifi, i badge, le statistiche di gioco, l'ELO del giocatore, lo stato della partita in corso e gli indicatori «benvenuto»/tour visto.
 - Le funzionalità del «Tavolo da scacchi» usano chiavi separate `sff_r8_` (preferenze di annunci/voce, torneo, serie giornaliera, cache del problema del giorno); il kit FFF aggiunge il backup (esportazione/importazione/cancellazione) e la finestra «Trasparenza» dal numero di versione.
 - L'unica nuova comunicazione di rete è la partita in due facoltativa, tramite WebRTC direttamente tra i due giocatori, con segnalazione manuale e, solo se ne inserisci uno, un server STUN (egress dichiarato: 0).
 - Rete: nel codice verificato non ci sono chiamate `fetch` né script/font caricati da host esterni. Le schede contengono link a fonti (ad esempio Wikipedia, FIDE Handbook, Lichess, chessvariants.com), che si aprono solo se li clicchi. Il testo dell'applicazione afferma: «Funziona offline, senza tracciamento, senza pubblicità».
@@ -66,6 +66,10 @@ Test: `node tests/fff-r8.test.mjs` (Playwright, rete bloccata, 2 pagine per il P
 Scarica `index.html` (circa 2,4 MB) e aprilo in un browser; funziona senza internet. Solo i link verso fonti esterne richiedono una connessione.
 
 ## Cronologia / Changelog
+### 14.6.12 — 2026-10-23
+
+- Le chiavi dell'archiviazione locale usano ora il prefisso `sah-fara-frontiere.` (`FFF.store.migrate` all'avvio, prima di qualsiasi lettura): i dati esistenti vengono conservati automaticamente e i vecchi backup `.fff.json` si possono ancora importare.
+
 - **14.6.10 — 2026-10-22:** Peso e DOM: la pagina scende da 8,4 MB a 3,2 MB e da circa 22.500 a circa 1.700 nodi DOM all’avvio. Le 1.005 schede vengono create come semplici scheletri (aria-label, tabindex) e il loro contenuto è costruito solo quando si avvicinano alla finestra (IntersectionObserver, margine di 1.400 px) e liberato quando si allontanano, mantenendo l’altezza misurata perché lo scorrimento non salti; l’evidenziazione della ricerca si applica all’idratazione. Le traduzioni del contenuto (en, fr, it, es, pt, de, hu; 5,3 MB) sono in `i18n/vi18n-<lingua>.js`, caricati solo per la lingua scelta (più l’inglese come riserva); il service worker li tiene in cache e, quando la pagina è inattiva, scarica il resto in background (non con Save-Data / connessioni lente), quindi l’app resta completamente offline; se un pacchetto non si può caricare viene mostrato un avviso nella lingua scelta. Bersagli touch di 44 px su puntatore grossolano per i pulsanti di traguardi, informazioni, banner di benvenuto e aiuto. Nuovo test: `tests/lazy.test.mjs`.
 
 ### 14.6.9 — 2026-10-22
@@ -127,7 +131,7 @@ I nomi dei giochi sono denominazioni commerciali dei rispettivi titolari, usate 
 Alexio — Alexandru-Ionuț Chiuță, contatto: alexio@trom.tf. L'applicazione lo presenta come autore, sviluppatore e musicista, con menzioni del progetto TROM, di Editura Tornada e del Centrul StrING.
 
 ## Riepilogo
-Șah fără frontiere è un atlante di varianti degli scacchi a file singolo: 706 varianti più 299 voci di lessico, con ricerca, filtri, motori giocabili (IA locale, esportazione PGN/FEN, ELO locale), un corso guidato di 7 giorni, badge ed esportazione CSV/BibTeX. Dalla 14.4.0 un «Tavolo da scacchi» per gli scacchi standard aggiunge il gioco in due via WebRTC (segnalazione manuale, senza server), un semplice analizzatore locale, un problema di matto quotidiano deterministico, spiegazioni «perché non posso muovere?», il gioco da tastiera con annunci vocali e un torneo Elo locale (le 706 varianti non sono coperte). Tutto gira in locale; i progressi sono conservati in localStorage (chiavi `sff:`) e nel codice non sono state trovate richieste esterne. Concesso in licenza MIT per il contributo proprio dell'autore (vedi LICENSE); i riassunti derivati da terzi mantengono le licenze d'origine.
+Șah fără frontiere è un atlante di varianti degli scacchi a file singolo: 706 varianti più 299 voci di lessico, con ricerca, filtri, motori giocabili (IA locale, esportazione PGN/FEN, ELO locale), un corso guidato di 7 giorni, badge ed esportazione CSV/BibTeX. Dalla 14.4.0 un «Tavolo da scacchi» per gli scacchi standard aggiunge il gioco in due via WebRTC (segnalazione manuale, senza server), un semplice analizzatore locale, un problema di matto quotidiano deterministico, spiegazioni «perché non posso muovere?», il gioco da tastiera con annunci vocali e un torneo Elo locale (le 706 varianti non sono coperte). Tutto gira in locale; i progressi sono conservati in localStorage (chiavi `sah-fara-frontiere.`) e nel codice non sono state trovate richieste esterne. Concesso in licenza MIT per il contributo proprio dell'autore (vedi LICENSE); i riassunti derivati da terzi mantengono le licenze d'origine.
 
 ## Audit
 

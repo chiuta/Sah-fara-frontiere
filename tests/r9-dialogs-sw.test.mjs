@@ -24,7 +24,7 @@ const b = await chromium.launch({executablePath: '/opt/pw-browsers/chromium', ar
 
 for (const [L, rx, cancel] of [['de', /Fortschritt/, 'Abbrechen'], ['en', /progress/i, 'Cancel'], ['ro', /progresul/, 'Anulează'], ['hu', /haladás/i, 'Mégse']]) {
   const ctx = await b.newContext({viewport: {width: 1000, height: 800}, serviceWorkers: 'block', locale: L});
-  await ctx.addInitScript((l) => { try { localStorage.setItem('sff:lang', l); localStorage.setItem('sff:welcomeSeen', '1'); localStorage.setItem('sff:tourSeen', '1'); } catch (e) {} }, L);
+  await ctx.addInitScript((l) => { try { localStorage.setItem('sah-fara-frontiere.lang', l); localStorage.setItem('sah-fara-frontiere.welcomeSeen', '1'); localStorage.setItem('sah-fara-frontiere.tourSeen', '1'); } catch (e) {} }, L);
   const p = await ctx.newPage(); const errs = []; let native = 0;
   p.on('pageerror', (e) => errs.push(e.message)); p.on('dialog', (d) => { native++; d.dismiss(); });
   await p.goto(BASE); await p.waitForTimeout(4000);
@@ -43,7 +43,7 @@ for (const [L, rx, cancel] of [['de', /Fortschritt/, 'Abbrechen'], ['en', /progr
 // service worker + manifest
 {
   const ctx = await b.newContext({viewport: {width: 1000, height: 800}});
-  await ctx.addInitScript(() => { try { localStorage.setItem('sff:welcomeSeen', '1'); localStorage.setItem('sff:tourSeen', '1'); } catch (e) {} });
+  await ctx.addInitScript(() => { try { localStorage.setItem('sah-fara-frontiere.welcomeSeen', '1'); localStorage.setItem('sah-fara-frontiere.tourSeen', '1'); } catch (e) {} });
   const p = await ctx.newPage(); const errs = [];
   p.on('pageerror', (e) => errs.push(e.message));
   await p.goto(BASE); await p.waitForTimeout(3000);

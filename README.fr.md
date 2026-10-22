@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · **Français** · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version :** 14.6.11 · **Dernière mise à jour :** 2026-10-23
+**Version :** 14.6.12 · **Dernière mise à jour :** 2026-10-23
 
 Langues de l'interface : **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -25,7 +25,7 @@ Atlas/encyclopédie de variantes d'échecs : 706 variantes et 299 entrées de le
 - « Cours » : un parcours guidé de 7 jours et 17 réalisations (badges) à débloquer.
 - « Exporter en CSV (toutes les entrées) » et « Citer en BibTeX » ; bouton « Lien » pour le partage.
 - Thème sombre/clair, trois tailles de texte, zoom.
-- « Sauvegarde de la progression » (dans « À propos de cet atlas ») : exporte et importe dans un fichier JSON le parcours, les badges, l'ELO et les préférences locales (les clés `sff:`) ; à l'import, le fichier est validé et une confirmation est demandée.
+- « Sauvegarde de la progression » (dans « À propos de cet atlas ») : exporte et importe dans un fichier JSON le parcours, les badges, l'ELO et les préférences locales (les clés `sah-fara-frontiere.`) ; à l'import, le fichier est validé et une confirmation est demandée.
 
 ## Nouvelles fonctionnalités (14.4.0) — « Table d'échecs »
 
@@ -55,7 +55,7 @@ Tests : `node tests/fff-r8.test.mjs` (Playwright, réseau bloqué, 2 pages pour 
 
 ## Confidentialité et réseau
 
-- Local : dans `localStorage`, avec le préfixe `sff:` — l'état de l'atlas (`sff:state:v2`), le parcours (`sff:curriculum:v1`), le thème, la taille du texte, le son, le style de notation et de glyphes, les badges, les statistiques de jeu, l'ELO du joueur, l'état de la partie en cours et les marqueurs « bienvenue »/visite vue.
+- Local : dans `localStorage`, avec le préfixe `sah-fara-frontiere.` — l'état de l'atlas (`sah-fara-frontiere.state:v2`), le parcours (`sah-fara-frontiere.curriculum:v1`), le thème, la taille du texte, le son, le style de notation et de glyphes, les badges, les statistiques de jeu, l'ELO du joueur, l'état de la partie en cours et les marqueurs « bienvenue »/visite vue.
 - Les fonctionnalités de la « Table d'échecs » utilisent des clés distinctes `sff_r8_` (préférences d'annonces/voix, tournoi, série quotidienne, cache du problème du jour) ; le kit FFF ajoute une sauvegarde (export/import/suppression) et la fenêtre « Transparence » depuis le numéro de version.
 - La seule nouvelle communication réseau est la partie à deux facultative, via WebRTC directement entre les deux joueurs, avec signalisation manuelle et, uniquement si vous en saisissez un, un serveur STUN (egress déclaré : 0).
 - Réseau : dans le code vérifié, il n'y a aucun appel `fetch` ni script/police chargé depuis des hôtes externes. Les fiches contiennent des liens vers des sources (par exemple Wikipedia, FIDE Handbook, Lichess, chessvariants.com), qui ne s'ouvrent que si vous cliquez dessus. Le texte de l'application affirme : « Fonctionne hors ligne, sans pistage, sans publicités ».
@@ -66,6 +66,10 @@ Tests : `node tests/fff-r8.test.mjs` (Playwright, réseau bloqué, 2 pages pour 
 Téléchargez `index.html` (environ 2,4 Mo) et ouvrez-le dans un navigateur ; il fonctionne sans internet. Seuls les liens vers des sources externes nécessitent une connexion.
 
 ## Historique / Changelog
+### 14.6.12 — 2026-10-23
+
+- Les clés du stockage local utilisent désormais le préfixe `sah-fara-frontiere.` (`FFF.store.migrate` au démarrage, avant toute lecture) : les données existantes sont conservées automatiquement et les anciennes sauvegardes `.fff.json` restent importables.
+
 - **14.6.10 — 2026-10-22:** Poids et DOM : la page passe de 8,4 Mo à 3,2 Mo et d’environ 22 500 à environ 1 700 nœuds DOM au démarrage. Les 1 005 cartes sont créées comme de simples squelettes (aria-label, tabindex) et leur contenu n’est construit que lorsqu’elles approchent de la fenêtre (IntersectionObserver, marge de 1 400 px) puis libéré quand elles s’éloignent, en gardant la hauteur mesurée pour que le défilement ne saute pas ; la surbrillance de la recherche est appliquée à l’hydratation. Les traductions du contenu (en, fr, it, es, pt, de, hu ; 5,3 Mo) sont dans `i18n/vi18n-<langue>.js`, chargés seulement pour la langue choisie (plus l’anglais en secours) ; le service worker les met en cache et, quand la page est inactive, télécharge le reste en arrière-plan (sauf avec Save-Data / connexion lente), de sorte que l’application reste entièrement hors ligne ; si un pack ne peut pas être chargé, un avis s’affiche dans la langue choisie. Cibles tactiles de 44 px sur pointeur grossier pour les boutons de réussites, à propos, bannière de bienvenue et aide. Nouveau test : `tests/lazy.test.mjs`.
 
 ### 14.6.9 — 2026-10-22
@@ -127,7 +131,7 @@ Les noms de jeux sont des dénominations commerciales de leurs titulaires, utili
 Alexio — Alexandru-Ionuț Chiuță, contact : alexio@trom.tf. L'application le présente comme auteur, développeur et musicien, avec des mentions du projet TROM, des éditions Tornada et du Centrul StrING.
 
 ## Résumé
-Șah fără frontiere est un atlas de variantes d'échecs en un seul fichier : 706 variantes plus 299 entrées de lexique, avec recherche, filtres, moteurs jouables (IA locale, export PGN/FEN, ELO local), un cours guidé de 7 jours, des badges et un export CSV/BibTeX. Depuis la 14.4.0, une « Table d'échecs » pour les échecs standard ajoute le jeu à deux via WebRTC (signalisation manuelle, sans serveur), un analyseur local simple, un problème de mat quotidien déterministe, des explications « pourquoi ne puis-je pas jouer ? », le jeu au clavier avec annonces vocales et un tournoi Elo local (les 706 variantes ne sont pas couvertes). Tout s'exécute en local ; la progression est conservée dans localStorage (clés `sff:`) et aucune requête externe n'a été trouvée dans le code. Sous licence MIT pour la contribution propre de l'auteur (voir LICENSE) ; les résumés dérivés de tiers conservent leurs licences d'origine.
+Șah fără frontiere est un atlas de variantes d'échecs en un seul fichier : 706 variantes plus 299 entrées de lexique, avec recherche, filtres, moteurs jouables (IA locale, export PGN/FEN, ELO local), un cours guidé de 7 jours, des badges et un export CSV/BibTeX. Depuis la 14.4.0, une « Table d'échecs » pour les échecs standard ajoute le jeu à deux via WebRTC (signalisation manuelle, sans serveur), un analyseur local simple, un problème de mat quotidien déterministe, des explications « pourquoi ne puis-je pas jouer ? », le jeu au clavier avec annonces vocales et un tournoi Elo local (les 706 variantes ne sont pas couvertes). Tout s'exécute en local ; la progression est conservée dans localStorage (clés `sah-fara-frontiere.`) et aucune requête externe n'a été trouvée dans le code. Sous licence MIT pour la contribution propre de l'auteur (voir LICENSE) ; les résumés dérivés de tiers conservent leurs licences d'origine.
 
 ## Audit
 

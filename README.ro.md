@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 14.6.11 · **Ultima actualizare:** 2026-10-23
+**Versiune:** 14.6.12 · **Ultima actualizare:** 2026-10-23
 
 Limbile interfeței: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -25,7 +25,7 @@ Atlas/enciclopedie de variante de șah: 706 variante și 299 intrări de lexicon
 - „Curs": parcurs ghidat de 7 zile și 17 realizări (insigne) deblocabile.
 - „Export CSV (toate intrările)" și „Citează ca BibTeX"; buton „Link" pentru partajare.
 - Tema închisă/deschisă, trei mărimi de text, zoom.
-- „Copie de siguranță a progresului” (în „Despre acest atlas”): exportă și importă într-un fișier JSON parcursul, insignele, ELO-ul și preferințele locale (cheile `sff:`); la import se validează fișierul și se cere confirmarea.
+- „Copie de siguranță a progresului” (în „Despre acest atlas”): exportă și importă într-un fișier JSON parcursul, insignele, ELO-ul și preferințele locale (cheile `sah-fara-frontiere.`); la import se validează fișierul și se cere confirmarea.
 
 ## Funcții noi (14.4.0) — „Masa de șah”
 
@@ -55,7 +55,7 @@ Teste: `node tests/fff-r8.test.mjs` (Playwright, rețea blocată, 2 pagini pentr
 
 ## Confidențialitate și rețea
 
-- Local: în `localStorage`, cu prefixul `sff:` — starea atlasului (`sff:state:v2`), parcursul (`sff:curriculum:v1`), tema, mărimea textului, sunetul, stilul notației și glifelor, insignele, statisticile jocurilor, ELO-ul jucătorului, starea jocului curent și marcajele „bun venit"/tur văzut.
+- Local: în `localStorage`, cu prefixul `sah-fara-frontiere.` — starea atlasului (`sah-fara-frontiere.state:v2`), parcursul (`sah-fara-frontiere.curriculum:v1`), tema, mărimea textului, sunetul, stilul notației și glifelor, insignele, statisticile jocurilor, ELO-ul jucătorului, starea jocului curent și marcajele „bun venit"/tur văzut.
 - Funcțiile din „Masa de șah” folosesc chei separate `sff_r8_` (preferințe de anunțuri/voce, turneu, serie zilnică, cache-ul problemei zilei); kitul FFF adaugă copie de siguranță (export/import/ștergere) și fereastra „Transparență” din numărul versiunii.
 - Singura comunicare de rețea nouă este jocul în doi opțional, prin WebRTC direct între cei doi jucători, cu semnalizare manuală și, doar dacă introduci unul, un server STUN (egress declarat: 0).
 - Rețea: în codul verificat nu există apeluri `fetch` sau scripturi/fonturi încărcate de pe gazde externe. Fișele conțin linkuri către surse (de exemplu Wikipedia, FIDE Handbook, Lichess, chessvariants.com), care se deschid doar dacă le apeși. Textul aplicației afirmă: „Funcționează offline, fără tracking, fără reclame".
@@ -66,6 +66,10 @@ Teste: `node tests/fff-r8.test.mjs` (Playwright, rețea blocată, 2 pagini pentr
 Descarcă `index.html` (aproximativ 2,4 MB) și deschide-l în browser; funcționează fără internet. Doar linkurile către surse externe necesită conexiune.
 
 ## Istoric / Changelog
+### 14.6.12 — 2026-10-23
+
+- Cheile din stocarea locală folosesc acum prefixul `sah-fara-frontiere.` (`FFF.store.migrate` la pornire, înainte de orice citire): datele existente se păstrează automat, iar copiile `.fff.json` vechi se pot importa în continuare.
+
 - **14.6.10 — 2026-10-22:** Greutate și DOM: pagina scade de la 8,4 MB la 3,2 MB și de la ≈22.500 la ≈1.700 de noduri DOM la pornire. Cele 1.005 carduri se creează ca „schelete” ușoare (aria-label, tabindex), iar conținutul lor se construiește doar când se apropie de fereastră (IntersectionObserver, margine 1.400 px) și se eliberează când se îndepărtează, păstrând înălțimea măsurată ca scroll-ul să nu sară; evidențierea căutării se aplică la hidratare. Traducerile conținutului (en, fr, it, es, pt, de, hu; 5,3 MB) au trecut în `i18n/vi18n-<limbă>.js`, încărcate doar pentru limba aleasă (plus engleza ca rezervă); service worker-ul le păstrează în cache și, când pagina e inactivă, descarcă restul în fundal (nu cu Save-Data / conexiuni lente), deci aplicația rămâne complet offline; dacă un pachet nu poate fi încărcat se afișează o notificare în limba aleasă. Ținte tactile de 44 px pe pointer grosier la butoanele de realizări, despre, banner de bun venit și ajutor. Test nou: `tests/lazy.test.mjs`.
 
 ### 14.6.9 — 2026-10-22
@@ -128,7 +132,7 @@ Alexio — Alexandru-Ionuț Chiuță, contact: alexio@trom.tf. Aplicația îl pr
 
 ## Rezumat
 
-Șah fără frontiere este un atlas al variantelor de șah într-un singur fișier: 706 variante plus 299 de intrări de lexicon, cu căutare, filtre, motoare jucabile (AI local, export PGN/FEN, ELO local), un curs ghidat de 7 zile, insigne și export CSV/BibTeX. Din 14.4.0, o „Masă de joc” pentru șahul standard adaugă joc în doi prin WebRTC (semnalizare manuală, fără server), un analizor local simplu, o problemă zilnică de mat determinist, explicații „de ce nu pot muta?”, joc cu tastatura cu anunțuri vocale și un turneu Elo local (cele 706 variante nu sunt acoperite). Totul rulează local; progresul se păstrează în localStorage (chei `sff:`) și nu s-au găsit cereri externe în cod. Licență MIT pentru contribuția proprie a autorului (vezi LICENSE); rezumatele derivate din terți își păstrează licențele sursă.
+Șah fără frontiere este un atlas al variantelor de șah într-un singur fișier: 706 variante plus 299 de intrări de lexicon, cu căutare, filtre, motoare jucabile (AI local, export PGN/FEN, ELO local), un curs ghidat de 7 zile, insigne și export CSV/BibTeX. Din 14.4.0, o „Masă de joc” pentru șahul standard adaugă joc în doi prin WebRTC (semnalizare manuală, fără server), un analizor local simplu, o problemă zilnică de mat determinist, explicații „de ce nu pot muta?”, joc cu tastatura cu anunțuri vocale și un turneu Elo local (cele 706 variante nu sunt acoperite). Totul rulează local; progresul se păstrează în localStorage (chei `sah-fara-frontiere.`) și nu s-au găsit cereri externe în cod. Licență MIT pentru contribuția proprie a autorului (vezi LICENSE); rezumatele derivate din terți își păstrează licențele sursă.
 
 ## Audit
 

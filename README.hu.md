@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · **Magyar**
 
-**Verzió:** 14.6.11 · **Utolsó frissítés:** 2026-10-23
+**Verzió:** 14.6.12 · **Utolsó frissítés:** 2026-10-23
 
 A felület nyelvei: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -25,7 +25,7 @@ A Șah fără frontiere („Sakk határok nélkül”) egyetlen HTML-fájlból �
 - „Tanfolyam”: vezetett 7 napos útvonal és 17 feloldható teljesítmény (jelvény).
 - „CSV-export (minden bejegyzés)” és „Hivatkozás BibTeX-ként”; „Hivatkozás” gomb a megosztáshoz.
 - Sötét/világos téma, három szövegméret, nagyítás.
-- „Haladás biztonsági mentése” (az „Erről az atlaszról” részben): JSON-fájlba exportálja és onnan importálja a tanfolyamot, a jelvényeket, az ELO-t és a helyi beállításokat (az `sff:` kulcsokat); importáláskor a fájl érvényesítésre kerül, és megerősítést kér.
+- „Haladás biztonsági mentése” (az „Erről az atlaszról” részben): JSON-fájlba exportálja és onnan importálja a tanfolyamot, a jelvényeket, az ELO-t és a helyi beállításokat (az `sah-fara-frontiere.` kulcsokat); importáláskor a fájl érvényesítésre kerül, és megerősítést kér.
 
 ## Új funkciók (14.4.0) — „Sakkasztal”
 
@@ -55,7 +55,7 @@ Tesztek: `node tests/fff-r8.test.mjs` (Playwright, letiltott hálózat, 2 oldal 
 
 ## Adatvédelem és hálózat
 
-- Helyi: a `localStorage`-ban, `sff:` előtaggal — az atlasz állapota (`sff:state:v2`), a tanfolyam (`sff:curriculum:v1`), a téma, a szövegméret, a hang, a jelölés és a figurák stílusa, a jelvények, a játékstatisztikák, a játékos ELO-ja, az aktuális játék állapota, valamint az „üdvözlő”/látott túra jelölések.
+- Helyi: a `localStorage`-ban, `sah-fara-frontiere.` előtaggal — az atlasz állapota (`sah-fara-frontiere.state:v2`), a tanfolyam (`sah-fara-frontiere.curriculum:v1`), a téma, a szövegméret, a hang, a jelölés és a figurák stílusa, a jelvények, a játékstatisztikák, a játékos ELO-ja, az aktuális játék állapota, valamint az „üdvözlő”/látott túra jelölések.
 - A „Sakkasztal” funkciói külön `sff_r8_` kulcsokat használnak (bemondás-/hangbeállítások, verseny, napi sorozat, a nap feladványának gyorsítótára); az FFF-kit biztonsági mentést (export/import/törlés) és a verziószámból megnyíló „Átláthatóság” ablakot adja hozzá.
 - Az egyetlen új hálózati kommunikáció az opcionális kétszemélyes játék, WebRTC-n keresztül közvetlenül a két játékos között, kézi jelzéssel és — csak ha megadsz egyet — STUN-szerverrel (deklarált kimenő forgalom: 0).
 - Hálózat: az ellenőrzött kódban nincs `fetch` hívás, sem külső gazdagépekről betöltött szkript/betűtípus. Az adatlapok forrásokra mutató hivatkozásokat tartalmaznak (például Wikipedia, FIDE Handbook, Lichess, chessvariants.com), amelyek csak kattintásra nyílnak meg. Az alkalmazás szövege kijelenti: „Offline működik, követés nélkül, reklámok nélkül”.
@@ -66,6 +66,10 @@ Tesztek: `node tests/fff-r8.test.mjs` (Playwright, letiltott hálózat, 2 oldal 
 Töltsd le az `index.html` fájlt (körülbelül 2,4 MB), és nyisd meg böngészőben; internet nélkül is működik. Csak a külső forrásokra mutató hivatkozásokhoz kell kapcsolat.
 
 ## Előzmények / Changelog
+### 14.6.12 — 2026-10-23
+
+- A helyi tárhely kulcsai mostantól a `sah-fara-frontiere.` előtagot használják (`FFF.store.migrate` induláskor, bármilyen olvasás előtt): a meglévő adatok automatikusan megmaradnak, a régi `.fff.json` mentések továbbra is importálhatók.
+
 - **14.6.10 — 2026-10-22:** Méret és DOM: az oldal 8,4 MB-ról 3,2 MB-ra, indításkor pedig körülbelül 22 500-ról körülbelül 1 700 DOM-csomópontra csökken. Az 1 005 kártya könnyű vázként jön létre (aria-label, tabindex), tartalmuk csak akkor épül fel, amikor közelednek az ablakhoz (IntersectionObserver, 1 400 px margó), és felszabadul, amikor eltávolodnak; a mért magasságot megőrzik, hogy a görgetés ne ugorjon; a keresés kiemelése a feltöltéskor érvényesül. A tartalom fordításai (en, fr, it, es, pt, de, hu; 5,3 MB) az `i18n/vi18n-<nyelv>.js` fájlokba kerültek, csak a kiválasztott nyelvhez töltődnek be (plusz az angol tartalékként); a service worker gyorsítótárazza őket, tétlen oldalnál pedig a háttérben letölti a többit (Save-Data / lassú kapcsolat esetén nem), így az alkalmazás teljesen offline marad; ha egy csomag nem tölthető be, értesítés jelenik meg a kiválasztott nyelven. 44 px-es érintési célpontok durva mutatónál az eredmények, névjegy, üdvözlő szalag és súgó gombjainál. Új teszt: `tests/lazy.test.mjs`.
 
 ### 14.6.9 — 2026-10-22
@@ -127,7 +131,7 @@ A játékok nevei a jogtulajdonosaik kereskedelmi megnevezései, leíró jellegg
 Alexio — Alexandru-Ionuț Chiuță, kapcsolat: alexio@trom.tf. Az alkalmazás szerzőként, fejlesztőként és zenészként mutatja be, a TROM projekt, az Editura Tornada és a Centrul StrING említésével.
 
 ## Összefoglaló
-A Șah fără frontiere egyfájlos sakkváltozat-atlasz: 706 változat és 299 szótári bejegyzés, kereséssel, szűrőkkel, játszható motorokkal (helyi MI, PGN/FEN-export, helyi ELO), 7 napos vezetett tanfolyammal, jelvényekkel és CSV/BibTeX-exporttal. A 14.4.0 óta a hagyományos sakkhoz tartozó „Sakkasztal” kétszemélyes játékot ad WebRTC-n keresztül (kézi jelzés, szerver nélkül), egyszerű helyi elemzőt, determinisztikus napi mattfeladványt, „miért nem léphetek?” magyarázatokat, billentyűzetes játékot hangbemondással és helyi Elo-versenyt (a 706 változat nem érintett). Minden helyben fut; a haladás a localStorage-ban tárolódik (`sff:` kulcsok), és a kódban nem találtunk külső kéréseket. A szerző saját hozzájárulására MIT licenc vonatkozik (lásd LICENSE); a harmadik féltől származtatott összefoglalók megtartják forráslicencüket.
+A Șah fără frontiere egyfájlos sakkváltozat-atlasz: 706 változat és 299 szótári bejegyzés, kereséssel, szűrőkkel, játszható motorokkal (helyi MI, PGN/FEN-export, helyi ELO), 7 napos vezetett tanfolyammal, jelvényekkel és CSV/BibTeX-exporttal. A 14.4.0 óta a hagyományos sakkhoz tartozó „Sakkasztal” kétszemélyes játékot ad WebRTC-n keresztül (kézi jelzés, szerver nélkül), egyszerű helyi elemzőt, determinisztikus napi mattfeladványt, „miért nem léphetek?” magyarázatokat, billentyűzetes játékot hangbemondással és helyi Elo-versenyt (a 706 változat nem érintett). Minden helyben fut; a haladás a localStorage-ban tárolódik (`sah-fara-frontiere.` kulcsok), és a kódban nem találtunk külső kéréseket. A szerző saját hozzájárulására MIT licenc vonatkozik (lásd LICENSE); a harmadik féltől származtatott összefoglalók megtartják forráslicencüket.
 
 ## Audit
 

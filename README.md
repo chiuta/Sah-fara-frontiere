@@ -2,7 +2,7 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 14.6.11 · **Last updated:** 2026-10-23
+**Version:** 14.6.12 · **Last updated:** 2026-10-23
 
 Interface languages: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -25,7 +25,7 @@ An atlas/encyclopedia of chess variants: 706 variants and 299 lexicon entries, w
 - "Course": a guided 7-day path and 17 unlockable achievements (badges).
 - "Export CSV (all entries)" and "Cite as BibTeX"; a "Link" button for sharing.
 - Dark/light theme, three text sizes, zoom.
-- "Progress backup" (in "About this atlas"): exports and imports to/from a JSON file the progress, badges, ELO and local preferences (the `sff:` keys); on import the file is validated and confirmation is requested.
+- "Progress backup" (in "About this atlas"): exports and imports to/from a JSON file the progress, badges, ELO and local preferences (the `sah-fara-frontiere.` keys); on import the file is validated and confirmation is requested.
 
 ## New features (14.4.0) — "Chess table"
 
@@ -55,7 +55,7 @@ Tests: `node tests/fff-r8.test.mjs` (Playwright, network blocked, 2 pages for P2
 
 ## Privacy and network
 
-- Local: in `localStorage`, with the prefix `sff:` — the atlas state (`sff:state:v2`), the course (`sff:curriculum:v1`), the theme, text size, sound, notation and glyph style, the badges, game statistics, the player's ELO, the current game state and the "welcome"/seen-tour markers.
+- Local: in `localStorage`, with the prefix `sah-fara-frontiere.` — the atlas state (`sah-fara-frontiere.state:v2`), the course (`sah-fara-frontiere.curriculum:v1`), the theme, text size, sound, notation and glyph style, the badges, game statistics, the player's ELO, the current game state and the "welcome"/seen-tour markers.
 - The "Chess table" features use separate `sff_r8_` keys (announcement/voice preferences, tournament, daily streak, the cache of the problem of the day); the FFF kit adds backup (export/import/delete) and the "Transparency" window from the version number.
 - The only new network communication is the optional two-player game, through WebRTC directly between the two players, with manual signalling and, only if you enter one, a STUN server (declared egress: 0).
 - Network: in the checked code there are no `fetch` calls and no scripts/fonts loaded from external hosts. The sheets contain links to sources (for example Wikipedia, FIDE Handbook, Lichess, chessvariants.com), which open only if you click them. The application text states: "Works offline, no tracking, no ads".
@@ -66,6 +66,10 @@ Tests: `node tests/fff-r8.test.mjs` (Playwright, network blocked, 2 pages for P2
 Download `index.html` (about 2.4 MB) and open it in a browser; it works without internet. Only the links to external sources require a connection.
 
 ## History / Changelog
+### 14.6.12 — 2026-10-23
+
+- Local storage keys now use the `sah-fara-frontiere.` prefix (`FFF.store.migrate` at startup, before any read): existing data is kept automatically, and old `.fff.json` backups can still be imported.
+
 - **14.6.10 — 2026-10-22:** Weight and DOM: the page falls from 8.4 MB to 3.2 MB and from about 22,500 to about 1,700 DOM nodes at start. The 1,005 cards are created as light skeletons (aria-label, tabindex) and their content is built only when they approach the viewport (IntersectionObserver, 1,400 px margin) and released when they move away, keeping their measured height so the scroll does not jump; search highlighting is applied at hydration. The content translations (en, fr, it, es, pt, de, hu; 5.3 MB) moved to `i18n/vi18n-<lang>.js`, loaded only for the chosen language (plus English as fallback); the service worker caches them and, once idle, the page downloads the rest in the background (skipped with Save-Data / slow connections), so the app stays fully offline; if a pack cannot be loaded a notice in the chosen language is shown. Touch targets of 44 px on coarse pointers for the achievements, about, welcome-banner and help buttons. New test: `tests/lazy.test.mjs`.
 
 ### 14.6.9 — 2026-10-22
@@ -128,7 +132,7 @@ Alexio — Alexandru-Ionuț Chiuță, contact: alexio@trom.tf. The application p
 
 ## English summary
 
-Șah fără frontiere is a single-file chess-variants atlas: 706 variants plus 299 lexicon entries, with search, filters, playable engines (local AI, PGN/FEN export, local ELO), a 7-day guided course, badges and CSV/BibTeX export. Since 14.4.0 a "Chess table" for standard chess adds two-player play over WebRTC (manual signalling, no server), a simple local analyzer, a deterministic daily mate puzzle, "why can't I move?" explanations, keyboard play with spoken announcements and a local Elo tournament (the 706 variants are not covered). Everything runs locally; progress is kept in localStorage (`sff:` keys) and no external requests were found in the code. Licensed MIT for the author's own contribution (see LICENSE); third-party-derived summaries keep their source licences.
+Șah fără frontiere is a single-file chess-variants atlas: 706 variants plus 299 lexicon entries, with search, filters, playable engines (local AI, PGN/FEN export, local ELO), a 7-day guided course, badges and CSV/BibTeX export. Since 14.4.0 a "Chess table" for standard chess adds two-player play over WebRTC (manual signalling, no server), a simple local analyzer, a deterministic daily mate puzzle, "why can't I move?" explanations, keyboard play with spoken announcements and a local Elo tournament (the 706 variants are not covered). Everything runs locally; progress is kept in localStorage (`sah-fara-frontiere.` keys) and no external requests were found in the code. Licensed MIT for the author's own contribution (see LICENSE); third-party-derived summaries keep their source licences.
 
 ## Audit
 

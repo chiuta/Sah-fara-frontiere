@@ -11,7 +11,7 @@ const SPEECH_FN = () => {
   const voices = ["ro-RO", "en-US", "fr-FR", "it-IT", "es-ES", "pt-PT", "de-DE", "hu-HU"].map(l => ({lang: l, name: "Test " + l, localService: true, default: l === "en-US"}));
   Object.defineProperty(window, "speechSynthesis", {configurable: true, value: {cancel() {}, speak(u) { window.__said.push(u.text); }, getVoices() { return voices; }, addEventListener() {}, removeEventListener() {}}});
 };
-const SPEECH = {content: "(" + SPEECH_FN.toString() + ")();try{if(window.name!=='__sff_lang'){window.name='__sff_lang';localStorage.setItem('sff:lang'," + JSON.stringify(LANG) + ")}}catch(e){}"};
+const SPEECH = {content: "(" + SPEECH_FN.toString() + ")();try{if(window.name!=='__sff_lang'){window.name='__sff_lang';localStorage.setItem('sah-fara-frontiere.lang'," + JSON.stringify(LANG) + ")}}catch(e){}"};
 // text din dicționarul aplicației în limba curentă a paginii; fragmentele literale ale unui șablon (fără {variabile}) trebuie să apară în text
 const tx = (page, k, v) => page.evaluate(([k, v]) => TBL.t(k, v), [k, v || null]);
 const chunks = async (page, k, v) => (await tx(page, k, v)).split(/\{\w+\}/).map(x => x.trim()).filter(Boolean);
@@ -38,8 +38,8 @@ console.log("1. pornire, versiune, kit, regresie atlas");
   check("0 erori", st.errs.length === 0, st.errs);
   check("0 cereri de rețea", st.net.length === 0, st.net);
   check("0 violări CSP", (await page.evaluate(() => window.__csp)).length === 0);
-  check("meta application-version 14.6.11", (await page.getAttribute('meta[name="application-version"]', "content")) === "14.6.11");
-  check("#app-version", /14\.6\.11 · 2026-10-23/.test(await page.textContent("#app-version")));
+  check("meta application-version 14.6.12", (await page.getAttribute('meta[name="application-version"]', "content")) === "14.6.12");
+  check("#app-version", /14\.6\.12 · 2026-10-23/.test(await page.textContent("#app-version")));
   check("fără depășire orizontală (1280)", (await hOverflow(page)) <= 0);
   check("atlasul are 1005 intrări", /1005/.test(await page.textContent("#results-count")), await page.textContent("#results-count"));
   check("butonul #table-btn („Masa de șah” / „Chess table”) există", await page.locator("#table-btn").isVisible());
@@ -326,7 +326,7 @@ console.log("7. limbi: paritate chei și schimbare de limbă");
   await page.locator(`${PANE} select[id^="sh-lang"]`).selectOption(target);
   await page.waitForTimeout(500);
   await page.waitForSelector("dialog.c1a-dlg[open]");
-  check(`selectorul din „Masa” comută limba paginii (${target})`, (await page.evaluate(() => document.documentElement.lang)) === target && (await page.evaluate(() => localStorage.getItem("sff:lang"))) === target);
+  check(`selectorul din „Masa” comută limba paginii (${target})`, (await page.evaluate(() => document.documentElement.lang)) === target && (await page.evaluate(() => localStorage.getItem("sah-fara-frontiere.lang"))) === target);
   check(`titlul ferestrei trece pe ${target}`, (await page.locator("dialog.c1a-dlg[open]").innerText()).includes(TITLE[target]), await page.locator("dialog.c1a-dlg[open]").innerText());
   await page.reload(); await page.waitForFunction(() => window.__sah8); await page.waitForTimeout(500); await page.click("#table-btn");
   check("limba aleasă persistă", (await page.locator("dialog.c1a-dlg[open]").innerText()).includes(TITLE[target]), (await page.locator("dialog.c1a-dlg[open]").innerText()).slice(0, 100));

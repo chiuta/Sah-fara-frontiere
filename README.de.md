@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · **Deutsch** · [Magyar](README.hu.md)
 
-**Version:** 14.6.11 · **Zuletzt aktualisiert:** 2026-10-23
+**Version:** 14.6.12 · **Zuletzt aktualisiert:** 2026-10-23
 
 Oberflächensprachen: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -25,7 +25,7 @@ Atlas/Enzyklopädie von Schachvarianten: 706 Varianten und 299 Lexikoneinträge,
 - „Kurs“: ein geführter 7-Tage-Pfad und 17 freischaltbare Errungenschaften (Abzeichen).
 - „CSV exportieren (alle Einträge)“ und „Als BibTeX zitieren“; Schaltfläche „Link“ zum Teilen.
 - Dunkles/helles Thema, drei Textgrößen, Zoom.
-- „Fortschrittssicherung“ (unter „Über diesen Atlas“): exportiert und importiert in eine JSON-Datei den Kurs, die Abzeichen, das ELO und die lokalen Einstellungen (die `sff:`-Schlüssel); beim Import wird die Datei validiert und eine Bestätigung verlangt.
+- „Fortschrittssicherung“ (unter „Über diesen Atlas“): exportiert und importiert in eine JSON-Datei den Kurs, die Abzeichen, das ELO und die lokalen Einstellungen (die `sah-fara-frontiere.`-Schlüssel); beim Import wird die Datei validiert und eine Bestätigung verlangt.
 
 ## Neue Funktionen (14.4.0) — „Schachtisch“
 
@@ -55,7 +55,7 @@ Tests: `node tests/fff-r8.test.mjs` (Playwright, Netzwerk gesperrt, 2 Seiten fü
 
 ## Datenschutz und Netzwerk
 
-- Lokal: in `localStorage`, mit dem Präfix `sff:` — der Zustand des Atlas (`sff:state:v2`), der Kurs (`sff:curriculum:v1`), das Thema, die Textgröße, der Ton, der Stil von Notation und Glyphen, die Abzeichen, die Spielstatistiken, das ELO des Spielers, der Zustand des laufenden Spiels und die Markierungen „Willkommen“/Tour gesehen.
+- Lokal: in `localStorage`, mit dem Präfix `sah-fara-frontiere.` — der Zustand des Atlas (`sah-fara-frontiere.state:v2`), der Kurs (`sah-fara-frontiere.curriculum:v1`), das Thema, die Textgröße, der Ton, der Stil von Notation und Glyphen, die Abzeichen, die Spielstatistiken, das ELO des Spielers, der Zustand des laufenden Spiels und die Markierungen „Willkommen“/Tour gesehen.
 - Die Funktionen des „Schachtischs“ verwenden gesonderte `sff_r8_`-Schlüssel (Ansage-/Spracheinstellungen, Turnier, tägliche Serie, Cache der Aufgabe des Tages); das FFF-Kit fügt eine Sicherung (Export/Import/Löschen) und das Fenster „Transparenz“ über die Versionsnummer hinzu.
 - Die einzige neue Netzwerkkommunikation ist das optionale Zwei-Personen-Spiel über WebRTC direkt zwischen den beiden Spielern, mit manueller Signalisierung und, nur wenn du einen eingibst, einem STUN-Server (deklarierter Egress: 0).
 - Netzwerk: Im geprüften Code gibt es keine `fetch`-Aufrufe und keine von externen Hosts geladenen Skripte/Schriften. Die Blätter enthalten Links zu Quellen (zum Beispiel Wikipedia, FIDE Handbook, Lichess, chessvariants.com), die sich nur per Klick öffnen. Der Anwendungstext erklärt: „Funktioniert offline, ohne Tracking, ohne Werbung“.
@@ -66,6 +66,10 @@ Tests: `node tests/fff-r8.test.mjs` (Playwright, Netzwerk gesperrt, 2 Seiten fü
 Lade `index.html` (etwa 2,4 MB) herunter und öffne sie in einem Browser; sie funktioniert ohne Internet. Nur die Links zu externen Quellen benötigen eine Verbindung.
 
 ## Verlauf / Changelog
+### 14.6.12 — 2026-10-23
+
+- Die Schlüssel des lokalen Speichers verwenden jetzt das Präfix `sah-fara-frontiere.` (`FFF.store.migrate` beim Start, vor jedem Lesezugriff): vorhandene Daten bleiben automatisch erhalten, alte `.fff.json`-Sicherungen lassen sich weiterhin importieren.
+
 - **14.6.10 — 2026-10-22:** Gewicht und DOM: die Seite schrumpft von 8,4 MB auf 3,2 MB und beim Start von etwa 22.500 auf etwa 1.700 DOM-Knoten. Die 1.005 Karten werden als leichte Gerüste angelegt (aria-label, tabindex); ihr Inhalt wird erst aufgebaut, wenn sie sich dem Fenster nähern (IntersectionObserver, 1.400 px Rand), und wieder freigegeben, wenn sie sich entfernen, wobei die gemessene Höhe erhalten bleibt, damit das Scrollen nicht springt; die Suchhervorhebung wird bei der Hydrierung angewendet. Die Inhaltsübersetzungen (en, fr, it, es, pt, de, hu; 5,3 MB) liegen jetzt in `i18n/vi18n-<Sprache>.js` und werden nur für die gewählte Sprache geladen (plus Englisch als Rückfall); der Service Worker cached sie und lädt im Leerlauf den Rest im Hintergrund (nicht bei Save-Data / langsamer Verbindung), sodass die App vollständig offline bleibt; lässt sich ein Paket nicht laden, erscheint ein Hinweis in der gewählten Sprache. 44-px-Touch-Ziele bei grobem Zeiger für die Schaltflächen Erfolge, Info, Willkommensbanner und Hilfe. Neuer Test: `tests/lazy.test.mjs`.
 
 ### 14.6.9 — 2026-10-22
@@ -127,7 +131,7 @@ Spielnamen sind Handelsbezeichnungen ihrer Inhaber, beschreibend verwendet; das 
 Alexio — Alexandru-Ionuț Chiuță, Kontakt: alexio@trom.tf. Die Anwendung stellt ihn als Autor, Entwickler und Musiker vor, mit Erwähnungen des Projekts TROM, der Editura Tornada und des Centrul StrING.
 
 ## Zusammenfassung
-Șah fără frontiere ist ein Atlas von Schachvarianten in einer einzigen Datei: 706 Varianten plus 299 Lexikoneinträge, mit Suche, Filtern, spielbaren Engines (lokale KI, PGN-/FEN-Export, lokales ELO), einem geführten 7-Tage-Kurs, Abzeichen und CSV-/BibTeX-Export. Seit 14.4.0 ergänzt ein „Schachtisch“ für Standardschach das Spiel zu zweit über WebRTC (manuelle Signalisierung, ohne Server), einen einfachen lokalen Analysator, eine deterministische tägliche Mattaufgabe, Erklärungen „Warum kann ich nicht ziehen?“, Tastaturspiel mit gesprochenen Ansagen und ein lokales Elo-Turnier (die 706 Varianten sind nicht abgedeckt). Alles läuft lokal; der Fortschritt wird in localStorage (`sff:`-Schlüssel) gehalten, und im Code wurden keine externen Anfragen gefunden. Für den eigenen Beitrag des Autors unter MIT-Lizenz (siehe LICENSE); von Dritten abgeleitete Zusammenfassungen behalten ihre Quelllizenzen.
+Șah fără frontiere ist ein Atlas von Schachvarianten in einer einzigen Datei: 706 Varianten plus 299 Lexikoneinträge, mit Suche, Filtern, spielbaren Engines (lokale KI, PGN-/FEN-Export, lokales ELO), einem geführten 7-Tage-Kurs, Abzeichen und CSV-/BibTeX-Export. Seit 14.4.0 ergänzt ein „Schachtisch“ für Standardschach das Spiel zu zweit über WebRTC (manuelle Signalisierung, ohne Server), einen einfachen lokalen Analysator, eine deterministische tägliche Mattaufgabe, Erklärungen „Warum kann ich nicht ziehen?“, Tastaturspiel mit gesprochenen Ansagen und ein lokales Elo-Turnier (die 706 Varianten sind nicht abgedeckt). Alles läuft lokal; der Fortschritt wird in localStorage (`sah-fara-frontiere.`-Schlüssel) gehalten, und im Code wurden keine externen Anfragen gefunden. Für den eigenen Beitrag des Autors unter MIT-Lizenz (siehe LICENSE); von Dritten abgeleitete Zusammenfassungen behalten ihre Quelllizenzen.
 
 ## Audit
 
