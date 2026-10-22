@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · **Português** · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versão:** 14.6.4 · **Última atualização:** 2026-10-22
+**Versão:** 14.6.5 · **Última atualização:** 2026-10-22
 
 Idiomas da interface: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -66,6 +66,9 @@ Testes: `node tests/fff-r8.test.mjs` (Playwright, rede bloqueada, 2 páginas par
 Transfira `index.html` (cerca de 2,4 MB) e abra-o num navegador; funciona sem internet. Apenas as ligações para fontes externas exigem ligação.
 
 ## Histórico / Changelog
+
+### 14.6.5 — 2026-10-22
+- Correções de tradução: o título da página e as metaetiquetas seguem o idioma da interface; as etiquetas dos botões de filtro por etiqueta e dos tipos de tabuleiro estão traduzidas nos 8 idiomas.
 
 ### v14.6.4 — 22 de outubro de 2026
 - Corrigida a entrada 460 (Arménia): os três títulos olímpicos (2006, 2008, 2012) não foram consecutivos (em 2010 ganhou a Ucrânia) e Aronian era segundo, e não terceiro, do mundo em 2014; a fórmula «tripleta» foi removida nas 8 línguas. Verificadas as 26 entradas assinaladas; não se encontraram mais erros.

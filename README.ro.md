@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 14.6.4 · **Ultima actualizare:** 2026-10-22
+**Versiune:** 14.6.5 · **Ultima actualizare:** 2026-10-22
 
 Limbile interfeței: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -66,6 +66,9 @@ Teste: `node tests/fff-r8.test.mjs` (Playwright, rețea blocată, 2 pagini pentr
 Descarcă `index.html` (aproximativ 2,4 MB) și deschide-l în browser; funcționează fără internet. Doar linkurile către surse externe necesită conexiune.
 
 ## Istoric / Changelog
+
+### 14.6.5 — 2026-10-22
+- Corecturi de traducere: titlul paginii și meta-etichetele urmează limba interfeței; etichetele butoanelor de filtrare după tag și etichetele de tablă/tip sunt traduse în toate cele 8 limbi.
 
 ### v14.6.4 — 22 octombrie 2026
 - Corectată intrarea 460 (Armenia): cele trei titluri olimpice (2006, 2008, 2012) nu au fost consecutive (în 2010 a câștigat Ucraina), iar Aronian a fost al doilea, nu al treilea, din lume în 2014; formularea „hat-trick” a fost eliminată în toate cele 8 limbi. Verificate factual cele 26 de intrări marcate pentru revizuire; nu s-au găsit alte erori.

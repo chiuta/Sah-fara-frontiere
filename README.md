@@ -2,7 +2,7 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 14.6.4 · **Last updated:** 2026-10-22
+**Version:** 14.6.5 · **Last updated:** 2026-10-22
 
 Interface languages: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -66,6 +66,9 @@ Tests: `node tests/fff-r8.test.mjs` (Playwright, network blocked, 2 pages for P2
 Download `index.html` (about 2.4 MB) and open it in a browser; it works without internet. Only the links to external sources require a connection.
 
 ## History / Changelog
+
+### 14.6.5 — 2026-10-22
+- Translation fixes: page title and meta tags follow the interface language; tag-filter button labels and board/type labels are translated in all 8 languages.
 
 ### v14.6.4 — 22 October 2026
 - Corrected entry 460 (Armenia): the three Olympiad titles (2006, 2008, 2012) were not consecutive (Ukraine won in 2010) and Aronian was second, not third, in the world in 2014; the "hat-trick" wording was removed in all 8 languages. Fact-checked the 26 entries flagged for review; no further errors found.

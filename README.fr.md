@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · **Français** · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version :** 14.6.4 · **Dernière mise à jour :** 2026-10-22
+**Version :** 14.6.5 · **Dernière mise à jour :** 2026-10-22
 
 Langues de l'interface : **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -66,6 +66,9 @@ Tests : `node tests/fff-r8.test.mjs` (Playwright, réseau bloqué, 2 pages pour 
 Téléchargez `index.html` (environ 2,4 Mo) et ouvrez-le dans un navigateur ; il fonctionne sans internet. Seuls les liens vers des sources externes nécessitent une connexion.
 
 ## Historique / Changelog
+
+### 14.6.5 — 2026-10-22
+- Corrections de traduction : le titre de la page et les balises meta suivent la langue de l’interface ; les libellés des boutons de filtre par étiquette et des types d’échiquier sont traduits dans les 8 langues.
 
 ### v14.6.4 — 22 octobre 2026
 - Entrée 460 (Arménie) corrigée : les trois titres olympiques (2006, 2008, 2012) n'étaient pas consécutifs (l'Ukraine a gagné en 2010) et Aronian était deuxième, et non troisième, mondial en 2014 ; la formule « triplé » a été retirée dans les 8 langues. Vérification factuelle des 26 entrées signalées ; aucune autre erreur trouvée.

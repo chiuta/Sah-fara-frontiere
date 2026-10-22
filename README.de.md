@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · **Deutsch** · [Magyar](README.hu.md)
 
-**Version:** 14.6.4 · **Zuletzt aktualisiert:** 2026-10-22
+**Version:** 14.6.5 · **Zuletzt aktualisiert:** 2026-10-22
 
 Oberflächensprachen: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -66,6 +66,9 @@ Tests: `node tests/fff-r8.test.mjs` (Playwright, Netzwerk gesperrt, 2 Seiten fü
 Lade `index.html` (etwa 2,4 MB) herunter und öffne sie in einem Browser; sie funktioniert ohne Internet. Nur die Links zu externen Quellen benötigen eine Verbindung.
 
 ## Verlauf / Changelog
+
+### 14.6.5 — 2026-10-22
+- Übersetzungskorrekturen: Seitentitel und Meta-Tags folgen der Oberflächensprache; Beschriftungen der Tag-Filter-Schaltflächen und der Brett-/Typangaben sind in allen 8 Sprachen übersetzt.
 
 ### v14.6.4 — 22. Oktober 2026
 - Eintrag 460 (Armenien) korrigiert: Die drei Olympiasiege (2006, 2008, 2012) waren nicht aufeinanderfolgend (2010 siegte die Ukraine), und Aronjan war 2014 Zweiter, nicht Dritter der Welt; die Formulierung „Hattrick“ wurde in allen 8 Sprachen entfernt. Die 26 zur Prüfung markierten Einträge wurden faktengeprüft; keine weiteren Fehler gefunden.

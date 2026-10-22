@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · **Magyar**
 
-**Verzió:** 14.6.4 · **Utolsó frissítés:** 2026-10-22
+**Verzió:** 14.6.5 · **Utolsó frissítés:** 2026-10-22
 
 A felület nyelvei: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -66,6 +66,9 @@ Tesztek: `node tests/fff-r8.test.mjs` (Playwright, letiltott hálózat, 2 oldal 
 Töltsd le az `index.html` fájlt (körülbelül 2,4 MB), és nyisd meg böngészőben; internet nélkül is működik. Csak a külső forrásokra mutató hivatkozásokhoz kell kapcsolat.
 
 ## Előzmények / Changelog
+
+### 14.6.5 — 2026-10-22
+- Fordítási javítások: az oldalcím és a meta címkék követik a felület nyelvét; a címkeszűrő gombok és a tábla-/típuscímkék mind a 8 nyelven le vannak fordítva.
 
 ### v14.6.4 — 2026. október 22.
 - Javítva a 460. bejegyzés (Örményország): a három olimpiai cím (2006, 2008, 2012) nem egymást követő volt (2010-ben Ukrajna nyert), Aronján pedig 2014-ben a világ második, nem harmadik játékosa volt; a „mesterhármas” megfogalmazás mind a 8 nyelvből kikerült. A 26 átvizsgálásra jelölt bejegyzés tényellenőrzése megtörtént; további hiba nem volt.

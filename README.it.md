@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · **Italiano** · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versione:** 14.6.4 · **Ultimo aggiornamento:** 2026-10-22
+**Versione:** 14.6.5 · **Ultimo aggiornamento:** 2026-10-22
 
 Lingue dell'interfaccia: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -66,6 +66,9 @@ Test: `node tests/fff-r8.test.mjs` (Playwright, rete bloccata, 2 pagine per il P
 Scarica `index.html` (circa 2,4 MB) e aprilo in un browser; funziona senza internet. Solo i link verso fonti esterne richiedono una connessione.
 
 ## Cronologia / Changelog
+
+### 14.6.5 — 2026-10-22
+- Correzioni di traduzione: il titolo della pagina e i meta tag seguono la lingua dell’interfaccia; le etichette dei pulsanti di filtro per tag e dei tipi di scacchiera sono tradotte nelle 8 lingue.
 
 ### v14.6.4 — 22 ottobre 2026
 - Corretta la voce 460 (Armenia): i tre titoli olimpici (2006, 2008, 2012) non furono consecutivi (nel 2010 vinse l'Ucraina) e Aronian era secondo, non terzo, al mondo nel 2014; la formula «tripletta» è stata rimossa in tutte e 8 le lingue. Verificate le 26 voci segnalate; nessun altro errore trovato.
