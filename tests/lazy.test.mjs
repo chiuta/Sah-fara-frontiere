@@ -1,4 +1,4 @@
-// Șah fără frontiere — virtualizarea listei (carduri hidratate la cerere) și pachetele de limbă la cerere (14.6.10).
+// Șah fără frontiere — virtualizarea listei (carduri hidratate la cerere) și pachetele de limbă la cerere (14.6.11).
 // Rulare: node tests/lazy.test.mjs   (rețea blocată în afară de serverul local)
 import http from "node:http";
 import fs from "node:fs";
