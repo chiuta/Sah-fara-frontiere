@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · **Magyar**
 
-**Verzió:** 14.6.6 · **Utolsó frissítés:** 2026-10-22
+**Verzió:** 14.6.7 · **Utolsó frissítés:** 2026-10-22
 
 A felület nyelvei: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -67,6 +67,7 @@ Töltsd le az `index.html` fájlt (körülbelül 2,4 MB), és nyisd meg böngés
 
 ## Előzmények / Changelog
 
+- 14.6.7 — 2026-10-22: a megerősítések és másolási tartalékok lefordított beágyazott párbeszédeket használnak a confirm()/prompt() helyett; valódi service worker és manifest offline induláshoz; mobil és kisegítő finomítások: legalább 12 px-es szöveg és legalább 24 px-es érintési felületek.
 - **14.6.6 — 2026-10-22:** a „kísérleti változat” és a „rokon játék” jelvények súgószövegei és hozzáférhetőségi címkéi mostantól minden nyelven le vannak fordítva (korábban románul maradtak).
 ### 14.6.5 — 2026-10-22
 - Fordítási javítások: az oldalcím és a meta címkék követik a felület nyelvét; a címkeszűrő gombok és a tábla-/típuscímkék mind a 8 nyelven le vannak fordítva.
