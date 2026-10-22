@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · **Italiano** · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versione:** 14.6.9 · **Ultimo aggiornamento:** 2026-10-22
+**Versione:** 14.6.10 · **Ultimo aggiornamento:** 2026-10-22
 
 Lingue dell'interfaccia: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -66,6 +66,7 @@ Test: `node tests/fff-r8.test.mjs` (Playwright, rete bloccata, 2 pagine per il P
 Scarica `index.html` (circa 2,4 MB) e aprilo in un browser; funziona senza internet. Solo i link verso fonti esterne richiedono una connessione.
 
 ## Cronologia / Changelog
+- **14.6.10 — 2026-10-22:** Peso e DOM: la pagina scende da 8,4 MB a 3,2 MB e da circa 22.500 a circa 1.700 nodi DOM all’avvio. Le 1.005 schede vengono create come semplici scheletri (aria-label, tabindex) e il loro contenuto è costruito solo quando si avvicinano alla finestra (IntersectionObserver, margine di 1.400 px) e liberato quando si allontanano, mantenendo l’altezza misurata perché lo scorrimento non salti; l’evidenziazione della ricerca si applica all’idratazione. Le traduzioni del contenuto (en, fr, it, es, pt, de, hu; 5,3 MB) sono in `i18n/vi18n-<lingua>.js`, caricati solo per la lingua scelta (più l’inglese come riserva); il service worker li tiene in cache e, quando la pagina è inattiva, scarica il resto in background (non con Save-Data / connessioni lente), quindi l’app resta completamente offline; se un pacchetto non si può caricare viene mostrato un avviso nella lingua scelta. Bersagli touch di 44 px su puntatore grossolano per i pulsanti di traguardi, informazioni, banner di benvenuto e aiuto. Nuovo test: `tests/lazy.test.mjs`.
 
 ### 14.6.9 — 2026-10-22
 

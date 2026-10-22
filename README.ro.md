@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 14.6.9 · **Ultima actualizare:** 2026-10-22
+**Versiune:** 14.6.10 · **Ultima actualizare:** 2026-10-22
 
 Limbile interfeței: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -66,6 +66,7 @@ Teste: `node tests/fff-r8.test.mjs` (Playwright, rețea blocată, 2 pagini pentr
 Descarcă `index.html` (aproximativ 2,4 MB) și deschide-l în browser; funcționează fără internet. Doar linkurile către surse externe necesită conexiune.
 
 ## Istoric / Changelog
+- **14.6.10 — 2026-10-22:** Greutate și DOM: pagina scade de la 8,4 MB la 3,2 MB și de la ≈22.500 la ≈1.700 de noduri DOM la pornire. Cele 1.005 carduri se creează ca „schelete” ușoare (aria-label, tabindex), iar conținutul lor se construiește doar când se apropie de fereastră (IntersectionObserver, margine 1.400 px) și se eliberează când se îndepărtează, păstrând înălțimea măsurată ca scroll-ul să nu sară; evidențierea căutării se aplică la hidratare. Traducerile conținutului (en, fr, it, es, pt, de, hu; 5,3 MB) au trecut în `i18n/vi18n-<limbă>.js`, încărcate doar pentru limba aleasă (plus engleza ca rezervă); service worker-ul le păstrează în cache și, când pagina e inactivă, descarcă restul în fundal (nu cu Save-Data / conexiuni lente), deci aplicația rămâne complet offline; dacă un pachet nu poate fi încărcat se afișează o notificare în limba aleasă. Ținte tactile de 44 px pe pointer grosier la butoanele de realizări, despre, banner de bun venit și ajutor. Test nou: `tests/lazy.test.mjs`.
 
 ### 14.6.9 — 2026-10-22
 

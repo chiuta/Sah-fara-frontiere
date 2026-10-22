@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · **Magyar**
 
-**Verzió:** 14.6.9 · **Utolsó frissítés:** 2026-10-22
+**Verzió:** 14.6.10 · **Utolsó frissítés:** 2026-10-22
 
 A felület nyelvei: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -66,6 +66,7 @@ Tesztek: `node tests/fff-r8.test.mjs` (Playwright, letiltott hálózat, 2 oldal 
 Töltsd le az `index.html` fájlt (körülbelül 2,4 MB), és nyisd meg böngészőben; internet nélkül is működik. Csak a külső forrásokra mutató hivatkozásokhoz kell kapcsolat.
 
 ## Előzmények / Changelog
+- **14.6.10 — 2026-10-22:** Méret és DOM: az oldal 8,4 MB-ról 3,2 MB-ra, indításkor pedig körülbelül 22 500-ról körülbelül 1 700 DOM-csomópontra csökken. Az 1 005 kártya könnyű vázként jön létre (aria-label, tabindex), tartalmuk csak akkor épül fel, amikor közelednek az ablakhoz (IntersectionObserver, 1 400 px margó), és felszabadul, amikor eltávolodnak; a mért magasságot megőrzik, hogy a görgetés ne ugorjon; a keresés kiemelése a feltöltéskor érvényesül. A tartalom fordításai (en, fr, it, es, pt, de, hu; 5,3 MB) az `i18n/vi18n-<nyelv>.js` fájlokba kerültek, csak a kiválasztott nyelvhez töltődnek be (plusz az angol tartalékként); a service worker gyorsítótárazza őket, tétlen oldalnál pedig a háttérben letölti a többit (Save-Data / lassú kapcsolat esetén nem), így az alkalmazás teljesen offline marad; ha egy csomag nem tölthető be, értesítés jelenik meg a kiválasztott nyelven. 44 px-es érintési célpontok durva mutatónál az eredmények, névjegy, üdvözlő szalag és súgó gombjainál. Új teszt: `tests/lazy.test.mjs`.
 
 ### 14.6.9 — 2026-10-22
 

@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · **Français** · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version :** 14.6.9 · **Dernière mise à jour :** 2026-10-22
+**Version :** 14.6.10 · **Dernière mise à jour :** 2026-10-22
 
 Langues de l'interface : **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -66,6 +66,7 @@ Tests : `node tests/fff-r8.test.mjs` (Playwright, réseau bloqué, 2 pages pour 
 Téléchargez `index.html` (environ 2,4 Mo) et ouvrez-le dans un navigateur ; il fonctionne sans internet. Seuls les liens vers des sources externes nécessitent une connexion.
 
 ## Historique / Changelog
+- **14.6.10 — 2026-10-22:** Poids et DOM : la page passe de 8,4 Mo à 3,2 Mo et d’environ 22 500 à environ 1 700 nœuds DOM au démarrage. Les 1 005 cartes sont créées comme de simples squelettes (aria-label, tabindex) et leur contenu n’est construit que lorsqu’elles approchent de la fenêtre (IntersectionObserver, marge de 1 400 px) puis libéré quand elles s’éloignent, en gardant la hauteur mesurée pour que le défilement ne saute pas ; la surbrillance de la recherche est appliquée à l’hydratation. Les traductions du contenu (en, fr, it, es, pt, de, hu ; 5,3 Mo) sont dans `i18n/vi18n-<langue>.js`, chargés seulement pour la langue choisie (plus l’anglais en secours) ; le service worker les met en cache et, quand la page est inactive, télécharge le reste en arrière-plan (sauf avec Save-Data / connexion lente), de sorte que l’application reste entièrement hors ligne ; si un pack ne peut pas être chargé, un avis s’affiche dans la langue choisie. Cibles tactiles de 44 px sur pointeur grossier pour les boutons de réussites, à propos, bannière de bienvenue et aide. Nouveau test : `tests/lazy.test.mjs`.
 
 ### 14.6.9 — 2026-10-22
 

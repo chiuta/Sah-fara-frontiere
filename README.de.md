@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · **Deutsch** · [Magyar](README.hu.md)
 
-**Version:** 14.6.9 · **Zuletzt aktualisiert:** 2026-10-22
+**Version:** 14.6.10 · **Zuletzt aktualisiert:** 2026-10-22
 
 Oberflächensprachen: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -66,6 +66,7 @@ Tests: `node tests/fff-r8.test.mjs` (Playwright, Netzwerk gesperrt, 2 Seiten fü
 Lade `index.html` (etwa 2,4 MB) herunter und öffne sie in einem Browser; sie funktioniert ohne Internet. Nur die Links zu externen Quellen benötigen eine Verbindung.
 
 ## Verlauf / Changelog
+- **14.6.10 — 2026-10-22:** Gewicht und DOM: die Seite schrumpft von 8,4 MB auf 3,2 MB und beim Start von etwa 22.500 auf etwa 1.700 DOM-Knoten. Die 1.005 Karten werden als leichte Gerüste angelegt (aria-label, tabindex); ihr Inhalt wird erst aufgebaut, wenn sie sich dem Fenster nähern (IntersectionObserver, 1.400 px Rand), und wieder freigegeben, wenn sie sich entfernen, wobei die gemessene Höhe erhalten bleibt, damit das Scrollen nicht springt; die Suchhervorhebung wird bei der Hydrierung angewendet. Die Inhaltsübersetzungen (en, fr, it, es, pt, de, hu; 5,3 MB) liegen jetzt in `i18n/vi18n-<Sprache>.js` und werden nur für die gewählte Sprache geladen (plus Englisch als Rückfall); der Service Worker cached sie und lädt im Leerlauf den Rest im Hintergrund (nicht bei Save-Data / langsamer Verbindung), sodass die App vollständig offline bleibt; lässt sich ein Paket nicht laden, erscheint ein Hinweis in der gewählten Sprache. 44-px-Touch-Ziele bei grobem Zeiger für die Schaltflächen Erfolge, Info, Willkommensbanner und Hilfe. Neuer Test: `tests/lazy.test.mjs`.
 
 ### 14.6.9 — 2026-10-22
 

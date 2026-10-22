@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · **Português** · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versão:** 14.6.9 · **Última atualização:** 2026-10-22
+**Versão:** 14.6.10 · **Última atualização:** 2026-10-22
 
 Idiomas da interface: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -66,6 +66,7 @@ Testes: `node tests/fff-r8.test.mjs` (Playwright, rede bloqueada, 2 páginas par
 Transfira `index.html` (cerca de 2,4 MB) e abra-o num navegador; funciona sem internet. Apenas as ligações para fontes externas exigem ligação.
 
 ## Histórico / Changelog
+- **14.6.10 — 2026-10-22:** Peso e DOM: a página desce de 8,4 MB para 3,2 MB e de cerca de 22.500 para cerca de 1.700 nós DOM ao iniciar. As 1.005 fichas são criadas como esqueletos leves (aria-label, tabindex) e o seu conteúdo só é construído quando se aproximam da janela (IntersectionObserver, margem de 1.400 px) e libertado quando se afastam, mantendo a altura medida para o deslocamento não saltar; o realce da pesquisa aplica-se na hidratação. As traduções do conteúdo (en, fr, it, es, pt, de, hu; 5,3 MB) passaram para `i18n/vi18n-<idioma>.js`, carregados só para o idioma escolhido (mais o inglês como reserva); o service worker guarda-os em cache e, quando a página está inativa, descarrega o resto em segundo plano (não com Save-Data / ligações lentas), pelo que a aplicação continua totalmente offline; se um pacote não puder ser carregado, mostra-se um aviso no idioma escolhido. Alvos táteis de 44 px com ponteiro grosseiro nos botões de conquistas, acerca, banner de boas-vindas e ajuda. Novo teste: `tests/lazy.test.mjs`.
 
 ### 14.6.9 — 2026-10-22
 

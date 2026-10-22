@@ -2,7 +2,7 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 14.6.9 · **Last updated:** 2026-10-22
+**Version:** 14.6.10 · **Last updated:** 2026-10-22
 
 Interface languages: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -66,6 +66,7 @@ Tests: `node tests/fff-r8.test.mjs` (Playwright, network blocked, 2 pages for P2
 Download `index.html` (about 2.4 MB) and open it in a browser; it works without internet. Only the links to external sources require a connection.
 
 ## History / Changelog
+- **14.6.10 — 2026-10-22:** Weight and DOM: the page falls from 8.4 MB to 3.2 MB and from about 22,500 to about 1,700 DOM nodes at start. The 1,005 cards are created as light skeletons (aria-label, tabindex) and their content is built only when they approach the viewport (IntersectionObserver, 1,400 px margin) and released when they move away, keeping their measured height so the scroll does not jump; search highlighting is applied at hydration. The content translations (en, fr, it, es, pt, de, hu; 5.3 MB) moved to `i18n/vi18n-<lang>.js`, loaded only for the chosen language (plus English as fallback); the service worker caches them and, once idle, the page downloads the rest in the background (skipped with Save-Data / slow connections), so the app stays fully offline; if a pack cannot be loaded a notice in the chosen language is shown. Touch targets of 44 px on coarse pointers for the achievements, about, welcome-banner and help buttons. New test: `tests/lazy.test.mjs`.
 
 ### 14.6.9 — 2026-10-22
 
