@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · **Português** · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versão:** 14.6.12 · **Última atualização:** 2026-10-23
+**Versão:** 14.6.13 · **Última atualização:** 2026-10-23
 
 Idiomas da interface: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -66,6 +66,10 @@ Testes: `node tests/fff-r8.test.mjs` (Playwright, rede bloqueada, 2 páginas par
 Transfira `index.html` (cerca de 2,4 MB) e abra-o num navegador; funciona sem internet. Apenas as ligações para fontes externas exigem ligação.
 
 ## Histórico / Changelog
+### 14.6.13 — 2026-10-23
+
+- Alvos de toque de pelo menos 44 px em dispositivos táteis (`pointer:coarse`); o computador não muda.
+
 ### 14.6.12 — 2026-10-23
 
 - As chaves do armazenamento local passam a usar o prefixo `sah-fara-frontiere.` (`FFF.store.migrate` no arranque, antes de qualquer leitura): os dados existentes são mantidos automaticamente e as cópias `.fff.json` antigas continuam a poder ser importadas.

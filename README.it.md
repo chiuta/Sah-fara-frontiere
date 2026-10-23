@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · **Italiano** · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versione:** 14.6.12 · **Ultimo aggiornamento:** 2026-10-23
+**Versione:** 14.6.13 · **Ultimo aggiornamento:** 2026-10-23
 
 Lingue dell'interfaccia: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -66,6 +66,10 @@ Test: `node tests/fff-r8.test.mjs` (Playwright, rete bloccata, 2 pagine per il P
 Scarica `index.html` (circa 2,4 MB) e aprilo in un browser; funziona senza internet. Solo i link verso fonti esterne richiedono una connessione.
 
 ## Cronologia / Changelog
+### 14.6.13 — 2026-10-23
+
+- Bersagli touch di almeno 44 px sui dispositivi touch (`pointer:coarse`); il desktop resta invariato.
+
 ### 14.6.12 — 2026-10-23
 
 - Le chiavi dell'archiviazione locale usano ora il prefisso `sah-fara-frontiere.` (`FFF.store.migrate` all'avvio, prima di qualsiasi lettura): i dati esistenti vengono conservati automaticamente e i vecchi backup `.fff.json` si possono ancora importare.

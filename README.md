@@ -2,7 +2,7 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 14.6.12 · **Last updated:** 2026-10-23
+**Version:** 14.6.13 · **Last updated:** 2026-10-23
 
 Interface languages: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -66,6 +66,10 @@ Tests: `node tests/fff-r8.test.mjs` (Playwright, network blocked, 2 pages for P2
 Download `index.html` (about 2.4 MB) and open it in a browser; it works without internet. Only the links to external sources require a connection.
 
 ## History / Changelog
+### 14.6.13 — 2026-10-23
+
+- Touch targets of at least 44 px on touch devices (`pointer:coarse`); desktop is unchanged.
+
 ### 14.6.12 — 2026-10-23
 
 - Local storage keys now use the `sah-fara-frontiere.` prefix (`FFF.store.migrate` at startup, before any read): existing data is kept automatically, and old `.fff.json` backups can still be imported.
