@@ -1,6 +1,10 @@
 // ȘAH FĂRĂ FRONTIERE — teste pentru funcțiile noi (runda 8, C1a): joc în doi P2P, analizor, provocarea zilei,
 // „de ce nu pot muta?", tastatură + anunțuri, turneu Elo local. Rulare: node tests/fff-r8.test.mjs
 // (atlasul de 1005 intrări este verificat doar ca regresie: număr, deschidere, mod „Joacă”.)
+// [fff-portable] versiunea/data/kitul aplicației se citesc din app.json (nu mai sunt hard-codate în teste)
+import {readFileSync as __fffRF} from 'node:fs';
+const __FFF_APP = JSON.parse(__fffRF(new URL('../app.json', import.meta.url), 'utf8'));
+const __fffRe = (s) => String(s).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 import {launch, axeRun, hOverflow, check, summary, kitSmoke, kitLabel} from "./_lib.mjs";
 
 // Limba interfeței pentru rulare: TEST_LANG (implicit en). Testele nu depind de textul românesc: textele așteptate vin din dicționarul aplicației (TBL.t).
@@ -38,8 +42,8 @@ console.log("1. pornire, versiune, kit, regresie atlas");
   check("0 erori", st.errs.length === 0, st.errs);
   check("0 cereri de rețea", st.net.length === 0, st.net);
   check("0 violări CSP", (await page.evaluate(() => window.__csp)).length === 0);
-  check("meta application-version 14.6.14", (await page.getAttribute('meta[name="application-version"]', "content")) === "14.6.14");
-  check("#app-version", /14\.6\.14 · 2026-10-26/.test(await page.textContent("#app-version")));
+  check(`meta application-version ${__FFF_APP.version}`, (await page.getAttribute('meta[name="application-version"]', "content")) === __FFF_APP.version);
+  check("#app-version", new RegExp(String.raw`${__fffRe(__FFF_APP.version)} · ${__fffRe(__FFF_APP.updated)}`).test(await page.textContent("#app-version")));
   check("fără depășire orizontală (1280)", (await hOverflow(page)) <= 0);
   check("atlasul are 1005 intrări", /1005/.test(await page.textContent("#results-count")), await page.textContent("#results-count"));
   check("butonul #table-btn („Masa de șah” / „Chess table”) există", await page.locator("#table-btn").isVisible());

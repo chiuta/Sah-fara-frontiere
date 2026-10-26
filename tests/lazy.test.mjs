@@ -14,7 +14,7 @@ const srv = http.createServer((q, r) => {
 });
 await new Promise(res => srv.listen(0, "127.0.0.1", res));
 const BASE = "http://127.0.0.1:" + srv.address().port + "/";
-const browser = await chromium.launch({executablePath: "/opt/pw-browsers/chromium", args: ["--no-sandbox"]});
+const browser = await chromium.launch({executablePath: process.env.CHROMIUM_PATH || undefined, args: ["--no-sandbox"]});
 const errs = [];
 async function mk(o = {}) {
   const ctx = await browser.newContext({viewport: {width: o.w || 1366, height: o.h || 850}, locale: o.locale || "en-US", hasTouch: !!o.touch, isMobile: !!o.touch});
