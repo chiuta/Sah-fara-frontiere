@@ -2,9 +2,11 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 14.6.14 · **Ultima actualizare:** 2026-10-26
+**Versiune:** 15.0.0 · **Ultima actualizare:** 2026-10-26
 
 Limbile interfeței: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
+
+**Nou în 15.0.0:** în panoul *Analiză* poți **importa un PGN** (cu etichete, comentarii și variante; mutările ilegale sunt respinse cu numărul lor), aplicația **recunoaște deschiderea** dintr-o listă internă scurtă (nu un catalog ECO complet), iar revizuirea partidei arată gafele/greșelile/imprecizile etichetate, pierderea medie pe mutare și un buton „Vezi poziția” pentru fiecare. Analiza folosește motorul JS local (alpha-beta, adâncime mică) – nu Stockfish/WASM; este orientativă.
 
 Atlas/enciclopedie de variante de șah: 706 variante și 299 intrări de lexicon, cu motoare jucabile pentru o parte dintre ele.
 
