@@ -2,7 +2,7 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 15.0.0 · **Last updated:** 2026-10-26
+**Version:** 15.1.0 · **Last updated:** 2026-10-27
 
 Interface languages: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -11,6 +11,8 @@ An atlas/encyclopedia of chess variants: 706 variants and 299 lexicon entries, w
 **Live app:** https://chiuta.github.io/Sah-fara-frontiere/
 
 ![Screenshot](screenshot.en.png)
+
+**New in 15.1.0:** difficulty and number-of-players filters in the atlas, and a new "Against the engine" tab in the Chess table (adjustable engine level, take-back, PGN download, resume from a PGN). See `CHANGELOG.md`.
 
 ## What it is
 
@@ -64,6 +66,14 @@ Tests: `node tests/fff-r8.test.mjs` (Playwright, network blocked, 2 pages for P2
 ## Running locally / offline
 
 Download `index.html` (about 2.4 MB) and open it in a browser; it works without internet. Only the links to external sources require a connection.
+
+## Status
+
+Stable, version 15.1.0 (2026-10-27). The atlas (706 variants + 299 lexicon entries) is complete; playable engines cover part of the variants. The Chess table covers standard chess only. A unified local multiplayer mode across the games is planned, not implemented. Changes: `CHANGELOG.md`.
+
+## Offline
+
+Everything runs from the single file `index.html`: no CDN, no external fonts or scripts, no tracking, no accounts. A service worker caches the app for offline start. The AI engines run locally in the browser; the optional two-player game uses WebRTC directly between the players (no server).
 
 ## History / Changelog
 ### 14.6.13 — 2026-10-23

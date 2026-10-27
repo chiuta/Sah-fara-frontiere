@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 15.0.0 · **Ultima actualizare:** 2026-10-26
+**Versiune:** 15.1.0 · **Ultima actualizare:** 2026-10-27
 
 Limbile interfeței: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -13,6 +13,8 @@ Atlas/enciclopedie de variante de șah: 706 variante și 299 intrări de lexicon
 **Live:** https://chiuta.github.io/Sah-fara-frontiere/
 
 ![Captura de ecran](screenshot.ro.png)
+
+**Nou în 15.1.0:** filtre după dificultate și număr de jucători în atlas și o filă nouă „Contra motorului” în Masa de șah (nivel reglabil, anulare mutare, descărcare PGN, reluare dintr-un PGN). Vezi `CHANGELOG.md`.
 
 ## Ce este
 
@@ -66,6 +68,14 @@ Teste: `node tests/fff-r8.test.mjs` (Playwright, rețea blocată, 2 pagini pentr
 ## Rulare locală / offline
 
 Descarcă `index.html` (aproximativ 2,4 MB) și deschide-l în browser; funcționează fără internet. Doar linkurile către surse externe necesită conexiune.
+
+## Stare
+
+Stabil, versiunea 15.1.0 (2026-10-27). Atlasul (706 variante + 299 intrări de lexicon) este complet; motoarele jucabile acoperă o parte dintre variante. Masa de șah acoperă doar șahul standard. Un mod multiplayer local unificat între jocuri este planificat, nu implementat. Modificări: `CHANGELOG.md`.
+
+## Offline
+
+Totul rulează dintr-un singur fișier `index.html`: fără CDN, fără fonturi sau scripturi externe, fără urmărire, fără conturi. Un service worker memorează aplicația pentru pornire offline. Motoarele AI rulează local în browser; jocul în doi opțional folosește WebRTC direct între jucători (fără server).
 
 ## Istoric / Changelog
 ### 14.6.13 — 2026-10-23
