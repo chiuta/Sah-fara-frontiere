@@ -37,7 +37,7 @@ await page.locator(".c1a-tab", {hasText: "Against the engine"}).click();
 await page.waitForTimeout(300);
 const PANE = ".c1a-pane:not([hidden])";
 check("tab «Against the engine» afișat", await page.locator(`${PANE} h3`).innerText() === "Play against the local engine");
-check("selector de nivel cu 4 niveluri (începător…avansat)", await page.locator(`${PANE} select`).first().locator("option").count() === 4);
+check("selector de nivel cu 5 niveluri (începător…expert)", await page.locator(`${PANE} select`).first().locator("option").count() === 5);
 await page.locator(`${PANE} select`).first().selectOption("1");
 await page.locator(`${PANE} select`).nth(1).selectOption("-1"); // omul joacă negru → motorul mută primul
 await page.locator(`${PANE} button`, {hasText: "Start the game"}).click();

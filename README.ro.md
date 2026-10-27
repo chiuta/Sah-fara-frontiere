@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 15.1.0 · **Ultima actualizare:** 2026-10-27
+**Versiune:** 15.2.0 · **Ultima actualizare:** 2026-10-27
 
 Limbile interfeței: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -13,6 +13,8 @@ Atlas/enciclopedie de variante de șah: 706 variante și 299 intrări de lexicon
 **Live:** https://chiuta.github.io/Sah-fara-frontiere/
 
 ![Captura de ecran](screenshot.ro.png)
+
+**Nou în 15.2.0:** nivelul 4 „expert” al motorului (adâncime 7, plafon 1,5 M noduri); într-o simulare de 51 de partide contra nivelului 3 a obținut scor 0,73 (Wilson 95% [0,59; 0,83]). Nivelurile 0–3 sunt neschimbate.
 
 **Nou în 15.1.0:** filtre după dificultate și număr de jucători în atlas și o filă nouă „Contra motorului” în Masa de șah (nivel reglabil, anulare mutare, descărcare PGN, reluare dintr-un PGN). Vezi `CHANGELOG.md`.
 
@@ -71,7 +73,7 @@ Descarcă `index.html` (aproximativ 2,4 MB) și deschide-l în browser; funcțio
 
 ## Stare
 
-Stabil, versiunea 15.1.0 (2026-10-27). Atlasul (706 variante + 299 intrări de lexicon) este complet; motoarele jucabile acoperă o parte dintre variante. Masa de șah acoperă doar șahul standard. Un mod multiplayer local unificat între jocuri este planificat, nu implementat. Modificări: `CHANGELOG.md`.
+Stabil, versiunea 15.2.0 (2026-10-27). Atlasul (706 variante + 299 intrări de lexicon) este complet; motoarele jucabile acoperă o parte dintre variante. Masa de șah acoperă doar șahul standard. Un mod multiplayer local unificat între jocuri este planificat, nu implementat. Modificări: `CHANGELOG.md`.
 
 ## Offline
 

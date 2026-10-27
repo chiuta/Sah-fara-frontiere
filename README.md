@@ -2,7 +2,7 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 15.1.0 · **Last updated:** 2026-10-27
+**Version:** 15.2.0 · **Last updated:** 2026-10-27
 
 Interface languages: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -11,6 +11,8 @@ An atlas/encyclopedia of chess variants: 706 variants and 299 lexicon entries, w
 **Live app:** https://chiuta.github.io/Sah-fara-frontiere/
 
 ![Screenshot](screenshot.en.png)
+
+**New in 15.2.0:** engine level 4 ("expert", depth 7, 1.5M-node cap); in a 51-game simulation against level 3 it scored 0.73 (Wilson 95% [0.59, 0.83]). Levels 0-3 are unchanged.
 
 **New in 15.1.0:** difficulty and number-of-players filters in the atlas, and a new "Against the engine" tab in the Chess table (adjustable engine level, take-back, PGN download, resume from a PGN). See `CHANGELOG.md`.
 
@@ -69,7 +71,7 @@ Download `index.html` (about 2.4 MB) and open it in a browser; it works without 
 
 ## Status
 
-Stable, version 15.1.0 (2026-10-27). The atlas (706 variants + 299 lexicon entries) is complete; playable engines cover part of the variants. The Chess table covers standard chess only. A unified local multiplayer mode across the games is planned, not implemented. Changes: `CHANGELOG.md`.
+Stable, version 15.2.0 (2026-10-27). The atlas (706 variants + 299 lexicon entries) is complete; playable engines cover part of the variants. The Chess table covers standard chess only. A unified local multiplayer mode across the games is planned, not implemented. Changes: `CHANGELOG.md`.
 
 ## Offline
 

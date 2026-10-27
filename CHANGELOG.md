@@ -2,6 +2,20 @@
 
 Format: [SemVer](https://semver.org/lang/ro/) MAJOR.MINOR.PATCH. Istoricul detaliat al versiunilor 14.x se află în secțiunea „Istoric / Changelog” din `README.ro.md`.
 
+## 15.2.0 — 2026-10-27 (anterior: v15.1.0)
+
+### Adăugat
+- **Nivelul 4 „expert”** în „Contra motorului”: același motor negamax, cu adâncime 7 și plafon de 1.500.000 de noduri pe mutare. Textele „expert” sunt în cele 8 limbi (fr/it/es/pt/hu/de: traduceri automate, neverificate nativ).
+- **Simulare** (`tests/level4-sim.mjs`): nivelul 4 contra nivelului 3, 51 de partide, culori alternate, deschidere aleatoare de 6 jumătăți de mutare per pereche, adjudecare la 140 de jumătăți de mutare (4 partide adjudecate). Rezultat: 28 victorii, 18 remize, 5 înfrângeri, scor 0,726, interval Wilson 95% [0,59; 0,83] (diferență Elo estimată 169, [64; 274]). Nivelul 4 bate semnificativ nivelul 3.
+- Teste noi: `tests/level4.test.mjs` (nivelurile 0–3 neschimbate, nivelul 4 determinist și legal, plafonul de noduri, mat în 1 și în 2); `tests/vs-filters.test.mjs` așteaptă acum 5 niveluri.
+
+### Neschimbat
+- Nivelurile 0–3 și turneul Elo (care folosește 1–3).
+
+### Neimplementat
+- Modul multiplayer unificat între jocuri rămâne planificat.
+- Simularea măsoară doar nivelul 4 contra nivelului 3 pe o singură mașină; nu este o evaluare Elo absolută.
+
 ## 15.1.0 — 2026-10-27 (anterior: v15.0.0)
 
 ### Adăugat
