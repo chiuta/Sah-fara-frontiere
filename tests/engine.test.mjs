@@ -132,5 +132,23 @@ console.log("7. căutare, evaluare, niveluri");
   }
   check("nivelul 1 bate un jucător aleator în ≥ 6 din 8 partide (rezultat: " + w1 + "/8)", w1 >= 6, w1);
 }
+
+console.log("15.1.0. nivelul 0 (începător), PGN dus-întors la nivel de motor");
+{
+  const r = rng(77), G = new C.Game();
+  for (let k = 0; k < 30 && !G.status().over; k++) {
+    const m = C.chooseMove(G.pos, k % 4, r), legal = C.legalMoves(G.pos);
+    if (!legal.includes(m)) { check("nivelurile 0..3 aleg doar mutări legale", false, k); break; }
+    G.play(m);
+  }
+  check("nivelurile 0..3 aleg doar mutări legale (30 de semi-mutări alternând nivelurile)", G.moves.length === 30 || G.status().over);
+  const a = C.chooseMove(C.startPos(), 0, rng(5)), b = C.chooseMove(C.startPos(), 0, rng(5));
+  check("nivelul 0 este determinist pentru același rng", a === b);
+  const seen = new Set(); for (let s = 1; s <= 40; s++) seen.add(C.chooseMove(C.startPos(), 0, rng(s)));
+  check("nivelul 0 variază mutarea de deschidere (≥ 4 mutări diferite în 40 de semințe)", seen.size >= 4, seen.size);
+  const pgn = C.pgnText(G, {Event: "t", Result: "*"}), toks = pgn.split("\n\n")[1].replace(/\d+\.(\.\.)?/g, " ").split(/\s+/).filter(x => x && x !== "*");
+  const H = new C.Game(); let ok = true; for (const t of toks) { const pm = C.parseMove(H.pos, t); if (!pm || !pm.m) { ok = false; break; } H.play(pm.m); }
+  check("PGN-ul generat de motor se reciteste și dă aceeași poziție (FEN identic)", ok && C.toFEN(H.pos) === C.toFEN(G.pos), toks.length);
+}
 console.log(`\n${passes} reușite, ${fails} eșuate`);
 process.exit(fails ? 1 : 0);
