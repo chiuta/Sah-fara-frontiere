@@ -2,6 +2,10 @@
 
 Format: [SemVer](https://semver.org/lang/ro/) MAJOR.MINOR.PATCH. Istoricul detaliat al versiunilor 14.x se află în secțiunea „Istoric / Changelog” din `README.ro.md`.
 
+## 15.2.1 — 2026-10-31
+
+Doar interfață (accesibilitate pe telefon, 360×740): etichetele de filtru 10 → 12 px. Fără alte schimbări de comportament.
+
 ## 15.2.0 — 2026-10-27 (anterior: v15.1.0)
 
 ### Adăugat
