@@ -1,7 +1,7 @@
 // ȘAH FĂRĂ FRONTIERE 15.2.0 — simularea de forță: nivelul 4 (expert) contra nivelului 3 (avansat), N ≥ 50 de partide, culori alternate, deschideri aleatoare deterministe.
 // Rulare lungă (câteva minute pe partidă, în funcție de calculator):
-//   node tests/level4-sim.mjs run <de_la> <până_la> [nivelA=4] [nivelB=3] > rezultate-1.jsonl      (partidele <de_la>..<până_la>-1; perechile i, i+1 au aceeași deschidere cu culori inversate)
-//   node tests/level4-sim.mjs summary rezultate-*.jsonl                                           (scor, interval Wilson 95 %, estimare Elo)
+//   node tools/level4-sim.mjs run <de_la> <până_la> [nivelA=4] [nivelB=3] > rezultate-1.jsonl      (partidele <de_la>..<până_la>-1; perechile i, i+1 au aceeași deschidere cu culori inversate)
+//   node tools/level4-sim.mjs summary rezultate-*.jsonl                                           (scor, interval Wilson 95 %, estimare Elo)
 // Motorul și toate datele sunt locale; nu există rețea. Rezultatul este deterministic (căutare cu buget de noduri, nu cu ceas).
 import fs from "fs"; import path from "path"; import {fileURLToPath} from "url";
 const HERE = path.dirname(fileURLToPath(import.meta.url));

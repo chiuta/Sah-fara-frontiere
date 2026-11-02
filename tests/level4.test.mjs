@@ -1,5 +1,5 @@
 // ȘAH FĂRĂ FRONTIERE 15.2.0 — nivelul AI 4 („expert”): parametri, determinism, legalitate, buget de noduri, tactici simple; nivelurile 0–3 neschimbate.
-// Rulare: node tests/level4.test.mjs   (motor local, fără browser, fără rețea). Simularea de forță (≥50 de partide) este în tests/level4-sim.mjs (lungă, nu rulează implicit).
+// Rulare: node tests/level4.test.mjs   (motor local, fără browser, fără rețea). Simularea de forță (≥50 de partide) este în tools/level4-sim.mjs (lungă, nu rulează implicit).
 import fs from "fs"; import path from "path"; import {fileURLToPath} from "url";
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const html = fs.readFileSync(path.resolve(HERE, "..", "index.html"), "utf8");
