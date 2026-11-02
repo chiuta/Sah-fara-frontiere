@@ -2,6 +2,22 @@
 
 Format: [SemVer](https://semver.org/lang/ro/) MAJOR.MINOR.PATCH. Istoricul detaliat al versiunilor 14.x se află în secțiunea „Istoric / Changelog” din `README.ro.md`.
 
+## 15.2.3 — 2026-11-02
+
+### Surse actualizate (runda 2, verificat la 2026-11-02)
+- „Chess.com a achiziționat Play Magnus în 2023” -> 2022 în toate intrările și în cele 8 limbi (tranzacția a fost anunțată pe 24 august 2022 și încheiată pe 16 decembrie 2022; chess.com/news/view/chesscom-acquires-pmg).
+
+## 15.2.2 — 2026-11-02
+
+Actualizare surse (2026-11-02).
+
+### Modificat
+- „Șah Standard”: linkul sursă către Legile Șahului FIDE trece de la `handbook.fide.com/chapter/E012018` (ediția 2018, devenită istorică) la `handbook.fide.com/chapter/e012023` (Legile în vigoare din 1 ianuarie 2023; sursă: rcc.fide.com și FIDE Handbook).
+- Intrările „Chess AI — State of Art Mai 2026” și „Chess — Recorduri și Statistici Globale 2026” (în toate cele 8 limbi): Stockfish 18 (lansat 31 ianuarie 2026) în loc de Stockfish 17, iar „în pregătire” este acum Stockfish 19 (sursă: stockfishchess.org/blog; Stockfish 19 a apărut pe 5 septembrie 2026).
+
+### Neschimbat
+- Cifrele CCRL, predicțiile „Stockfish 18–20 (2027–2030)” și alte afirmații din atlas rămân neverificate.
+
 ## 15.2.1 — 2026-10-31
 
 Doar interfață (accesibilitate pe telefon, 360×740): etichetele de filtru 10 → 12 px. Fără alte schimbări de comportament.
