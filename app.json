@@ -28,8 +28,8 @@
     "sah-fara-frontiere.tourSeen",
     "sah-fara-frontiere.welcomeSeen"
   ],
-  "sizeBytes": 3223463,
-  "sha256": "66fb31a7a14df982e95786c489527019fce06ac133b3230eea88c090dc6f3490",
+  "sizeBytes": 3254784,
+  "sha256": "e7169c706392c805881b85b07eb24ade79a564dd2e55cca8b4024cf97740c483",
   "csp": {
     "present": true,
     "directives": {
@@ -74,6 +74,8 @@
       "bundle",
       "qr",
       "p2p",
+      "sync",
+      "history",
       "tts"
     ]
   },
@@ -87,6 +89,8 @@
       "bundle",
       "qr",
       "p2p",
+      "sync",
+      "history",
       "tts"
     ]
   },
