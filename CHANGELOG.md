@@ -2,6 +2,11 @@
 
 Format: [SemVer](https://semver.org/lang/ro/) MAJOR.MINOR.PATCH. Istoricul detaliat al versiunilor 14.x se află în secțiunea „Istoric / Changelog” din `README.ro.md`.
 
+## 15.2.3 — 2026-11-02
+
+### Surse actualizate (runda 2, verificat la 2026-11-02)
+- „Chess.com a achiziționat Play Magnus în 2023” -> 2022 în toate intrările și în cele 8 limbi (tranzacția a fost anunțată pe 24 august 2022 și încheiată pe 16 decembrie 2022; chess.com/news/view/chesscom-acquires-pmg).
+
 ## 15.2.2 — 2026-11-02
 
 Actualizare surse (2026-11-02).
