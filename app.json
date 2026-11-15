@@ -12,6 +12,7 @@
     "serviceWorker",
     "localStorage",
     "Web Crypto",
+    "WebGL",
     "BroadcastChannel"
   ],
   "storageKeys": [
@@ -30,8 +31,8 @@
     "sah-fara-frontiere.tourSeen",
     "sah-fara-frontiere.welcomeSeen"
   ],
-  "sizeBytes": 3372492,
-  "sha256": "e4163949865034d05c2ac5b57522d1472ebc4b919727fef0fbc1f68eb662d2b4",
+  "sizeBytes": 3424502,
+  "sha256": "2048b7c0a892bb422691971f38ca7e8cc2dde7632b7919e42de52277072a2e0a",
   "csp": {
     "present": true,
     "directives": {
@@ -44,7 +45,7 @@
       "base-uri": "'self'",
       "form-action": "'self'",
       "worker-src": "'self'",
-      "script-src": "'self' sha256×11",
+      "script-src": "'self' sha256×12",
       "connect-src": "'self'",
       "manifest-src": "'self'"
     },
