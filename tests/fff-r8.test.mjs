@@ -122,7 +122,8 @@ console.log("2. „De ce nu pot muta?”, tastatură, anunțuri (analiză = tabl
   await page.reload(); await page.waitForFunction(() => window.__sah8); await page.waitForTimeout(500);
   await page.click("#table-btn"); await hub(page, 1);
   await sq(page, S("e2")).focus(); await page.keyboard.press("s");
-  await page.waitForTimeout(1500);
+  // se așteaptă condiția (rostirea), nu un timp fix: sub încărcare 1,5 s nu ajungea
+  await page.waitForFunction(() => (window.__said || []).length >= 1, null, {timeout: 20000}).catch(() => {});
   const said = await page.evaluate(() => window.__said);
   check("cu vocea activă, tasta S este rostită", said.length >= 1, said);
   await browser.close();
@@ -207,7 +208,10 @@ console.log("4. provocarea zilei");
   await page.reload(); await page.waitForFunction(() => window.__sah8); await page.waitForTimeout(500);
   await page.click("#table-btn");
   await page.waitForSelector(`${PANE} .sh-board`, {timeout: 60000});
-  check("după reîncărcare ziua rămâne rezolvată", (await page.locator(PANE).innerText()).includes(await tx(page, "sh.dayDone")));
+  const doneTxt = await tx(page, "sh.dayDone");
+  // mesajul „rezolvat” apare la randarea panoului, nu neapărat în același cadru cu tabla: se așteaptă condiția (sub încărcare, citirea imediată dădea fals negativ)
+  await page.waitForFunction(([sel, t]) => { const e = document.querySelector(sel); return !!e && e.innerText.includes(t); }, [PANE, doneTxt], {timeout: 15000}).catch(() => {});
+  check("după reîncărcare ziua rămâne rezolvată", (await page.locator(PANE).innerText()).includes(doneTxt));
   check("0 erori", st.errs.length === 0, st.errs);
   await browser.close();
 }
